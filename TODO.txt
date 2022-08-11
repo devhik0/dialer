@@ -1,1 +1,2 @@
+* graphql, CMS ve redux api ekle
 * stil ekle
