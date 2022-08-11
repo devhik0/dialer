@@ -1,9 +1,11 @@
+import Home from "../components/layout/Home"
 
 const Anasayfa = () => {
+
   return (
-    <div>
-      Ta daa !
-    </div>
+    <>
+      <Home />
+    </>
   )
 }
 
