@@ -1,14 +1,30 @@
 import styles from './index.module.css'
+import { createClient } from 'contentful'
+
+const client = createClient({
+  space: process.env.CONTENTFUL_SPACE_ID!,
+  accessToken: process.env.CONTENTFUL_ACCESS_TOKEN!,
+})
+
+console.log('Token: ', process.env.CONTENTFUL_ACCESS_TOKEN)
+// ! fixme: expected param accesstoken error !
+
+// client.getEntries({ 'content_type': 'kisi' })
+//   .then((response) => console.log(response.items[0]))
+//   .catch(console.error)
 
 const Rehber = () => {
-  // todo: add graphql api 
-  const kisiler = ['ahmet', 'veli', 'hüseyin']
+  // const res = client.getEntries({ 'content_type': 'kisi' })
+  //   .then((response) => console.log(response.items))
+  //   .catch(console.error)
 
-  const kisi = () => kisiler.map(kisi => <div className={styles.kisi} key={kisi}>{kisi}</div>)
+  // const kisiler = res.items
+
+  // const kisi = () => kisiler.map(kisi => <div className={styles.kisi} key={kisi}>{kisi}</div>)
 
   return (
     <div>
-      {kisi()}
+      {/* {kisi()} */}
     </div>
   )
 }
