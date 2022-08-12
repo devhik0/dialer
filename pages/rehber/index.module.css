@@ -1,5 +1,48 @@
-.kisi {
-  margin: 1rem;
+.container {
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.kisi-container {
+  display: flex;
+  margin: .2rem;
   padding: .5rem;
-  background: #f3f3f3;
+  background: #f6f6f6;
+  align-items: center;
+  border-radius: .5rem;
+}
+
+.kisi-container:hover {
+  box-shadow: #ddd 1px 2px 10px 3px;
+}
+
+.kisi-container .avatar {
+  margin-right: 1rem;
+  padding: .5rem 0;
+  font-size: 1rem;
+  width: 10%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  text-align: center;
+  background: var(--bs-blue);
+}
+
+.eklebtn {
+  width: 35%;
+  margin-top: 1rem;
+  align-self: center;
+  border: none;
+  background: none;
+  color: var(--bs-blue);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.eklebtn:hover,
+.eklebtn:active,
+.eklebtn:focus {
+  background: none;
+  color: var(--bs-blue);
 }

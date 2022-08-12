@@ -1,1 +1,1 @@
-* stil ekle
+* arama özelliği ekle

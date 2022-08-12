@@ -7,11 +7,13 @@ import { Button } from "react-bootstrap"
 const Layout = ({ children }: any) => {
   return (
     <div className={styles.container}>
+      {/* //todo: add search bar here */}
+      <div>SEARCH BAR</div>
       <main>
         {children}
       </main>
       {/* // * FAB */}
-      <Button >
+      <Button className={styles.fab}>
         <Image src='/dialpad.svg' width={32} height={32} />
       </Button>
       <Navbar />

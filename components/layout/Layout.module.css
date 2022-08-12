@@ -2,15 +2,10 @@
   max-width: 100%;
 }
 
-.container button {
+.fab {
   aspect-ratio: 1/1;
   position: fixed;
   bottom: 15%;
   right: 5%;
   z-index: 1200;
-}
-
-.container button img {
-  color: red;
-  fill: white;
 }
