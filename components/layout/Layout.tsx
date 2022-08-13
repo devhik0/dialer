@@ -3,12 +3,13 @@ import styles from './Layout.module.css'
 import Image from "next/image"
 import { Button } from "react-bootstrap"
 
+type LayoutProps = {
+  children: React.ReactNode,
+}
 
-const Layout = ({ children }: any) => {
+const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={styles.container}>
-      {/* //todo: add search bar here */}
-      <div>SEARCH BAR</div>
       <main>
         {children}
       </main>

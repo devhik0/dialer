@@ -4,17 +4,30 @@
   flex-direction: column;
 }
 
+.form {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+}
+
+.form svg {
+  margin-right: .5rem;
+}
+
+.form input {
+  background-color: #f0ebeb;
+  border-width: 0;
+}
+
 .kisi-container {
   display: flex;
-  margin: .2rem;
+  margin: .5rem 1rem;
   padding: .5rem;
-  background: #f6f6f6;
   align-items: center;
-  border-radius: .5rem;
 }
 
 .kisi-container:hover {
-  box-shadow: #ddd 1px 2px 10px 3px;
+  background: #f1f1f1;
 }
 
 .kisi-container .avatar {
@@ -30,7 +43,7 @@
 
 .eklebtn {
   width: 35%;
-  margin-top: 1rem;
+  margin-bottom: .5rem;
   align-self: center;
   border: none;
   background: none;
