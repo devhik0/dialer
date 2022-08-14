@@ -42,8 +42,7 @@ const Rehber = ({ kisiler }: RehberProps) => {
           const makeInitial = () => {
             const initial = kisi.fields.adsoyad.toUpperCase().split(" ")
             const ad = initial[0][0]
-            const soyad = initial[1][0]
-            return `${ad}${soyad}`
+            return `${ad}`
           }
 
           return (
@@ -55,7 +54,7 @@ const Rehber = ({ kisiler }: RehberProps) => {
         })
       }
       {/* tuşlar modalı */}
-      <Dialpad placement={'bottom'} />
+      <Dialpad name={'bottom'} placement={'bottom'} />
     </div>
   )
 }
