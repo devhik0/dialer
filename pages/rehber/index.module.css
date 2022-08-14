@@ -4,21 +4,6 @@
   flex-direction: column;
 }
 
-.form {
-  display: flex;
-  align-items: center;
-  margin: 1rem;
-}
-
-.form svg {
-  margin-right: .5rem;
-}
-
-.form input {
-  background-color: #f0ebeb;
-  border-width: 0;
-}
-
 .kisi-container {
   display: flex;
   margin: .5rem 1rem;

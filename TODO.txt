@@ -1,2 +1,1 @@
 * arama özelliği ekle !!!
-* fab ı layout -> rehber/index e taşı

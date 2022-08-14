@@ -1,0 +1,41 @@
+.search {
+  padding: 0;
+}
+
+.search:focus-within .search-results {
+  display: block;
+}
+
+.search-results {
+  margin: 0 1rem;
+  margin-left: 2.5rem;
+  padding: .5rem;
+  width: auto;
+  max-width: 100%;
+  background-color: #ddd;
+  height: 150px;
+  display: none;
+}
+
+.search-result {
+  padding: 0;
+  list-style: none;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: .5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+.form svg {
+  margin-right: .5rem;
+}
+
+.form input {
+  background-color: #f0ebeb;
+  border-width: 0;
+}

@@ -1,8 +1,12 @@
 import React from 'react'
+import Search from '../../components/layout/Search'
 
 const Son = () => {
   return (
-    <div>Son</div>
+    <>
+      {/* <Search /> */}
+      <div>Son</div>
+    </>
   )
 }
 
