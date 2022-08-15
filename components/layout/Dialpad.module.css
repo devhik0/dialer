@@ -5,21 +5,3 @@
    right: 5%;
    z-index: 1200;
  }
-
- .form {
-   margin-right: .5rem;
-   width: 100%;
- }
-
- .input {
-   border: none;
-   border-radius: 0;
-   background: #ddd;
- }
-
- .pads {
-   margin-top: 1rem;
-   margin-bottom: 0;
-   height: 46vh;
-   background-color: #ddd;
- }
