@@ -1,4 +1,5 @@
 import '../styles/globals.css'
+import '../scss/custom.css'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import type { AppProps } from 'next/app'

@@ -14,7 +14,9 @@ function Dialpad({ name, ...props }: OffcanvasProps) {
       {/* // * FAB */}
       <Button onClick={handleShow} className={styles.fab}><Image src='/dialpad.svg' width={32} height={32} /></Button>
       {/* // !error: offcanvas X butonu telefonda çalışmıyor */}
-      <Offcanvas show={show} onHide={handleClose} {...props}>
+      <Offcanvas
+        className={styles.dialpad}
+        show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           Header
         </Offcanvas.Header>
