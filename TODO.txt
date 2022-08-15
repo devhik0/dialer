@@ -1,3 +1,4 @@
 * sorunu çöz !!!
 * bootstap customize işini çöz
 * react notlarını oku 
+* projeyi geliştir
