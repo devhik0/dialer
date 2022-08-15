@@ -3,9 +3,25 @@
    position: fixed;
    bottom: 15%;
    right: 5%;
-   z-index: 1200;
+   z-index: 1000;
  }
 
- /* .dialpad {
-   z-index: 1250;
- } */
+ .pads {
+   display: flex;
+   flex-direction: column;
+ }
+
+ .pad-btn,
+ .pad-call-btn {
+   width: 100%;
+   margin-bottom: 1rem;
+   font-size: 1.5rem;
+ }
+
+ .pad-call-btn {
+   width: 50%;
+   display: flex;
+   align-self: center;
+   align-items: center;
+   justify-content: space-evenly;
+ }
