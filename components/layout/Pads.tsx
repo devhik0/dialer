@@ -27,11 +27,11 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
   // events 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
     setVal(val.concat(evt.currentTarget.value))
+    SetQuery(val.concat(evt.currentTarget.value))
   }
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setVal(evt.target.value)
-    SetQuery(evt.target.value)
   }
 
   // silme işlevi
@@ -41,10 +41,14 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
     setVal(res.join(''))
   }
 
+  // ! error: silince eski sonucları göstermiyor !
   // arama sonucu
   const sonuc = kisiler
-    .map(kisi => kisi.fields.telefon)
-    .filter(k => k?.includes(query))
+    .map(kisi => kisi.fields.tel)
+    .filter(k => {
+      console.log(query)
+      return k.includes(query)
+    })
     .map(res => query && <li className={styles['search-result']} key={res}>{res}</li>)
 
   // pads 
@@ -58,9 +62,7 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
       {/* // * Dialpad Offcanvas */}
       <Offcanvas style={{ height: '100vh' }} show={show} onHide={handleClose} {...props}>
         <div data-testid='kb' className={styles['search-results']}>
-          {/* // todo: buraya bulunan kişileri ekle */}
-          {/* // * arama sonuçları */}
-          <b>Sonuçlar</b> {sonuc.length !== 0 ? sonuc : <p>Böyle biri yok</p>}
+          {sonuc.length !== 0 ? <>Sonuçlar: {sonuc}</> : ''}
         </div>
         <Offcanvas.Header className={styles.offheader} closeButton>
           <Form.Control className={styles.offinput} value={val} onChange={handleChange} />

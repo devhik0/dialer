@@ -11,7 +11,7 @@ const client = createClient({
 
 export type EntryFields = {
   adsoyad: string
-  telefon: string
+  tel: string
 }
 
 type RehberProps = {
@@ -47,7 +47,7 @@ const Rehber = ({ kisiler }: RehberProps) => {
           return (
             <div className={styles['kisi-container']} key={kisi.sys.id}>
               <div className={styles.avatar}><span style={{ color: '#f6f6f6' }}>{makeInitial()}</span></div>
-              {kisi.fields.adsoyad} {kisi.fields.telefon}
+              {kisi.fields.adsoyad}
             </div>
           )
         })
