@@ -48,13 +48,13 @@ const Rehber = ({ kisiler }: RehberProps) => {
           return (
             <div className={styles['kisi-container']} key={kisi.sys.id}>
               <div className={styles.avatar}><span style={{ color: '#f6f6f6' }}>{makeInitial()}</span></div>
-              {kisi.fields.adsoyad}
+              {kisi.fields.adsoyad} {kisi.fields.telefon}
             </div>
           )
         })
       }
       {/* tuşlar modalı */}
-      <Dialpad name={'bottom'} placement={'bottom'} />
+      <Dialpad kisiler={kisiler} name={'bottom'} placement={'bottom'} />
     </div>
   )
 }

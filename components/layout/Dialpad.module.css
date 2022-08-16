@@ -6,9 +6,24 @@
    z-index: 1000;
  }
 
+ .offheader {
+   margin: 0;
+   padding-top: 1rem;
+   padding-bottom: 0;
+ }
+
+ .offinput {
+   margin: 0 .75rem;
+   font-size: 1.75rem;
+ }
+
  .pads {
    display: flex;
    flex-direction: column;
+ }
+
+ .col {
+   padding: 0 .3rem;
  }
 
  .pad-btn,
@@ -24,4 +39,8 @@
    align-self: center;
    align-items: center;
    justify-content: space-evenly;
+ }
+
+ .call {
+   z-index: 1300;
  }
