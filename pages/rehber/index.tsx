@@ -1,9 +1,8 @@
 import styles from './index.module.css'
 import { Button } from 'react-bootstrap'
 import { createClient, Entry, EntryCollection } from 'contentful'
-import Image from "next/image"
 import Search from '../../components/layout/Search'
-import Dialpad from '../../components/layout/Dialpad'
+import Pads from '../../components/layout/Pads'
 
 const client = createClient({
   space: process.env.C_SPC_ID!,
@@ -53,8 +52,8 @@ const Rehber = ({ kisiler }: RehberProps) => {
           )
         })
       }
-      {/* tuşlar modalı */}
-      <Dialpad kisiler={kisiler} name={'bottom'} placement={'bottom'} />
+      {/* // * tuşlar modalı */}
+      <Pads kisiler={kisiler} name={'bottom'} placement={'bottom'} />
     </div>
   )
 }

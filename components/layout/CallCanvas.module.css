@@ -1,0 +1,13 @@
+.pad-call-btn {
+  width: 50%;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.call {
+  z-index: 1300;
+}

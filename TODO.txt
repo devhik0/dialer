@@ -1,2 +1,3 @@
 * tuşlu search işlevini yap
 * her component bittiğinde build edip hataları onar
+* refactor code
