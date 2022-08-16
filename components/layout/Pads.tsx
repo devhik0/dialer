@@ -1,9 +1,10 @@
 import { Entry } from 'contentful'
 import Image from "next/image"
 import { ChangeEvent, MouseEvent, useState } from 'react'
-import { Button, Col, Container, Form, Offcanvas, OffcanvasProps, Row } from 'react-bootstrap'
+import { Button, Container, Form, Offcanvas, OffcanvasProps, Row } from 'react-bootstrap'
 import { EntryFields } from '../../pages/rehber/index'
 import CallCanvas from './CallCanvas'
+import Pad from './Pad'
 import styles from './Pads.module.css'
 
 type PadsProps = OffcanvasProps & {
@@ -14,21 +15,15 @@ type PadsProps = OffcanvasProps & {
 const Pads = ({ name, kisiler, ...props }: PadsProps) => {
   // dial offcanvas state i
   const [show, setShow] = useState(false)
-
   const handleShow = () => setShow(true)
   const handleClose = () => setShow(false)
 
-  // todo: Search ı ayrı hallet
   // search state i
   const [query, SetQuery] = useState('')
 
-  const sonuc = kisiler
-    .map(kisi => kisi.fields.telefon)
-    .filter(k => k?.includes(query))
-    .map(res => query && <li className={styles['search-result']} key={res}>{res}</li>)
-
-  // dialpad state i
+  // input ve pad state i
   const [val, setVal] = useState('')
+
   // events 
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
     setVal(val.concat(evt.currentTarget.value))
@@ -36,9 +31,9 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setVal(evt.target.value)
-    // search işlevi
     SetQuery(evt.target.value)
   }
+
   // silme işlevi
   const handleDelete = () => {
     const res = Array.from(val)
@@ -46,20 +41,14 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
     setVal(res.join(''))
   }
 
-  // pads
-  const buttons = [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#']
+  // arama sonucu
+  const sonuc = kisiler
+    .map(kisi => kisi.fields.telefon)
+    .filter(k => k?.includes(query))
+    .map(res => query && <li className={styles['search-result']} key={res}>{res}</li>)
 
-  // render pads function
-  const renderPad = (btns: (string | number)[], firstIndex: number, lastIndex: number) => btns
-    .slice(firstIndex, lastIndex)
-    .map(btn => (
-      <Col key={btn} className={styles.col}>
-        <Button variant='outline-primary' className={styles['pad-btn']} key={btn} value={btn}
-          onClick={handleClick}
-        >
-          {btn}
-        </Button>
-      </Col>))
+  // pads 
+  const buttons = [1, 2, 3, 4, 5, 6, 7, 8, 9, '*', 0, '#']
 
   return (
     <>
@@ -67,15 +56,14 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
         <Image src='/dialpad.svg' alt='dialpad' width={32} height={32} />
       </Button>
       {/* // * Dialpad Offcanvas */}
-      <Offcanvas style={{ height: '100vh' }} className={styles.dialpad} show={show} onHide={handleClose} {...props}>
+      <Offcanvas style={{ height: '100vh' }} show={show} onHide={handleClose} {...props}>
         <div data-testid='kb' className={styles['search-results']}>
           {/* // todo: buraya bulunan kişileri ekle */}
           {/* // * arama sonuçları */}
           <b>Sonuçlar</b> {sonuc.length !== 0 ? sonuc : <p>Böyle biri yok</p>}
         </div>
         <Offcanvas.Header className={styles.offheader} closeButton>
-          <Form.Control className={styles.offinput} value={val} onChange={handleChange}
-            type='text' />
+          <Form.Control className={styles.offinput} value={val} onChange={handleChange} />
           <Button variant='outline-muted' style={{ padding: '.75rem' }} onClick={handleDelete}>
             <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
               className="bi bi-backspace" viewBox="0 0 16 16">
@@ -86,10 +74,10 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
         </Offcanvas.Header>
         <Offcanvas.Body>
           <Container fluid className={styles.pads}>
-            <Row>{renderPad(buttons, 0, 3)}</Row>
-            <Row>{renderPad(buttons, 3, 6)}</Row>
-            <Row>{renderPad(buttons, 6, 9)}</Row>
-            <Row>{renderPad(buttons, 9, 12)}</Row>
+            <Row><Pad handleClick={handleClick} btns={buttons} firstIndex={0} lastIndex={3} /></Row>
+            <Row><Pad handleClick={handleClick} btns={buttons} firstIndex={3} lastIndex={6} /></Row>
+            <Row><Pad handleClick={handleClick} btns={buttons} firstIndex={6} lastIndex={9} /></Row>
+            <Row><Pad handleClick={handleClick} btns={buttons} firstIndex={9} lastIndex={12} /></Row>
             <CallCanvas kisiler={kisiler} name={'bottom'} placement={'bottom'} />
           </Container>
         </Offcanvas.Body>

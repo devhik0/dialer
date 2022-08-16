@@ -1,8 +1,8 @@
+import { Entry } from 'contentful'
 import { useState } from "react"
 import { Button, Offcanvas, OffcanvasProps } from 'react-bootstrap'
-import styles from './CallCanvas.module.css'
-import { Entry } from 'contentful'
 import { EntryFields } from '../../pages/rehber'
+import styles from './CallCanvas.module.css'
 
 type CallCanvasProps = OffcanvasProps & {
   kisiler: Entry<EntryFields>[]
@@ -12,6 +12,7 @@ type CallCanvasProps = OffcanvasProps & {
 const CallCanvas = ({ name, kisiler, ...props }: CallCanvasProps) => {
   // call screen offcanvas state i
   const [showcall, setShowCall] = useState(false)
+
   const handleShowCall = () => setShowCall(true)
   const handleCloseCall = () => setShowCall(false)
 
@@ -25,7 +26,7 @@ const CallCanvas = ({ name, kisiler, ...props }: CallCanvasProps) => {
       </Button>
       {/* // * Callscreen Offcanvas */}
       <Offcanvas
-        className={styles.call} show={showcall} onHide={handleCloseCall} {...props} style={{ height: '100vh' }}
+        style={{ height: '100vh' }} className={styles.call} show={showcall} onHide={handleCloseCall} {...props}
       >
         <Offcanvas.Header closeButton>ta daa !</Offcanvas.Header>
         <Offcanvas.Body>

@@ -9,11 +9,12 @@ type SearchProps = {
 }
 
 const Search = ({ kisiler }: SearchProps) => {
-  // todo: burayı dialpad e ekle ve tuşa basınca kişi bul !
   // search state i
   const [query, SetQuery] = useState('')
 
-  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => SetQuery(evt.target.value.toLowerCase())
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
+    SetQuery(evt.target.value.toLowerCase())
+  }
 
   const sonuc = kisiler
     .map(kisi => kisi.fields.adsoyad)
