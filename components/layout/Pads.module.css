@@ -6,10 +6,20 @@
   z-index: 1000;
 }
 
+.pad-call-btn {
+  width: 50%;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  display: flex;
+  align-self: center;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
 .search-results {
   height: 25vh;
   overflow: scroll;
-  margin: 1rem 1.25rem;
+  margin: 0 1.25rem;
 }
 
 .search-results li {
@@ -24,11 +34,25 @@
 }
 
 .offinput {
-  margin: 0 0.75rem;
+  margin: 0 0.25rem;
   font-size: 1.75rem;
 }
 
 .pads {
   display: flex;
   flex-direction: column;
+}
+
+/* back button */
+.back {
+  text-align: left;
+  width: 5%;
+  padding: 0;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  border: none;
+}
+
+.back:hover {
+  border: none;
 }

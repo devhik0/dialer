@@ -1,8 +1,8 @@
-import styles from "./Search.module.css";
-import { Form } from "react-bootstrap";
-import { ChangeEvent, useState } from "react";
 import { Entry } from "contentful";
-import { EntryFields } from "../../pages/rehber/index";
+import { ChangeEvent, useState } from "react";
+import { Form } from "react-bootstrap";
+import { EntryFields } from "../../pages/kisiler/index";
+import styles from "./Search.module.css";
 import Sonuc from "./Sonuc";
 
 type SearchProps = {

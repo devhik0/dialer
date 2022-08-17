@@ -18,3 +18,12 @@ $zindex-offcanvas: 1250;
 @import "../node_modules/bootstrap/scss/type";
 @import "../node_modules/bootstrap/scss/offcanvas";
 // etc
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: black;
+}

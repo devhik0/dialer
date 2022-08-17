@@ -9,8 +9,7 @@ import {
   OffcanvasProps,
   Row,
 } from "react-bootstrap";
-import { EntryFields } from "../../pages/rehber/index";
-import CallCanvas from "./CallCanvas";
+import { EntryFields } from "../../pages/kisiler/index";
 import Pad from "./Pad";
 import styles from "./Pads.module.css";
 import Sonuc from "./Sonuc";
@@ -67,10 +66,25 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
         onHide={handleClose}
         {...props}
       >
+        <Button onClick={handleClose} variant="outline" className={styles.back}>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            fill="currentColor"
+            className="bi bi-arrow-left"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fillRule="evenodd"
+              d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"
+            />
+          </svg>
+        </Button>
         <div data-testid="kb" className={styles["search-results"]}>
           <Sonuc kisiler={kisiler} query={query} />
         </div>
-        <Offcanvas.Header className={styles.offheader} closeButton>
+        <Offcanvas.Header className={styles.offheader}>
           <Form.Control
             className={styles.offinput}
             onChange={handleChange}
@@ -79,7 +93,7 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
           />
           <Button
             variant="outline-muted"
-            style={{ padding: ".75rem" }}
+            style={{ marginRight: ".5rem", padding: ".75rem .5rem" }}
             onClick={handleDelete}
           >
             <svg
@@ -129,11 +143,22 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
                 lastIndex={12}
               />
             </Row>
-            <CallCanvas
-              kisiler={kisiler}
-              name={"bottom"}
-              placement={"bottom"}
-            />
+            <Button
+              variant="outline-success"
+              className={styles["pad-call-btn"]}
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                fill="currentColor"
+                className="bi bi-telephone"
+                viewBox="0 0 16 16"
+              >
+                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              </svg>
+              <span>Ara</span>
+            </Button>
           </Container>
         </Offcanvas.Body>
       </Offcanvas>

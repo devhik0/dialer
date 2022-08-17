@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import { EntryFields } from "../../pages/rehber/index";
+import { EntryFields } from "../../pages/kisiler/index";
 import styles from "./KisiKart.module.css";
 
 type KisiKartProps = {

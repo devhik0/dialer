@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import { EntryFields } from "../../pages/rehber/index";
+import { EntryFields } from "../../pages/kisiler/index";
 import KisiKart from "../kisiler/KisiKart";
 
 type SonucProps = {

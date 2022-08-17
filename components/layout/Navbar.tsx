@@ -40,9 +40,9 @@ const Navbar = () => {
       </Nav.Item>
       <Nav.Item>
         <Nav.Link
-          href="/rehber"
+          href="/kisiler"
           style={{
-            background: router.asPath === "/rehber" ? "#0d6efd" : "none",
+            background: router.asPath === "/kisiler" ? "#0d6efd" : "none",
           }}
         >
           <svg

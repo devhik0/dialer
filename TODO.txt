@@ -1,3 +1,4 @@
-* arama ekranını yap call screen
+* // todo: yu yap
+* kişi sayfasını yap !!!
 * her component bittiğinde build edip hataları onar
 * refactor code

@@ -1,7 +1,7 @@
 import { Entry } from "contentful";
 import { useState } from "react";
 import { Button, Offcanvas, OffcanvasProps } from "react-bootstrap";
-import { EntryFields } from "../../pages/rehber";
+import { EntryFields } from "../../pages/kisiler";
 import styles from "./CallCanvas.module.css";
 
 type CallCanvasProps = OffcanvasProps & {
@@ -46,7 +46,7 @@ const CallCanvas = ({ ...props }: CallCanvasProps) => {
         <Offcanvas.Header closeButton>ta daa !</Offcanvas.Header>
         <Offcanvas.Body>
           {/* //todo: arama ekranını yap */}
-          call screen
+          Aranıyor... Annem
         </Offcanvas.Body>
       </Offcanvas>
     </>
