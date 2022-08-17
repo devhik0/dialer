@@ -16,7 +16,7 @@ const KisiKart = ({ kisi }: KisiKartProps) => {
   return (
     <div className={styles["kisi-container"]} key={kisi.sys.id}>
       <div className={styles.avatar}>
-        <span style={{ color: "#f6f6f6" }}>{makeInitial()}</span>
+        <span style={{ color: "#f5f6f6" }}>{makeInitial()}</span>
       </div>
       {kisi.fields.adsoyad} {kisi.fields.tel}
     </div>
