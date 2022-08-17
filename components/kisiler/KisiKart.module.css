@@ -1,0 +1,24 @@
+.kisi-container {
+  display: flex;
+  margin: .5rem 1rem;
+  padding: .5rem;
+  align-items: center;
+  z-index: 1500;
+}
+
+.kisi-container:hover {
+  background: #f1f1f1;
+}
+
+.kisi-container .avatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 1rem;
+  font-size: .8rem;
+  width: 10%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  text-align: center;
+  background: var(--bs-blue);
+}

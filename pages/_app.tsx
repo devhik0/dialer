@@ -1,11 +1,11 @@
-import 'bootstrap-icons/font/bootstrap-icons.css'
-import 'bootstrap/dist/css/bootstrap.min.css'
-import '../styles/globals.css'
+import "bootstrap-icons/font/bootstrap-icons.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "../styles/globals.css";
 // * import after bootstrap to effect
-import type { AppProps } from 'next/app'
-import Head from 'next/head'
-import Layout from '../components/layout/Layout'
-import '../scss/custom.css'
+import type { AppProps } from "next/app";
+import Head from "next/head";
+import Layout from "../components/layout/Layout";
+import "../scss/custom.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -17,9 +17,9 @@ function MyApp({ Component, pageProps }: AppProps) {
 
       <Layout>
         <Component {...pageProps} />
-      </Layout >
+      </Layout>
     </>
-  )
+  );
 }
 
-export default MyApp
+export default MyApp;

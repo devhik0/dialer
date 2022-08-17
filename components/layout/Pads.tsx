@@ -1,6 +1,6 @@
 import { Entry } from "contentful";
 import Image from "next/image";
-import { ChangeEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
 import {
   Button,
   Container,
@@ -13,6 +13,7 @@ import { EntryFields } from "../../pages/rehber/index";
 import CallCanvas from "./CallCanvas";
 import Pad from "./Pad";
 import styles from "./Pads.module.css";
+import Sonuc from "./Sonuc";
 
 type PadsProps = OffcanvasProps & {
   kisiler: Entry<EntryFields>[];
@@ -26,36 +27,30 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
   const handleClose = () => setShow(false);
 
   // search state i
-  // const [query, SetQuery] = useState('')
+  const [query, SetQuery] = useState("");
 
   // input ve pad state i
   const [val, setVal] = useState("");
 
   // events
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
-    // setVal(val.concat(evt.currentTarget.value))
-    // SetQuery(val.concat(evt.currentTarget.value))
+    setVal(val.concat(evt.currentTarget.value));
+    SetQuery(val.concat(evt.currentTarget.value));
   };
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    // setVal(evt.target.value)
+    setVal(evt.currentTarget.value);
+    SetQuery(evt.currentTarget.value);
+    console.log(evt.target.value);
   };
 
   // silme işlevi
   const handleDelete = () => {
-    // console.log(query)
-    // const res = Array.from(val)
-    // res.pop()
-    // setVal(res.join(''))
+    const res = Array.from(val);
+    res.pop();
+    setVal(res.join(""));
+    SetQuery(res.join(""));
   };
-
-  // console.log(query)
-  // ! error: silince eski sonucları göstermiyor !
-  // arama sonucu
-  // const sonuc = kisiler
-  //   .map(kisi => kisi.fields.tel)
-  //   .filter(k => k.includes(query))
-  //   .map(res => query && <li className={styles['search-result']} key={res}>{res}</li>)
 
   // pads
   const buttons = [1, 2, 3, 4, 5, 6, 7, 8, 9, "*", 0, "#"];
@@ -73,13 +68,14 @@ const Pads = ({ name, kisiler, ...props }: PadsProps) => {
         {...props}
       >
         <div data-testid="kb" className={styles["search-results"]}>
-          {/* {sonuc.length !== 0 ? <>Sonuçlar: {sonuc}</> : ''} */}
+          <Sonuc kisiler={kisiler} query={query} />
         </div>
         <Offcanvas.Header className={styles.offheader} closeButton>
           <Form.Control
             className={styles.offinput}
-            value={val}
             onChange={handleChange}
+            value={val}
+            type="search"
           />
           <Button
             variant="outline-muted"

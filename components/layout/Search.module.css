@@ -13,8 +13,9 @@
   width: auto;
   max-width: 100%;
   background-color: #ddd;
-  height: 150px;
+  z-index: 10000;
   display: none;
+  overflow: hidden;
 }
 
 .search-result {

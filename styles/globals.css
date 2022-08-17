@@ -20,6 +20,6 @@
   background-clip: padding-box;
   outline: 0;
   height: 60vh;
-  transition: transform .3s ease-in;
+  transition: transform 0.3s ease-in;
   box-shadow: #ddd 3px -1px 10px 5px;
 }

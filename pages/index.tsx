@@ -1,12 +1,11 @@
-import Home from "../components/layout/Home"
+import Home from "../components/layout/Home";
 
 const Anasayfa = () => {
-
   return (
     <>
       <Home />
     </>
-  )
-}
+  );
+};
 
-export default Anasayfa
+export default Anasayfa;

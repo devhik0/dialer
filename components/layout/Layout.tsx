@@ -1,19 +1,17 @@
-import Navbar from "./Navbar"
-import styles from './Layout.module.css'
+import Navbar from "./Navbar";
+import styles from "./Layout.module.css";
 
 type LayoutProps = {
-  children: React.ReactNode,
-}
+  children: React.ReactNode;
+};
 
 const Layout = ({ children }: LayoutProps) => {
   return (
     <div className={styles.container}>
-      <main>
-        {children}
-      </main>
+      <main>{children}</main>
       <Navbar />
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

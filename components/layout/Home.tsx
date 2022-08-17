@@ -1,13 +1,13 @@
 import { useEffect } from "react";
-import Router from 'next/router'
+import Router from "next/router";
 
 const Home = () => {
   useEffect(() => {
-    const { pathname } = Router
-    pathname === '/' ? Router.push('/son') : ''
-  })
+    const { pathname } = Router;
+    pathname === "/" ? Router.push("/son") : "";
+  });
 
-  return <></>
-}
+  return <></>;
+};
 
-export default Home
+export default Home;
