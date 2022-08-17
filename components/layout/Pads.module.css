@@ -1,34 +1,34 @@
- .fab {
-   aspect-ratio: 1/1;
-   position: fixed;
-   bottom: 15%;
-   right: 5%;
-   z-index: 1000;
- }
+.fab {
+  aspect-ratio: 1/1;
+  position: fixed;
+  bottom: 15%;
+  right: 5%;
+  z-index: 1000;
+}
 
- .search-results {
+.search-results {
   height: 25vh;
-  overflow: hidden;
-   margin: 1rem 1.25rem;
- }
+  overflow: scroll;
+  margin: 1rem 1.25rem;
+}
 
- .search-results li {
-   list-style: none;
-   font-size: 1.25rem;
- }
+.search-results li {
+  list-style: none;
+  font-size: 1.25rem;
+}
 
- .offheader {
-   margin: 0;
-   padding-top: 1rem;
-   padding-bottom: 0;
- }
+.offheader {
+  margin: 0;
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
 
- .offinput {
-   margin: 0 .75rem;
-   font-size: 1.75rem;
- }
+.offinput {
+  margin: 0 0.75rem;
+  font-size: 1.75rem;
+}
 
- .pads {
-   display: flex;
-   flex-direction: column;
- }
+.pads {
+  display: flex;
+  flex-direction: column;
+}
