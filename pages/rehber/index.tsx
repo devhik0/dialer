@@ -1,12 +1,12 @@
-import styles from "./index.module.css";
-import { Button } from "react-bootstrap";
 import { createClient, Entry, EntryCollection } from "contentful";
-import Search from "../../components/layout/Search";
+import { Button } from "react-bootstrap";
 import Pads from "../../components/layout/Pads";
+import Search from "../../components/layout/Search";
+import styles from "./index.module.css";
 
 const client = createClient({
-  space: process.env.C_SPC_ID!,
-  accessToken: process.env.C_ACC_TKN!,
+  space: process.env.C_SPC_ID || "",
+  accessToken: process.env.C_ACC_TKN || "",
 });
 
 export type EntryFields = {

@@ -9,7 +9,7 @@ type CallCanvasProps = OffcanvasProps & {
 };
 
 // * Call screen offcanvas
-const CallCanvas = ({ name, kisiler, ...props }: CallCanvasProps) => {
+const CallCanvas = ({ ...props }: CallCanvasProps) => {
   // call screen offcanvas state i
   const [showcall, setShowCall] = useState(false);
 

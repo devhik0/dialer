@@ -1,6 +1,6 @@
 import { Entry } from "contentful";
 import Image from "next/image";
-import { ChangeEvent, FormEvent, MouseEvent, useState } from "react";
+import { ChangeEvent, MouseEvent, useState } from "react";
 import {
   Button,
   Container,
@@ -20,7 +20,7 @@ type PadsProps = OffcanvasProps & {
 };
 
 // * Floating pads button with offcanvas
-const Pads = ({ name, kisiler, ...props }: PadsProps) => {
+const Pads = ({ kisiler, ...props }: PadsProps) => {
   // dial offcanvas state i
   const [show, setShow] = useState(false);
   const handleShow = () => setShow(true);
