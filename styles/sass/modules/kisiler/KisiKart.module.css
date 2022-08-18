@@ -1,9 +1,8 @@
-/* button */
+@charset "UTF-8";
 .kisi {
   width: 100%;
   border: none;
 }
-
 .kisi:hover {
   border: none;
 }
@@ -16,7 +15,6 @@
   align-items: center;
   z-index: 1500;
 }
-
 .kisi-container:hover {
   background: #f1f1f1;
 }
@@ -31,7 +29,7 @@
   aspect-ratio: 1/1;
   border-radius: 50%;
   text-align: center;
-  background: var(--bs-blue);
+  background: #0d6efd;
 }
 
 /* offcanvas styling */
@@ -49,20 +47,14 @@
   margin-left: 0.5rem;
   border: none;
 }
-
 .back:hover {
   border: none;
 }
 
-.settings {
-  width: 15%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-
 .settings svg {
-  width: 18px;
+  width: 20px;
+  aspect-ratio: 1/1;
+  margin-right: 1rem;
 }
 
 /* offcanvas body */
@@ -74,7 +66,6 @@
   align-items: center;
   row-gap: 3.5rem;
 }
-
 .kisi-container-col .avatar {
   font-size: 2rem;
   width: 15%;
@@ -88,14 +79,12 @@
   padding: 0;
   margin-bottom: 1.5rem;
 }
-
 .options div {
   padding: 0.5rem;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
 }
-
 .options button {
   width: 50%;
   margin: auto 0.5rem;
@@ -111,32 +100,32 @@
   padding: 1rem 0.5rem;
   max-width: 100%;
   background: #f0e8e8;
+  /* info card buttons */
 }
-
-.info {
+.info-card .info {
   display: flex;
   justify-content: space-around;
 }
-
-.info svg:nth-child(1) {
+.info-card .info svg {
   margin-right: 1rem;
 }
-
-/* info card buttons */
-.call,
-.message {
+.info-card .call,
+.info-card .message {
   border: 0;
 }
-
-.message {
+.info-card .call:hover, .info-card .call:focus,
+.info-card .message:hover,
+.info-card .message:focus {
+  border: 0;
+}
+.info-card .message {
   width: 50%;
   display: flex;
   justify-content: flex-end;
 }
-
-.call:hover,
-.call:focus,
-.message:hover,
-.message:focus {
+.info-card .call:hover,
+.info-card .call:focus,
+.info-card .message:hover,
+.info-card .message:focus {
   border: 0;
 }

@@ -10,7 +10,7 @@ const KisiListe = ({ kisiler }: KisiListeProps) => {
   return (
     <>
       {kisiler.map((kisi) => (
-        <KisiKart key={kisi.sys.id} kisi={kisi} name={"end"} placement={"end"} display={"row"} />
+        <KisiKart key={kisi.sys.id} kisi={kisi} name={"end"} placement={"end"} />
       ))}
     </>
   );

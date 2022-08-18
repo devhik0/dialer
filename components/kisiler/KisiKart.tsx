@@ -2,7 +2,7 @@ import { Entry } from "contentful";
 import { useState } from "react";
 import { Button, Card, Offcanvas, OffcanvasProps } from "react-bootstrap";
 import type { EntryFields } from "../../pages/kisiler/index";
-import styles from "./KisiKart.module.css";
+import styles from "../../styles/sass/modules/kisiler/KisiKart.module.css";
 
 type KisiKartProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;
@@ -76,7 +76,7 @@ const KisiKart = ({ kisi, ...props }: KisiKartProps) => {
                 </svg>
                 <span>Ara</span>
               </Button>
-              <Button variant="outline-primary" className={styles["pad-btn"]}>
+              <Button variant="outline-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -92,7 +92,6 @@ const KisiKart = ({ kisi, ...props }: KisiKartProps) => {
               </Button>
             </Card.Body>
           </Card>
-
           {/* iletişim bilgileri kartı */}
           <Card className={styles["info-card"]}>
             <Card.Title as={"h6"}>İletişim bilgileri</Card.Title>

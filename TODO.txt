@@ -1,2 +1,6 @@
+* componentleri gözden geçirip düzelt
+* css i sass ile yeniden yaz
+* sass dosyalarını tekrar düzenle
+* klasör yapısını düzenle
 * her component bittiğinde build edip hataları onar
 * refactor code

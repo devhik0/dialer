@@ -12,11 +12,9 @@ type SearchProps = {
 const Search = ({ kisiler }: SearchProps) => {
   // search state i
   const [query, SetQuery] = useState("");
-  // console.log("Initial query: ", query);
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     SetQuery(evt.target.value.toLowerCase());
-    // console.log("Changed query: ", evt.target.value);
   };
 
   return (

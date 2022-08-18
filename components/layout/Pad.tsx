@@ -14,13 +14,7 @@ const Pad = ({ handleClick, btns, firstIndex, lastIndex }: PadProps) => {
     <>
       {btns.slice(firstIndex, lastIndex).map((btn) => (
         <Col key={btn} className={styles.col}>
-          <Button
-            onClick={handleClick}
-            variant="outline-primary"
-            className={styles["pad-btn"]}
-            key={btn}
-            value={btn}
-          >
+          <Button onClick={handleClick} variant="outline-primary" className={styles["pad-btn"]} key={btn} value={btn}>
             {btn}
           </Button>
         </Col>

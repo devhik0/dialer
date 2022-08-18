@@ -18,11 +18,7 @@ const CallCanvas = ({ ...props }: CallCanvasProps) => {
 
   return (
     <>
-      <Button
-        onClick={handleShowCall}
-        variant="outline-success"
-        className={styles["pad-call-btn"]}
-      >
+      <Button onClick={handleShowCall} variant="outline-success" className={styles["pad-call-btn"]}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"
