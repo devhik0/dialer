@@ -1,3 +1,14 @@
+/* button */
+.kisi {
+  width: 100%;
+  border: none;
+}
+
+.kisi:hover {
+  border: none;
+}
+
+/* kisi kartı */
 .kisi-container {
   display: flex;
   margin: 0.5rem 1rem;
@@ -10,7 +21,7 @@
   background: #f1f1f1;
 }
 
-.kisi-container .avatar {
+.avatar {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -21,4 +32,113 @@
   border-radius: 50%;
   text-align: center;
   background: var(--bs-blue);
+}
+
+/* offcanvas styling */
+.header {
+  display: flex;
+  background: #ddd;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+/* back button */
+.back {
+  text-align: left;
+  width: 5%;
+  padding: 0;
+  margin-left: 0.5rem;
+  border: none;
+}
+
+.back:hover {
+  border: none;
+}
+
+.settings {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.settings svg {
+  width: 18px;
+}
+
+/* offcanvas body */
+.kisi-container-col {
+  margin: 1rem;
+  padding: 1rem 0.5rem;
+  background-color: #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3.5rem;
+}
+
+.kisi-container-col .avatar {
+  font-size: 2rem;
+  width: 15%;
+  aspect-ratio: 1/1;
+}
+
+.options {
+  border-radius: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 1.5rem;
+}
+
+.options div {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.options button {
+  width: 50%;
+  margin: auto 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.info-card {
+  margin: 1rem;
+  border: none;
+  padding: 1rem 0.5rem;
+  max-width: 100%;
+  background: #f0e8e8;
+}
+
+.info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.info svg:nth-child(1) {
+  margin-right: 1rem;
+}
+
+/* info card buttons */
+.call,
+.message {
+  border: 0;
+}
+
+.message {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.call:hover,
+.call:focus,
+.message:hover,
+.message:focus {
+  border: 0;
 }

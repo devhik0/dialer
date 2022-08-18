@@ -1,6 +1,6 @@
 import { createClient, Entry, EntryCollection } from "contentful";
-import Link from "next/link";
 import { Button } from "react-bootstrap";
+import KisiListe from "../../components/kisiler/KisiListe";
 import Pads from "../../components/layout/Pads";
 import Search from "../../components/layout/Search";
 import styles from "./index.module.css";
@@ -10,10 +10,10 @@ const client = createClient({
   accessToken: process.env.C_ACC_TKN || "",
 });
 
-// todo: buraya slug?: string ekle
 export type EntryFields = {
   adsoyad: string;
   tel: string;
+  slug: string;
 };
 
 type RehberProps = {
@@ -50,34 +50,8 @@ const Rehber = ({ kisiler }: RehberProps) => {
         </svg>
         <span>Yeni kişi ekle</span>
       </Button>
-      {kisiler.map((kisi) => {
-        const makeInitial = () => {
-          const { adsoyad } = kisi.fields;
-          // todo: const {adsoyad, slug} = kisi.fields
-          const initial = adsoyad.toUpperCase().split(" ");
-          const ad = initial[0][0];
-          return `${ad}`;
-        };
-
-        return (
-          <Link
-            key={kisi.sys.id}
-            // todo: cms ye slug ekle ve kisi.fields.slug ile buraya çek
-            // href={`/kisiler/${slug}`}
-            href={`/kisiler/ahmet-genis`}
-          >
-            <a>
-              <div className={styles["kisi-container"]}>
-                <div className={styles.avatar}>
-                  <span style={{ color: "#f6f6f6" }}>{makeInitial()}</span>
-                </div>
-                <span>{kisi.fields.adsoyad}</span>
-              </div>
-            </a>
-          </Link>
-        );
-      })}
-      {/* // * tuşlar modalı */}
+      <KisiListe kisiler={kisiler} />
+      {/* // * tuşlar offcanvas */}
       <Pads kisiler={kisiler} name={"bottom"} placement={"bottom"} />
     </div>
   );
