@@ -5,7 +5,7 @@ import "../styles/globals.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
-import "../scss/custom.css";
+import "../styles/custom.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

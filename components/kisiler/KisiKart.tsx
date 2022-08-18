@@ -2,7 +2,7 @@ import { Entry } from "contentful";
 import { useState } from "react";
 import { Button, Card, Offcanvas, OffcanvasProps } from "react-bootstrap";
 import type { EntryFields } from "../../pages/kisiler/index";
-import styles from "../../styles/sass/modules/kisiler/KisiKart.module.css";
+import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
 
 type KisiKartProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;

@@ -3,8 +3,8 @@ import Image from "next/image";
 import { ChangeEvent, MouseEvent, useState } from "react";
 import { Button, Container, Form, Offcanvas, OffcanvasProps, Row } from "react-bootstrap";
 import { EntryFields } from "../../pages/kisiler/index";
+import styles from "../../styles/scss/modules/layout/Pads.module.css";
 import Pad from "./Pad";
-import styles from "./Pads.module.css";
 import Sonuc from "./Sonuc";
 
 type PadsProps = OffcanvasProps & {
@@ -74,11 +74,7 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
         </div>
         <Offcanvas.Header className={styles.offheader}>
           <Form.Control className={styles.offinput} onChange={handleChange} value={val} type="search" />
-          <Button
-            variant="outline-muted"
-            style={{ marginRight: ".5rem", padding: ".75rem .5rem" }}
-            onClick={handleDelete}
-          >
+          <Button variant="outline" style={{ marginRight: ".5rem", padding: ".75rem .5rem" }} onClick={handleDelete}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"

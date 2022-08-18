@@ -1,6 +1,6 @@
 import { MouseEvent } from "react";
 import { Button, Col } from "react-bootstrap";
-import styles from "./Pad.module.css";
+import styles from "../../styles/scss/modules/layout/Pad.module.css";
 
 type PadProps = {
   handleClick: (evt: MouseEvent<HTMLButtonElement>) => void;

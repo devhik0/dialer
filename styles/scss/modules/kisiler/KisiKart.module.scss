@@ -1,13 +1,16 @@
 // bootstrap primary
 $blue: #0d6efd;
 
+// other vars
+$border: none;
+
 // kisi button
 .kisi {
   width: 100%;
-  border: none;
+  border: $border;
 
   &:hover {
-    border: none;
+    border: $border;
   }
 }
 
@@ -50,10 +53,10 @@ $blue: #0d6efd;
   width: 5%;
   padding: 0;
   margin-left: 0.5rem;
-  border: none;
+  border: $border;
 
   &:hover {
-    border: none;
+    border: $border;
   }
 }
 
@@ -108,7 +111,7 @@ $blue: #0d6efd;
 // iletişim kartı
 .info-card {
   margin: 1rem;
-  border: none;
+  border: $border;
   padding: 1rem 0.5rem;
   max-width: 100%;
   background: #f0e8e8;
@@ -125,11 +128,11 @@ $blue: #0d6efd;
   /* info card buttons */
   .call,
   .message {
-    border: 0;
+    border: $border;
 
     &:hover,
     &:focus {
-      border: 0;
+      border: $border;
     }
   }
 
@@ -143,6 +146,6 @@ $blue: #0d6efd;
   .call:focus,
   .message:hover,
   .message:focus {
-    border: 0;
+    border: $border;
   }
 }

@@ -1,0 +1,11 @@
+.col {
+  padding: 0 0.3rem;
+}
+
+.pad-btn {
+  width: 100%;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  color: black;
+}

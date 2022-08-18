@@ -1,9 +1,23 @@
 .search {
   padding: 0;
 }
-
 .search:focus-within .search-results {
   display: block;
+}
+.search .form {
+  display: flex;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+.search .form svg {
+  margin-right: 0.5rem;
+}
+.search .form input {
+  background-color: #f0ebeb;
+  border-width: 0;
 }
 
 .search-results {
@@ -13,27 +27,4 @@
   max-width: 100%;
   display: none;
   overflow: scroll;
-}
-
-.search-result {
-  padding: 0;
-  list-style: none;
-}
-
-.form {
-  display: flex;
-  align-items: center;
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  margin-left: 1rem;
-  margin-right: 1rem;
-}
-
-.form svg {
-  margin-right: 0.5rem;
-}
-
-.form input {
-  background-color: #f0ebeb;
-  border-width: 0;
 }

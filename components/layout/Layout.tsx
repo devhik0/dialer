@@ -1,4 +1,4 @@
-import styles from "./Layout.module.css";
+import styles from "../../styles/scss/modules/layout/Layout.module.css";
 import Navbar from "./Navbar";
 
 type LayoutProps = {

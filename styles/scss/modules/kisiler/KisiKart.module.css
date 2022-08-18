@@ -111,12 +111,12 @@
 }
 .info-card .call,
 .info-card .message {
-  border: 0;
+  border: none;
 }
 .info-card .call:hover, .info-card .call:focus,
 .info-card .message:hover,
 .info-card .message:focus {
-  border: 0;
+  border: none;
 }
 .info-card .message {
   width: 50%;
@@ -127,5 +127,5 @@
 .info-card .call:focus,
 .info-card .message:hover,
 .info-card .message:focus {
-  border: 0;
+  border: none;
 }

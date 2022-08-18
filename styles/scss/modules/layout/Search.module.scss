@@ -1,0 +1,34 @@
+.search {
+  padding: 0;
+
+  &:focus-within .search-results {
+    display: block;
+  }
+
+  .form {
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+
+    svg {
+      margin-right: 0.5rem;
+    }
+
+    input {
+      background-color: #f0ebeb;
+      border-width: 0;
+    }
+  }
+}
+
+.search-results {
+  padding: 0.5rem;
+  width: 100%;
+  height: 40vh;
+  max-width: 100%;
+  display: none;
+  overflow: scroll;
+}

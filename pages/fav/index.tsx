@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./index.module.css";
+import styles from "../../styles/scss/modules/pages/fav/index.module.css";
 
 const Fav = () => {
   const nofav = (

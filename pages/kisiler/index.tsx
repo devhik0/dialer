@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 import KisiListe from "../../components/kisiler/KisiListe";
 import Pads from "../../components/layout/Pads";
 import Search from "../../components/layout/Search";
-import styles from "./index.module.css";
+import styles from "../../styles/scss/modules/pages/kisiler/index.module.css";
 
 const client = createClient({
   space: process.env.C_SPC_ID || "",

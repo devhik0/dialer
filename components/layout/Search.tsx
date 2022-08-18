@@ -2,7 +2,7 @@ import { Entry } from "contentful";
 import { ChangeEvent, useState } from "react";
 import { Form } from "react-bootstrap";
 import { EntryFields } from "../../pages/kisiler/index";
-import styles from "./Search.module.css";
+import styles from "../../styles/scss/modules/layout/Search.module.css";
 import Sonuc from "./Sonuc";
 
 type SearchProps = {
