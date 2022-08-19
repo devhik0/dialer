@@ -13,7 +13,6 @@
   margin: 0.5rem 1rem;
   padding: 0.5rem;
   align-items: center;
-  z-index: 1500;
 }
 .kisi-container:hover {
   background: #f1f1f1;
@@ -122,4 +121,16 @@
 .info-card .message:hover,
 .info-card .message:focus {
   border: none;
+}
+
+.delete {
+  display: flex;
+  justify-content: center;
+}
+.delete button {
+  width: 30%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 1.25rem;
 }

@@ -4,6 +4,10 @@ $border: none;
 $blue: #0d6efd;
 
 .settings {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
   button {
     border: $border;
 

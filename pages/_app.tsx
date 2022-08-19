@@ -1,10 +1,10 @@
 import "bootstrap-icons/font/bootstrap-icons.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "../styles/globals.css";
-// * import after bootstrap to effect
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import Layout from "../components/layout/Layout";
+import "../styles/globals.css";
+// * import after bootstrap to effect
 import "../styles/custom.css";
 
 function MyApp({ Component, pageProps }: AppProps) {

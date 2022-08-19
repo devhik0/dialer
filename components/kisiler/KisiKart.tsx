@@ -4,6 +4,7 @@ import { Button, Card, Offcanvas, OffcanvasProps } from "react-bootstrap";
 import type { EntryFields } from "../../pages/kisiler/index";
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
 import KisiSecenek from "./KisiSecenek";
+import KisiSilModal from "./KisiSilModal";
 
 type KisiKartProps = OffcanvasProps & { kisi: Entry<EntryFields> };
 
@@ -23,7 +24,9 @@ const KisiKart = ({ kisi, ...props }: KisiKartProps) => {
           <div className={styles.avatar}>
             <span style={{ color: "#f6f6f6" }}>{adsoyad.toUpperCase().split(" ")[0][0]}</span>
           </div>
-          <span>{adsoyad}</span>
+          <span>
+            {adsoyad} {tel}
+          </span>
         </div>
       </Button>
       <Offcanvas style={{ width: "100vw", height: "100vh" }} show={show} onHide={handleClose} {...props}>
@@ -44,7 +47,7 @@ const KisiKart = ({ kisi, ...props }: KisiKartProps) => {
             </svg>
           </Button>
           {/* settings paneli */}
-          <KisiSecenek name={"bottom"} placement={"bottom"} />
+          <KisiSecenek name={"end"} placement={"end"} />
         </Offcanvas.Header>
         <Offcanvas.Body style={{ padding: "0" }}>
           <div className={styles["kisi-container-col"]} key={kisi.sys.id}>
@@ -119,6 +122,11 @@ const KisiKart = ({ kisi, ...props }: KisiKartProps) => {
               </Button>
             </Card.Body>
           </Card>
+          {/* sil butonu */}
+          <div className={styles.delete}>
+            {/* silme modalı */}
+            <KisiSilModal />
+          </div>
         </Offcanvas.Body>
       </Offcanvas>
     </>
