@@ -1,2 +1,4 @@
+* kisi kart ı yapmaya devam et // todo: 
 * her component bittiğinde build edip hataları onar
 * refactor code
+* koda her zaman yorum yaz !

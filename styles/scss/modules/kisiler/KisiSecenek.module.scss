@@ -1,0 +1,23 @@
+// settings panel
+
+$border: none;
+$blue: #0d6efd;
+
+.settings {
+  button {
+    border: $border;
+
+    &:hover {
+      border: $border;
+    }
+
+    &:nth-child(2):active {
+      fill: $blue;
+    }
+  }
+
+  svg {
+    width: 20px;
+    aspect-ratio: 1/1;
+  }
+}

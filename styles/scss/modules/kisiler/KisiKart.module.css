@@ -51,12 +51,6 @@
   border: none;
 }
 
-.settings svg {
-  width: 20px;
-  aspect-ratio: 1/1;
-  margin-right: 1rem;
-}
-
 /* offcanvas body */
 .kisi-container-col {
   margin: 1rem;
