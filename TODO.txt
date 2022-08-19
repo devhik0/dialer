@@ -1,4 +1,6 @@
-* kisi kart ı yapmaya devam et // todo: 
+* kişi düzenleme sayfasını yap !!!
+* arama sayfasını yap callscreen
 * her component bittiğinde build edip hataları onar
 * refactor code
+* componentleri düzenle (extract, stil, düzen...)
 * koda her zaman yorum yaz !

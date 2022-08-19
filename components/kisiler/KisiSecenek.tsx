@@ -22,6 +22,7 @@ const KisiSecenek = ({ ...props }: KisiSecenekProps) => {
           </svg>
         </Button>
         {/* kişi düzenleme sayfası */}
+        {/* // todo: bunu yap */}
         <Offcanvas style={{ width: "100vw", height: "100vh" }} show={show} onHide={handleClose} {...props}>
           <Offcanvas.Header closeButton></Offcanvas.Header>
           <Offcanvas.Body>kişi düzenleme sayfası</Offcanvas.Body>

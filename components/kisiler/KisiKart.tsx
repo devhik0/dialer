@@ -59,7 +59,7 @@ const KisiKart = ({ kisi, ...props }: KisiKartProps) => {
           {/* seçenekler kartı */}
           <Card className={styles.options}>
             <Card.Body>
-              <Button variant="outline-primary" className={styles["pad-btn"]}>
+              <Button variant="outline-primary">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
