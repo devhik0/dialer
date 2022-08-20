@@ -1,0 +1,22 @@
+$blue: #0d6efd;
+
+.off-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1.5rem;
+
+  .call-close {
+    position: fixed;
+    bottom: 5%;
+    border-top-left-radius: 30%;
+    border-bottom-right-radius: 30%;
+    width: 70px;
+    aspect-ratio: 1/1;
+
+    svg {
+      font-size: 1.5rem;
+      transform: rotate(135deg);
+    }
+  }
+}

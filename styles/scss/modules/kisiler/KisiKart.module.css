@@ -57,12 +57,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 3.5rem;
-}
-.kisi-container-col .avatar {
-  font-size: 2rem;
-  width: 15%;
-  aspect-ratio: 1/1;
+  row-gap: 2rem;
 }
 
 .options {
@@ -98,9 +93,17 @@
 .info-card .info {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
-.info-card .info svg {
+.info-card .info button {
+  border: none;
+  color: currentColor;
   margin-right: 1rem;
+}
+.info-card .info button:hover, .info-card .info button:focus {
+  border: none;
+  background: none;
+  box-shadow: none;
 }
 .info-card .call,
 .info-card .message {

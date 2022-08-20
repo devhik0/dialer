@@ -10,12 +10,15 @@
   align-self: center;
   border: none;
   background: none;
-  color: var(--bs-blue);
+  color: #0d6efd;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: none;
 }
 .eklebtn:hover, .eklebtn:active, .eklebtn:focus {
   background: none;
-  color: var(--bs-blue);
+  color: #0d6efd;
+  border: none;
+  box-shadow: none;
 }

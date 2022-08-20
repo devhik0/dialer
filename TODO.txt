@@ -1,6 +1,6 @@
-* kişi düzenleme sayfasını yap !!!
-* arama sayfasını yap callscreen
+* D R Y !!!!
+* yeni kişi ekleme sayfasını yap
+* componentleri düzenle (extract, stil, düzen...)
 * her component bittiğinde build edip hataları onar
 * refactor code
-* componentleri düzenle (extract, stil, düzen...)
 * koda her zaman yorum yaz !

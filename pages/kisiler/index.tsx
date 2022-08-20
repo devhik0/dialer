@@ -33,7 +33,7 @@ const Rehber = ({ kisiler }: RehberProps) => {
   return (
     <div className={styles.container}>
       <Search kisiler={kisiler} />
-      <Button className={styles.eklebtn}>
+      <Button variant="outline" className={styles.eklebtn}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22px"

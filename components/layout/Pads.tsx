@@ -15,14 +15,15 @@ type PadsProps = OffcanvasProps & {
 const Pads = ({ kisiler, ...props }: PadsProps) => {
   // dial offcanvas state i
   const [show, setShow] = useState(false);
+
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
 
-  // search state i
-  const [query, SetQuery] = useState("");
-
   // input ve pad state i
   const [val, setVal] = useState("");
+
+  // search state i
+  const [query, SetQuery] = useState("");
 
   // events
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
@@ -52,7 +53,7 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
       <Button onClick={handleShow} className={styles.fab}>
         <Image src="/dialpad.svg" alt="dialpad" width={32} height={32} />
       </Button>
-      {/* // * Dialpad Offcanvas */}
+      {/* Dialpad Offcanvas */}
       <Offcanvas style={{ height: "100vh" }} show={show} onHide={handleClose} {...props}>
         <Button onClick={handleClose} variant="outline" className={styles.back}>
           <svg

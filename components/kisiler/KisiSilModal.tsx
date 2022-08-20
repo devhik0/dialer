@@ -1,3 +1,4 @@
+import Router from "next/router";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiSilModal.module.css";
@@ -8,6 +9,12 @@ const KisiSilModal = () => {
 
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
+
+  // delete event
+  const handleDelete = () => {
+    handleCloseModal;
+    Router.push("/");
+  };
 
   return (
     <>
@@ -38,7 +45,7 @@ const KisiSilModal = () => {
           <Button variant="outline-secondary" onClick={handleCloseModal}>
             İptal
           </Button>
-          <Button variant="outline-danger" onClick={handleCloseModal}>
+          <Button variant="outline-danger" onClick={handleDelete}>
             Sil
           </Button>
         </Modal.Footer>

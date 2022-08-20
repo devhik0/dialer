@@ -1,11 +1,5 @@
 import Home from "../components/layout/Home";
 
-const Anasayfa = () => {
-  return (
-    <>
-      <Home />
-    </>
-  );
-};
+const Anasayfa = () => <Home />;
 
 export default Anasayfa;

@@ -66,13 +66,7 @@ $border: none;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 3.5rem;
-
-  .avatar {
-    font-size: 2rem;
-    width: 15%;
-    aspect-ratio: 1/1;
-  }
+  row-gap: 2rem;
 }
 
 .options {
@@ -110,9 +104,19 @@ $border: none;
   .info {
     display: flex;
     justify-content: space-around;
+    align-items: center;
 
-    svg {
+    button {
+      border: $border;
+      color: currentColor;
       margin-right: 1rem;
+
+      &:hover,
+      &:focus {
+        border: $border;
+        background: none;
+        box-shadow: none;
+      }
     }
   }
 
