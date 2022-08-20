@@ -1,6 +1,6 @@
-* D R Y !!!!
 * yeni kişi ekleme sayfasını yap
 * componentleri düzenle (extract, stil, düzen...)
 * her component bittiğinde build edip hataları onar
 * refactor code
+* D R Y !!!!
 * koda her zaman yorum yaz !
