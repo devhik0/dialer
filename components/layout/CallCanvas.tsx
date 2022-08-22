@@ -31,13 +31,7 @@ const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
         <span>Ara</span>
       </Button>
       {/* // * Callscreen Offcanvas */}
-      <Offcanvas
-        style={{ width: "100vw", height: "100vh" }}
-        className={styles.call}
-        show={showcall}
-        onHide={handleCloseCall}
-        {...props}
-      >
+      <Offcanvas style={{ width: "100vw", height: "100vh" }} show={showcall} onHide={handleCloseCall} {...props}>
         <Offcanvas.Header closeButton></Offcanvas.Header>
         <Offcanvas.Body className={styles["off-body"]}>
           <KisiAvatar kisi={kisi} />
