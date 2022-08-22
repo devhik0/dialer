@@ -1,15 +1,11 @@
-import { createClient, EntryCollection } from "contentful";
+import { EntryCollection } from "contentful";
 import { Button } from "react-bootstrap";
+import { client } from "../../cms/setup";
 import KisiListe from "../../components/kisiler/KisiListe";
 import Pads from "../../components/layout/Pads";
 import Search from "../../components/layout/Search";
 import styles from "../../styles/scss/modules/pages/kisiler/index.module.css";
 import { EntryFields, RehberProps } from "../../types/types";
-
-const client = createClient({
-  space: process.env.C_SPC_ID || "",
-  accessToken: process.env.C_ACC_TKN || "",
-});
 
 export const getStaticProps = async () => {
   const res: EntryCollection<EntryFields> = await client.getEntries({
