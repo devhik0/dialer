@@ -1,6 +1,8 @@
+* props -> context e geçir ve düzenle !
 * yeni kişi ekleme sayfasını yap
 * componentleri düzenle (extract, stil, düzen...)
 * her component bittiğinde build edip hataları onar
 * refactor code
 * D R Y !!!!
 * koda her zaman yorum yaz !
+* lighthouse ile testleri yap ve optimize et
