@@ -1,8 +1,8 @@
 import { Entry } from "contentful";
 import { useState } from "react";
 import { Button, OffcanvasProps } from "react-bootstrap";
-import { EntryFields } from "../../pages/kisiler";
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
+import { EntryFields } from "../../types/types";
 import KisiDuzenle from "./KisiDuzenle";
 
 type KisiSecenekProps = OffcanvasProps & {

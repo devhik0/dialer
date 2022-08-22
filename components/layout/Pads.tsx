@@ -2,8 +2,8 @@ import { Entry } from "contentful";
 import Image from "next/image";
 import { ChangeEvent, MouseEvent, useState } from "react";
 import { Button, Container, Form, Offcanvas, OffcanvasProps, Row } from "react-bootstrap";
-import { EntryFields } from "../../pages/kisiler/index";
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
+import { EntryFields } from "../../types/types";
 import Pad from "./Pad";
 import Sonuc from "./Sonuc";
 

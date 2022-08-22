@@ -1,4 +1,4 @@
-* props -> context e geçir ve düzenle !
+* tipleri ayrı dosyaya çıkar ve ordan import et
 * yeni kişi ekleme sayfasını yap
 * componentleri düzenle (extract, stil, düzen...)
 * her component bittiğinde build edip hataları onar

@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import type { EntryFields } from "../../pages/kisiler/index";
+import { EntryFields } from "../../types/types";
 import KisiKart from "./KisiKart";
 
 type KisiListeProps = {

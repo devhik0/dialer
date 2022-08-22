@@ -1,8 +1,8 @@
 import { Entry } from "contentful";
 import { useState } from "react";
 import { Button, Offcanvas, OffcanvasProps } from "react-bootstrap";
-import { EntryFields } from "../../pages/kisiler";
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
+import { EntryFields } from "../../types/types";
 import KisiAvatar from "./KisiAvatar";
 import Pads from "./Pads";
 

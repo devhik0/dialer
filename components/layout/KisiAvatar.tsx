@@ -1,5 +1,5 @@
 import { Entry } from "contentful";
-import { EntryFields } from "../../pages/kisiler";
+import { EntryFields } from "../../types/types";
 import styles from "../../styles/scss/modules/layout/KisiAvatar.module.css";
 
 type KisiAvatarProps = {

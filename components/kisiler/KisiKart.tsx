@@ -1,17 +1,11 @@
-import { Entry } from "contentful";
 import { useState } from "react";
-import { Button, Card, Offcanvas, OffcanvasProps } from "react-bootstrap";
-import type { EntryFields } from "../../pages/kisiler/index";
+import { Button, Card, Offcanvas } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
+import { KisiKartProps } from "../../types/types";
 import CallCanvas from "../layout/CallCanvas";
 import KisiAvatar from "../layout/KisiAvatar";
 import KisiSecenek from "./KisiSecenek";
 import KisiSilModal from "./KisiSilModal";
-
-type KisiKartProps = OffcanvasProps & {
-  kisi: Entry<EntryFields>;
-  kisiler: Entry<EntryFields>[];
-};
 
 const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
   const { adsoyad, tel } = kisi.fields;

@@ -1,14 +1,9 @@
-import { Entry } from "contentful";
 import { ChangeEvent, useState } from "react";
-import { Button, Form, Offcanvas, OffcanvasProps } from "react-bootstrap";
-import { EntryFields } from "../../pages/kisiler";
+import { Button, Form, Offcanvas } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiDuzenle.module.css";
+import { KisiDuzenleProps } from "../../types/types";
 import KisiAvatar from "../layout/KisiAvatar";
 import KisiSilModal from "./KisiSilModal";
-
-type KisiDuzenleProps = OffcanvasProps & {
-  kisi: Entry<EntryFields>;
-};
 
 const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {
   const { adsoyad, tel } = kisi.fields;
