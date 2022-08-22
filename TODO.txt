@@ -1,4 +1,5 @@
 * tipleri ayrı dosyaya çıkar ve ordan import et
+* client i de ayrı bir dosyaya at ve ordan import et
 * yeni kişi ekleme sayfasını yap
 * componentleri düzenle (extract, stil, düzen...)
 * her component bittiğinde build edip hataları onar

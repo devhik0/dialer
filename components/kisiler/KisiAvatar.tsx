@@ -1,10 +1,5 @@
-import { Entry } from "contentful";
-import { EntryFields } from "../../types/types";
 import styles from "../../styles/scss/modules/layout/KisiAvatar.module.css";
-
-type KisiAvatarProps = {
-  kisi: Entry<EntryFields>;
-};
+import { KisiAvatarProps } from "../../types/types";
 
 const KisiAvatar = ({ kisi }: KisiAvatarProps) => {
   const { adsoyad } = kisi.fields;

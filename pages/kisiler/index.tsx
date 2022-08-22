@@ -1,19 +1,15 @@
-import { createClient, Entry, EntryCollection } from "contentful";
+import { createClient, EntryCollection } from "contentful";
 import { Button } from "react-bootstrap";
 import KisiListe from "../../components/kisiler/KisiListe";
 import Pads from "../../components/layout/Pads";
 import Search from "../../components/layout/Search";
 import styles from "../../styles/scss/modules/pages/kisiler/index.module.css";
-import { EntryFields } from "../../types/types";
+import { EntryFields, RehberProps } from "../../types/types";
 
 const client = createClient({
   space: process.env.C_SPC_ID || "",
   accessToken: process.env.C_ACC_TKN || "",
 });
-
-type RehberProps = {
-  kisiler: Entry<EntryFields>[];
-};
 
 export const getStaticProps = async () => {
   const res: EntryCollection<EntryFields> = await client.getEntries({
@@ -51,7 +47,5 @@ const Rehber = ({ kisiler }: RehberProps) => {
     </div>
   );
 };
-
-export type { EntryFields };
 
 export default Rehber;

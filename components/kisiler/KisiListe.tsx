@@ -1,10 +1,5 @@
-import { Entry } from "contentful";
-import { EntryFields } from "../../types/types";
+import { KisiListeProps } from "../../types/types";
 import KisiKart from "./KisiKart";
-
-type KisiListeProps = {
-  kisiler: Entry<EntryFields>[];
-};
 
 const KisiListe = ({ kisiler }: KisiListeProps) => {
   return (

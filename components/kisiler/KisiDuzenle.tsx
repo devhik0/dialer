@@ -2,7 +2,7 @@ import { ChangeEvent, useState } from "react";
 import { Button, Form, Offcanvas } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiDuzenle.module.css";
 import { KisiDuzenleProps } from "../../types/types";
-import KisiAvatar from "../layout/KisiAvatar";
+import KisiAvatar from "./KisiAvatar";
 import KisiSilModal from "./KisiSilModal";
 
 const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {

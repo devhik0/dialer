@@ -3,7 +3,7 @@ import { Button, Card, Offcanvas } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
 import { KisiKartProps } from "../../types/types";
 import CallCanvas from "../layout/CallCanvas";
-import KisiAvatar from "../layout/KisiAvatar";
+import KisiAvatar from "./KisiAvatar";
 import KisiSecenek from "./KisiSecenek";
 import KisiSilModal from "./KisiSilModal";
 

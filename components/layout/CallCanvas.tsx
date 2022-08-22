@@ -1,15 +1,9 @@
-import { Entry } from "contentful";
 import { useState } from "react";
-import { Button, Offcanvas, OffcanvasProps } from "react-bootstrap";
+import { Button, Offcanvas } from "react-bootstrap";
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
-import { EntryFields } from "../../types/types";
-import KisiAvatar from "./KisiAvatar";
+import { CallCanvasProps } from "../../types/types";
+import KisiAvatar from "../kisiler/KisiAvatar";
 import Pads from "./Pads";
-
-type CallCanvasProps = OffcanvasProps & {
-  kisi: Entry<EntryFields>;
-  kisiler: Entry<EntryFields>[];
-};
 
 // * Call screen offcanvas
 const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {

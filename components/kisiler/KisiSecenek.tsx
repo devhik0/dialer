@@ -1,13 +1,8 @@
-import { Entry } from "contentful";
 import { useState } from "react";
-import { Button, OffcanvasProps } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
-import { EntryFields } from "../../types/types";
+import { KisiSecenekProps } from "../../types/types";
 import KisiDuzenle from "./KisiDuzenle";
-
-type KisiSecenekProps = OffcanvasProps & {
-  kisi: Entry<EntryFields>;
-};
 
 const KisiSecenek = ({ kisi }: KisiSecenekProps) => {
   // fav button color state i

@@ -1,11 +1,5 @@
-import { Entry } from "contentful";
-import { EntryFields } from "../../types/types";
+import { SonucProps } from "../../types/types";
 import KisiKart from "../kisiler/KisiKart";
-
-type SonucProps = {
-  kisiler: Entry<EntryFields>[];
-  query: string;
-};
 
 const Sonuc = ({ kisiler, query }: SonucProps) => {
   return (

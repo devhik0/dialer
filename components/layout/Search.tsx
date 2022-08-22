@@ -1,13 +1,8 @@
-import { Entry } from "contentful";
 import { ChangeEvent, useState } from "react";
 import { Form } from "react-bootstrap";
 import styles from "../../styles/scss/modules/layout/Search.module.css";
-import { EntryFields } from "../../types/types";
+import { SearchProps } from "../../types/types";
 import Sonuc from "./Sonuc";
-
-type SearchProps = {
-  kisiler: Entry<EntryFields>[];
-};
 
 const Search = ({ kisiler }: SearchProps) => {
   // search state i

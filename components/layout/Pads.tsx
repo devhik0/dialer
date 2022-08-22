@@ -1,15 +1,10 @@
-import { Entry } from "contentful";
 import Image from "next/image";
 import { ChangeEvent, MouseEvent, useState } from "react";
-import { Button, Container, Form, Offcanvas, OffcanvasProps, Row } from "react-bootstrap";
+import { Button, Container, Form, Offcanvas, Row } from "react-bootstrap";
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
-import { EntryFields } from "../../types/types";
+import { PadsProps } from "../../types/types";
 import Pad from "./Pad";
 import Sonuc from "./Sonuc";
-
-type PadsProps = OffcanvasProps & {
-  kisiler: Entry<EntryFields>[];
-};
 
 // * Floating pads button with offcanvas
 const Pads = ({ kisiler, ...props }: PadsProps) => {
