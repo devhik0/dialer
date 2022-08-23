@@ -1,4 +1,4 @@
-* yeni kişi ekleme sayfasını yap
+* crud işlemlerini yap 
 * componentleri düzenle (extract, stil, düzen...)
 * her component bittiğinde build edip hataları onar
 * refactor code
