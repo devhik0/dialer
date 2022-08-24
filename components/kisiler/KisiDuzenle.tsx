@@ -1,5 +1,6 @@
-import { ChangeEvent, useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import { Button, Form, Offcanvas } from "react-bootstrap";
+import { clientM } from "../../cms/setup";
 import styles from "../../styles/scss/modules/kisiler/KisiDuzenle.module.css";
 import { KisiDuzenleProps } from "../../types/types";
 import KisiAvatar from "./KisiAvatar";
@@ -17,9 +18,45 @@ const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {
   // form state i
   const [inputs, setInputs] = useState({ adsoyad, tel });
 
+  const makeSlug = () => {
+    const slug = inputs.adsoyad.toLowerCase().split(" ");
+    const ad = slug[0];
+    const soyad = slug[1];
+    return `${ad}-${soyad}`;
+  };
+
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.currentTarget;
     setInputs((val) => ({ ...val, [name]: value }));
+  };
+
+  const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
+    evt.preventDefault();
+    const kisiDuzenle = async () => {
+      const entryID: string = kisi.sys.id;
+      clientM
+        .getSpace(process.env.C_SPC_ID || "")
+        .then((space) => space.getEnvironment("master"))
+        .then((environment) => environment.getEntry(entryID))
+        .then((entry) => {
+          entry.fields = {
+            slug: { "en-US": makeSlug() },
+            adsoyad: { "en-US": inputs.adsoyad },
+            tel: { "en-US": inputs.tel },
+          };
+          return entry.update();
+        })
+        .then((entry) => {
+          entry.publish();
+          console.log(`Entry ${entry.sys.id} updated.`);
+        })
+        .catch(console.error);
+    };
+    kisiDuzenle();
+    alert("Kişi güncellendi");
+    handleClose();
+    // form temizleme
+    setInputs({ adsoyad: "", tel: "" });
   };
 
   return (
@@ -33,14 +70,11 @@ const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {
       <Offcanvas style={{ width: "100vw", height: "100vh" }} show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <h5>Kişiyi Düzenle</h5>
-          <Button variant="outline-primary" type="submit">
-            Kaydet
-          </Button>
         </Offcanvas.Header>
         <Offcanvas.Body className={styles["off-body"]}>
           <KisiAvatar kisi={kisi} />
           {/* düzenleme formu */}
-          <Form className={styles.form}>
+          <Form className={styles.form} onSubmit={handleSubmit}>
             <Form.Group className="mb-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -69,10 +103,13 @@ const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {
               <Form.Label>Telefon</Form.Label>
               <Form.Control name="tel" value={inputs.tel} onChange={handleChange} placeholder="Telefon girin" />
             </Form.Group>
+            <Button variant="outline-primary" type="submit">
+              Kaydet
+            </Button>
           </Form>
           <div className={styles.delete}>
             {/* silme modalı */}
-            <KisiSilModal />
+            <KisiSilModal kisi={kisi} />
           </div>
         </Offcanvas.Body>
       </Offcanvas>

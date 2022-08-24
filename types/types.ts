@@ -27,6 +27,10 @@ type KisiSecenekProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;
 };
 
+type KisiSilModalProps = {
+  kisi: Entry<EntryFields>;
+};
+
 type KisiAvatarProps = {
   kisi: Entry<EntryFields>;
 };
@@ -71,6 +75,7 @@ export type {
   KisiKartProps,
   KisiListeProps,
   KisiSecenekProps,
+  KisiSilModalProps,
   CallCanvasProps,
   KisiAvatarProps,
   LayoutProps,

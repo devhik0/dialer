@@ -103,7 +103,7 @@ const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
           {/* sil butonu */}
           <div className={styles.delete}>
             {/* silme modalı */}
-            <KisiSilModal />
+            <KisiSilModal kisi={kisi} />
           </div>
         </Offcanvas.Body>
       </Offcanvas>

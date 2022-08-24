@@ -1,7 +1,7 @@
 import { EntryCollection } from "contentful";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Button, Form, Offcanvas } from "react-bootstrap";
-import { client } from "../../cms/setup";
+import { client, clientM } from "../../cms/setup";
 import KisiListe from "../../components/kisiler/KisiListe";
 import Pads from "../../components/layout/Pads";
 import Search from "../../components/layout/Search";
@@ -27,6 +27,13 @@ const Rehber = ({ kisiler, ...props }: RehberProps) => {
   // form state i
   const [inputs, setInputs] = useState({ adsoyad: "", tel: "" });
 
+  const makeSlug = () => {
+    const slug = inputs.adsoyad.toLowerCase().split(" ");
+    const ad = slug[0];
+    const soyad = slug[1];
+    return `${ad}-${soyad}`;
+  };
+
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.currentTarget;
     setInputs((val) => ({ ...val, [name]: value }));
@@ -34,7 +41,29 @@ const Rehber = ({ kisiler, ...props }: RehberProps) => {
 
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    console.log(inputs);
+    const kisiEkle = async () => {
+      try {
+        const space = await clientM.getSpace(process.env.C_SPC_ID || "");
+        const env = await space.getEnvironment("master");
+        const entry = await env.createEntry("kisi", {
+          fields: {
+            slug: { "en-US": makeSlug() },
+            adsoyad: { "en-US": inputs.adsoyad },
+            tel: { "en-US": inputs.tel },
+          },
+        });
+        entry.publish();
+        console.log(`Entry ${entry.sys.id} published !`);
+      } catch (error) {
+        console.error("Error while publishing entry", error);
+      }
+    };
+    kisiEkle();
+    // doğrulama için
+    // console.log("Entry: ", inputs);
+    alert("Kiracı Eklendi !");
+    handleClose();
+    // form temizleme
     setInputs({ adsoyad: "", tel: "" });
   };
 
