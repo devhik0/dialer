@@ -32,7 +32,6 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
     console.log(evt.target.value);
   };
 
-  // silme işlevi
   const handleDelete = () => {
     const res = Array.from(val);
     res.pop();

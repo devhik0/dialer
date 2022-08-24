@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
+import { clientM } from "../../cms/setup";
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
 import { CallCanvasProps } from "../../types/types";
 import KisiAvatar from "../kisiler/KisiAvatar";
@@ -7,7 +8,14 @@ import Pads from "./Pads";
 
 // * Call screen offcanvas
 const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
-  const { adsoyad, tel } = kisi.fields;
+  const { adsoyad, tel, iscalled } = kisi.fields;
+
+  const makeSlug = () => {
+    const slug = adsoyad.toLowerCase().split(" ");
+    const ad = slug[0];
+    const soyad = slug[1];
+    return `${ad}-${soyad}`;
+  };
 
   // call screen offcanvas state i
   const [showcall, setShowCall] = useState(false);
@@ -15,9 +23,38 @@ const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
   const handleShowCall = () => setShowCall(true);
   const handleCloseCall = () => setShowCall(false);
 
+  // arama kaydı state i
+  const [called, setCalled] = useState({ adsoyad, tel, iscalled });
+
+  const handleClick = () => {
+    handleShowCall();
+    setCalled((val) => ({ ...val, iscalled: true }));
+    const kisiDuzenle = async () => {
+      clientM
+        .getSpace(process.env.C_SPC_ID || "")
+        .then((space) => space.getEnvironment("master"))
+        .then((environment) => environment.getEntry(kisi.sys.id))
+        .then((entry) => {
+          entry.fields = {
+            slug: { "en-US": makeSlug() },
+            adsoyad: { "en-US": adsoyad },
+            tel: { "en-US": tel },
+            iscalled: { "en-US": called.iscalled },
+          };
+          return entry.update();
+        })
+        .then((entry) => {
+          entry.publish();
+          // console.log(`Entry ${entry.sys.id} updated.`);
+        })
+        .catch(console.error);
+    };
+    kisiDuzenle();
+  };
+
   return (
     <>
-      <Button onClick={handleShowCall} variant="outline-primary">
+      <Button onClick={handleClick} variant="outline-primary">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="24"

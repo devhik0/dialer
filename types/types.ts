@@ -7,11 +7,21 @@ type EntryFields = {
   adsoyad: string;
   tel: string;
   slug: string;
+  iscalled: boolean;
 };
 
 // Component Props
 type KisiDuzenleProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;
+};
+
+type KisiDuzenleFormProps = {
+  kisi: Entry<EntryFields>;
+  handleClose: () => void;
+};
+
+type KisiEkleFormProps = {
+  handleClose: () => void;
 };
 
 type KisiKartProps = OffcanvasProps & {
@@ -72,6 +82,8 @@ type RehberProps = {
 export type {
   EntryFields,
   KisiDuzenleProps,
+  KisiDuzenleFormProps,
+  KisiEkleFormProps,
   KisiKartProps,
   KisiListeProps,
   KisiSecenekProps,

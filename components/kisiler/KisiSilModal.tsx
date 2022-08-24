@@ -12,23 +12,21 @@ const KisiSilModal = ({ kisi }: KisiSilModalProps) => {
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
 
-  // delete event
   const handleDelete = () => {
     const kisiSil = async () => {
       try {
         const space = await clientM.getSpace(process.env.C_SPC_ID || "");
         const env = await space.getEnvironment("master");
-        const entryID: string = kisi.sys.id;
-        const entry = await env.getEntry(entryID);
+        const entry = await env.getEntry(kisi.sys.id);
         await entry.unpublish();
         await entry.delete();
-        console.log(`Entry: ${entryID} deleted !`);
+        // console.log(`Entry: ${kisi.sys.id} deleted !`);
       } catch (error) {
         console.error(`Error while deleting entry ${kisi.sys.id} !`, error);
       }
     };
     kisiSil();
-    alert("Kiracı Silindi !");
+    alert("Kişi Silindi !");
     Router.push("/son");
     handleCloseModal();
   };
