@@ -29,6 +29,10 @@ type KisiKartProps = OffcanvasProps & {
   kisiler: Entry<EntryFields>[];
 };
 
+type KisiKayitProps = {
+  kisiler: Entry<EntryFields>[];
+};
+
 type KisiListeProps = {
   kisiler: Entry<EntryFields>[];
 };
@@ -79,12 +83,17 @@ type RehberProps = {
   kisiler: Entry<EntryFields>[];
 };
 
+type SonProps = {
+  kisiler: Entry<EntryFields>[];
+};
+
 export type {
   EntryFields,
   KisiDuzenleProps,
   KisiDuzenleFormProps,
   KisiEkleFormProps,
   KisiKartProps,
+  KisiKayitProps,
   KisiListeProps,
   KisiSecenekProps,
   KisiSilModalProps,
@@ -96,4 +105,5 @@ export type {
   SearchProps,
   SonucProps,
   RehberProps,
+  SonProps,
 };

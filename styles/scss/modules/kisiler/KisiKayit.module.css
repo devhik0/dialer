@@ -1,0 +1,26 @@
+@charset "UTF-8";
+/* kisi kartı */
+.kisi-container {
+  display: flex;
+  margin: 1rem;
+  justify-items: space-around;
+}
+
+.kisi-container:hover {
+  background: #f1f1f1;
+}
+
+.kisi-container-col {
+  padding: 1rem 0.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.kisi-container-col .delete .delete-modal {
+  z-index: 1251;
+  top: 25%;
+}
+.kisi-container-col .delete svg {
+  margin-right: 1rem;
+}

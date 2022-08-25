@@ -1,0 +1,12 @@
+.delete {
+  display: flex;
+  justify-content: center;
+
+  button {
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.25rem;
+  }
+}

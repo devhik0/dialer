@@ -8,7 +8,7 @@ import Pads from "./Pads";
 
 // * Call screen offcanvas
 const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
-  const { adsoyad, tel, iscalled } = kisi.fields;
+  const { adsoyad, tel } = kisi.fields;
 
   const makeSlug = () => {
     const slug = adsoyad.toLowerCase().split(" ");
@@ -23,12 +23,8 @@ const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
   const handleShowCall = () => setShowCall(true);
   const handleCloseCall = () => setShowCall(false);
 
-  // arama kaydı state i
-  const [called, setCalled] = useState({ adsoyad, tel, iscalled });
-
   const handleClick = () => {
     handleShowCall();
-    setCalled((val) => ({ ...val, iscalled: true }));
     const kisiDuzenle = async () => {
       clientM
         .getSpace(process.env.C_SPC_ID || "")
@@ -39,7 +35,7 @@ const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
             slug: { "en-US": makeSlug() },
             adsoyad: { "en-US": adsoyad },
             tel: { "en-US": tel },
-            iscalled: { "en-US": called.iscalled },
+            iscalled: { "en-US": true },
           };
           return entry.update();
         })

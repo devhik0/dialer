@@ -1,5 +1,5 @@
 * componentleri düzenle (extract, stil, düzen...)
-* /son sayfasını yap
+* /fav sayfasını yap
 * her component bittiğinde build edip hataları onar
 * refactor code
 * D R Y !!!!
