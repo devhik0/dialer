@@ -9,6 +9,7 @@ const client = createClient({
 
 const clientM = createClientM({
   accessToken: process.env.C_MNG_TKN || "",
+  retryOnError: false,
 });
 
 export { client, clientM };
