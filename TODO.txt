@@ -1,7 +1,3 @@
-* componentleri düzenle (extract, stil, düzen...)
-* /fav için ayrı kisifav component yaz ve ona göre düzenle
-* her component bittiğinde build edip hataları onar
-* refactor code
-* D R Y !!!!
+-> build
 * koda her zaman yorum yaz !
 * lighthouse ile testleri yap ve optimize et

@@ -39,6 +39,10 @@ type KisiEkleFormProps = {
   handleClose: () => void;
 };
 
+type KisiFavProps = {
+  kisi: Entry<EntryFields>;
+};
+
 type KisiKartProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;
   kisiler: Entry<EntryFields>[];
@@ -113,6 +117,7 @@ export type {
   KisiDuzenleFormProps,
   KisiDuzenleParams,
   KisiEkleFormProps,
+  KisiFavProps,
   KisiKartProps,
   KisiKayitProps,
   KisiListeProps,

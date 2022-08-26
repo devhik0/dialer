@@ -127,4 +127,23 @@ const kisiFav = async (kisi: Entry<EntryFields>) => {
     .catch(console.error);
 };
 
-export { client, clientM, kisiDuzenle, kisiEkle, kayitSil, kisiSil, kisiAra, kisiFav };
+const favSil = async (kisi: Entry<EntryFields>) => {
+  clientM
+    .getSpace(process.env.C_SPC_ID || "")
+    .then((space) => space.getEnvironment("master"))
+    .then((environment) => environment.getEntry(kisi.sys.id))
+    .then((entry) => {
+      entry.fields = {
+        ...entry.fields,
+        isfav: { "en-US": false },
+      };
+      return entry.update();
+    })
+    .then((entry) => {
+      entry.publish();
+      // console.log(`Entry ${entry.sys.id} updated.`);
+    })
+    .catch(console.error);
+};
+
+export { client, clientM, kisiDuzenle, kisiEkle, kayitSil, kisiSil, favSil, kisiAra, kisiFav };

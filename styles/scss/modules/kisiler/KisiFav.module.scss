@@ -1,0 +1,18 @@
+/* kisi kartı */
+.kisi-container {
+  display: flex;
+  margin: 1rem;
+  justify-items: space-around;
+
+  &:hover {
+    background: #f1f1f1;
+  }
+
+  .kisi-container-col {
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+  }
+}
