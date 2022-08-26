@@ -29,7 +29,6 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     setVal(evt.currentTarget.value);
     SetQuery(evt.currentTarget.value);
-    console.log(evt.target.value);
   };
 
   const handleDelete = () => {

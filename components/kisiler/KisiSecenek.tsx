@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Button } from "react-bootstrap";
+import { kisiFav } from "../../cms/setup";
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
 import { KisiSecenekProps } from "../../types/types";
 import KisiDuzenle from "./KisiDuzenle";
@@ -10,6 +11,11 @@ const KisiSecenek = ({ kisi }: KisiSecenekProps) => {
 
   const handleColor = () => (color === "var(--bs-blue)" ? setColor("currentColor") : setColor("var(--bs-blue)"));
 
+  const handleClick = () => {
+    kisiFav(kisi);
+    alert("Kişi favorilere eklendi !");
+  };
+
   return (
     <>
       {/* settings section */}
@@ -17,7 +23,7 @@ const KisiSecenek = ({ kisi }: KisiSecenekProps) => {
         {/* edit button */}
         <KisiDuzenle kisi={kisi} name={"end"} placement={"end"} />
         {/* fav button */}
-        <Button variant="outline">
+        <Button onClick={handleClick} variant="outline">
           <svg
             onClick={handleColor}
             fill={color}

@@ -6,7 +6,7 @@ const KisiAvatar = ({ kisi }: KisiAvatarProps) => {
 
   return (
     <div className={styles.avatar}>
-      <span style={{ color: "#f6f6f6" }}>{adsoyad.toUpperCase().split(" ")[0][0]}</span>
+      <span>{adsoyad.toUpperCase().split(" ")[0][0]}</span>
     </div>
   );
 };

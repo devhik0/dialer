@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Offcanvas } from "react-bootstrap";
-import { clientM } from "../../cms/setup";
+import { kisiAra } from "../../cms/setup";
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
 import { CallCanvasProps } from "../../types/types";
 import KisiAvatar from "../kisiler/KisiAvatar";
@@ -10,13 +10,6 @@ import Pads from "./Pads";
 const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
   const { adsoyad, tel } = kisi.fields;
 
-  const makeSlug = () => {
-    const slug = adsoyad.toLowerCase().split(" ");
-    const ad = slug[0];
-    const soyad = slug[1];
-    return `${ad}-${soyad}`;
-  };
-
   // call screen offcanvas state i
   const [showcall, setShowCall] = useState(false);
 
@@ -25,27 +18,7 @@ const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
 
   const handleClick = () => {
     handleShowCall();
-    const kisiDuzenle = async () => {
-      clientM
-        .getSpace(process.env.C_SPC_ID || "")
-        .then((space) => space.getEnvironment("master"))
-        .then((environment) => environment.getEntry(kisi.sys.id))
-        .then((entry) => {
-          entry.fields = {
-            slug: { "en-US": makeSlug() },
-            adsoyad: { "en-US": adsoyad },
-            tel: { "en-US": tel },
-            iscalled: { "en-US": true },
-          };
-          return entry.update();
-        })
-        .then((entry) => {
-          entry.publish();
-          // console.log(`Entry ${entry.sys.id} updated.`);
-        })
-        .catch(console.error);
-    };
-    kisiDuzenle();
+    kisiAra(kisi);
   };
 
   return (

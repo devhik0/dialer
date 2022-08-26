@@ -2,12 +2,27 @@ import { Entry } from "contentful";
 import { MouseEvent } from "react";
 import { OffcanvasProps } from "react-bootstrap";
 
+// General
+type Inputs = {
+  adsoyad: string;
+  tel: string;
+};
+
+// Functions
+type KisiDuzenleParams = {
+  kisi: Entry<EntryFields>;
+  inputs: Inputs;
+  iscalled: boolean;
+  isfav: boolean;
+};
+
 // CMS
 type EntryFields = {
   adsoyad: string;
   tel: string;
   slug: string;
   iscalled: boolean;
+  isfav: boolean;
 };
 
 // Component Props
@@ -87,10 +102,16 @@ type SonProps = {
   kisiler: Entry<EntryFields>[];
 };
 
+type FavProps = {
+  kisiler: Entry<EntryFields>[];
+};
+
 export type {
+  Inputs,
   EntryFields,
   KisiDuzenleProps,
   KisiDuzenleFormProps,
+  KisiDuzenleParams,
   KisiEkleFormProps,
   KisiKartProps,
   KisiKayitProps,
@@ -106,4 +127,5 @@ export type {
   SonucProps,
   RehberProps,
   SonProps,
+  FavProps,
 };

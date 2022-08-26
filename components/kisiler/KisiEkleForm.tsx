@@ -1,18 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { clientM } from "../../cms/setup";
-import { KisiEkleFormProps } from "../../types/types";
+import { kisiEkle } from "../../cms/setup";
+import { Inputs, KisiEkleFormProps } from "../../types/types";
 
 const KisiEkleForm = ({ handleClose }: KisiEkleFormProps) => {
   // form state i
-  const [inputs, setInputs] = useState({ adsoyad: "", tel: "" });
-
-  const makeSlug = () => {
-    const slug = inputs.adsoyad.toLowerCase().split(" ");
-    const ad = slug[0];
-    const soyad = slug[1];
-    return `${ad}-${soyad}`;
-  };
+  const [inputs, setInputs] = useState<Inputs>({ adsoyad: "", tel: "" });
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.currentTarget;
@@ -21,27 +14,7 @@ const KisiEkleForm = ({ handleClose }: KisiEkleFormProps) => {
 
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    const kisiEkle = async () => {
-      try {
-        const space = await clientM.getSpace(process.env.C_SPC_ID || "");
-        const env = await space.getEnvironment("master");
-        const entry = await env.createEntry("kisi", {
-          fields: {
-            slug: { "en-US": makeSlug() },
-            adsoyad: { "en-US": inputs.adsoyad },
-            tel: { "en-US": inputs.tel },
-            iscalled: { "en-US": false },
-          },
-        });
-        entry.publish();
-        // console.log(`Entry ${entry.sys.id} published !`);
-      } catch (error) {
-        console.error("Error while publishing entry", error);
-      }
-    };
-    kisiEkle();
-    // doğrulama için
-    // console.log("Entry: ", inputs);
+    kisiEkle(inputs);
     alert("Kişi Eklendi !");
     handleClose();
     // form temizleme

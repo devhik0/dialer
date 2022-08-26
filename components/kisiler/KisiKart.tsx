@@ -22,7 +22,7 @@ const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
       <Button onClick={handleShow} variant="outline" className={styles.kisi}>
         <div className={styles["kisi-container"]}>
           <KisiAvatar kisi={kisi} />
-          <span>
+          <span style={{ marginLeft: "1rem" }}>
             {adsoyad} {tel}
           </span>
         </div>

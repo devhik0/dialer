@@ -1,20 +1,13 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { Button, Form } from "react-bootstrap";
-import { clientM } from "../../cms/setup";
-import { KisiDuzenleFormProps } from "../../types/types";
+import { kisiDuzenle } from "../../cms/setup";
+import { Inputs, KisiDuzenleFormProps } from "../../types/types";
 
 const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
-  const { adsoyad, tel, iscalled } = kisi.fields;
+  const { adsoyad, tel, iscalled, isfav } = kisi.fields;
 
   // form state i
-  const [inputs, setInputs] = useState({ adsoyad, tel });
-
-  const makeSlug = () => {
-    const slug = inputs.adsoyad.toLowerCase().split(" ");
-    const ad = slug[0];
-    const soyad = slug[1];
-    return `${ad}-${soyad}`;
-  };
+  const [inputs, setInputs] = useState<Inputs>({ adsoyad, tel });
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.currentTarget;
@@ -23,27 +16,7 @@ const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
 
   const handleSubmit = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
-    const kisiDuzenle = async () => {
-      clientM
-        .getSpace(process.env.C_SPC_ID || "")
-        .then((space) => space.getEnvironment("master"))
-        .then((environment) => environment.getEntry(kisi.sys.id))
-        .then((entry) => {
-          entry.fields = {
-            slug: { "en-US": makeSlug() },
-            adsoyad: { "en-US": inputs.adsoyad },
-            tel: { "en-US": inputs.tel },
-            iscalled: { "en-US": iscalled },
-          };
-          return entry.update();
-        })
-        .then((entry) => {
-          entry.publish();
-          // console.log(`Entry ${entry.sys.id} updated.`);
-        })
-        .catch(console.error);
-    };
-    kisiDuzenle();
+    kisiDuzenle({ kisi, inputs, iscalled, isfav });
     alert("Kişi güncellendi");
     handleClose();
     // form temizleme
@@ -55,8 +28,8 @@ const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
       <Form.Group className="mb-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="20"
+          height="20"
           fill="currentColor"
           className="bi bi-person"
           viewBox="0 0 16 16"
@@ -69,8 +42,8 @@ const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
       <Form.Group className="mb-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="16"
-          height="16"
+          width="20"
+          height="20"
           fill="currentColor"
           className="bi bi-telephone"
           viewBox="0 0 16 16"

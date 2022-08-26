@@ -1,7 +1,7 @@
 import Router from "next/router";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
-import { clientM } from "../../cms/setup";
+import { kisiSil } from "../../cms/setup";
 import styles from "../../styles/scss/modules/kisiler/KisiSilModal.module.css";
 import { KisiSilModalProps } from "../../types/types";
 
@@ -13,19 +13,7 @@ const KisiSilModal = ({ kisi }: KisiSilModalProps) => {
   const handleShowModal = () => setShowModal(true);
 
   const handleDelete = () => {
-    const kisiSil = async () => {
-      try {
-        const space = await clientM.getSpace(process.env.C_SPC_ID || "");
-        const env = await space.getEnvironment("master");
-        const entry = await env.getEntry(kisi.sys.id);
-        await entry.unpublish();
-        await entry.delete();
-        // console.log(`Entry: ${kisi.sys.id} deleted !`);
-      } catch (error) {
-        console.error(`Error while deleting entry ${kisi.sys.id} !`, error);
-      }
-    };
-    kisiSil();
+    kisiSil(kisi);
     alert("Kişi Silindi !");
     Router.push("/son");
     handleCloseModal();

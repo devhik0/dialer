@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button, Card, Modal } from "react-bootstrap";
-import { clientM } from "../../cms/setup";
+import { kayitSil } from "../../cms/setup";
 import styles from "../../styles/scss/modules/kisiler/KisiKayit.module.css";
 import { KisiKayitProps } from "../../types/types";
 import KisiAvatar from "./KisiAvatar";
@@ -16,28 +16,6 @@ const KisiKayit = ({ kisiler }: KisiKayitProps) => {
     <>
       {kisiler.map((kisi) => {
         const { adsoyad } = kisi.fields;
-
-        const handleDelete = () => {
-          const kisiDuzenle = async () => {
-            clientM
-              .getSpace(process.env.C_SPC_ID || "")
-              .then((space) => space.getEnvironment("master"))
-              .then((environment) => environment.getEntry(kisi.sys.id))
-              .then((entry) => {
-                entry.fields = {
-                  ...entry.fields,
-                  iscalled: { "en-US": false },
-                };
-                return entry.update();
-              })
-              .then((entry) => {
-                entry.publish();
-                // console.log(`Entry ${entry.sys.id} updated.`);
-              })
-              .catch(console.error);
-          };
-          kisiDuzenle();
-        };
 
         return (
           <Card key={kisi.sys.id} className={styles["kisi-container"]}>
@@ -60,7 +38,7 @@ const KisiKayit = ({ kisiler }: KisiKayitProps) => {
                     <Button
                       variant="outline-danger"
                       onClick={() => {
-                        handleDelete();
+                        kayitSil(kisi);
                         handleCloseModal();
                       }}
                     >

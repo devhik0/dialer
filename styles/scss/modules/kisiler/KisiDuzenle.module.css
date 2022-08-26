@@ -4,18 +4,17 @@
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.off-body .form svg {
+.off-body form svg {
   margin-right: 0.5rem;
+}
+.off-body button {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 .off-body .delete {
   width: 30%;
   display: flex;
   justify-content: center;
-}
-.off-body .delete button {
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.25rem;
 }
