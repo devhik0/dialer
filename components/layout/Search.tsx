@@ -1,8 +1,11 @@
-import { ChangeEvent, useState } from "react";
-import { Form } from "react-bootstrap";
+import dynamic from "next/dynamic";
+import { ChangeEvent, Suspense, useState } from "react";
+import { Form, Spinner } from "react-bootstrap";
 import styles from "../../styles/scss/modules/layout/Search.module.css";
 import { SearchProps } from "../../types/types";
-import Sonuc from "./Sonuc";
+// import Sonuc from "./Sonuc";
+
+const DSonuc = dynamic(() => import("./Sonuc"));
 
 const Search = ({ kisiler }: SearchProps) => {
   // search state i
@@ -34,7 +37,9 @@ const Search = ({ kisiler }: SearchProps) => {
         />
       </Form>
       <div data-testid="kb" className={styles["search-results"]}>
-        <Sonuc kisiler={kisiler} query={query} />
+        <Suspense fallback={<Spinner animation="border" />}>
+          <DSonuc kisiler={kisiler} query={query} />
+        </Suspense>
       </div>
     </div>
   );

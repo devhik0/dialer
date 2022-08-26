@@ -1,10 +1,13 @@
+import dynamic from "next/dynamic";
 import Image from "next/image";
-import { ChangeEvent, MouseEvent, useState } from "react";
-import { Button, Container, Form, Offcanvas, Row } from "react-bootstrap";
+import { ChangeEvent, MouseEvent, Suspense, useState } from "react";
+import { Button, Container, Form, Offcanvas, Row, Spinner } from "react-bootstrap";
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
 import { PadsProps } from "../../types/types";
 import Pad from "./Pad";
-import Sonuc from "./Sonuc";
+// import Sonuc from "./Sonuc";
+
+const DSonuc = dynamic(() => import("./Sonuc"));
 
 // * Floating pads button with offcanvas
 const Pads = ({ kisiler, ...props }: PadsProps) => {
@@ -64,7 +67,9 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
           </svg>
         </Button>
         <div data-testid="kb" className={styles["search-results"]}>
-          <Sonuc kisiler={kisiler} query={query} />
+          <Suspense fallback={<Spinner animation="border" />}>
+            <DSonuc kisiler={kisiler} query={query} />
+          </Suspense>
         </div>
         <Offcanvas.Header className={styles.offheader}>
           <Form.Control className={styles.offinput} onChange={handleChange} value={val} type="search" />

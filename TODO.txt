@@ -1,3 +1,2 @@
--> build
+-> optimizasyon sorunlarını çöz
 * koda her zaman yorum yaz !
-* lighthouse ile testleri yap ve optimize et

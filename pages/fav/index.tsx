@@ -1,9 +1,13 @@
 import { EntryCollection } from "contentful";
+import dynamic from "next/dynamic";
 import Link from "next/link";
+import { Suspense } from "react";
+import { Spinner } from "react-bootstrap";
 import { client } from "../../cms/setup";
-import KisiFav from "../../components/kisiler/KisiFav";
 import styles from "../../styles/scss/modules/pages/fav/index.module.css";
 import { EntryFields, FavProps } from "../../types/types";
+
+const DKisiFav = dynamic(() => import("../../components/kisiler/KisiFav"));
 
 export const getStaticProps = async () => {
   const res: EntryCollection<EntryFields> = await client.getEntries({
@@ -32,7 +36,9 @@ const Fav = ({ kisiler }: FavProps) => {
         <>
           <h6 style={{ margin: "1rem" }}>Favoriler</h6>
           {kisiler.map((kisi) => (
-            <KisiFav key={kisi.sys.id} kisi={kisi} />
+            <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" />}>
+              <DKisiFav kisi={kisi} />
+            </Suspense>
           ))}
         </>
       )}

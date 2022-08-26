@@ -1,9 +1,12 @@
-import { useState } from "react";
-import { Button } from "react-bootstrap";
+import dynamic from "next/dynamic";
+import { Suspense, useState } from "react";
+import { Button, Spinner } from "react-bootstrap";
 import { kisiFav } from "../../cms/setup";
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
 import { KisiSecenekProps } from "../../types/types";
-import KisiDuzenle from "./KisiDuzenle";
+// import KisiDuzenle from "./KisiDuzenle";
+
+const DKisiDuzenle = dynamic(() => import("./KisiDuzenle"));
 
 const KisiSecenek = ({ kisi }: KisiSecenekProps) => {
   // fav button color state i
@@ -21,7 +24,9 @@ const KisiSecenek = ({ kisi }: KisiSecenekProps) => {
       {/* settings section */}
       <div className={styles.settings}>
         {/* edit button */}
-        <KisiDuzenle kisi={kisi} name={"end"} placement={"end"} />
+        <Suspense fallback={<Spinner animation="border" />}>
+          <DKisiDuzenle kisi={kisi} name={"end"} placement={"end"} />
+        </Suspense>
         {/* fav button */}
         <Button onClick={handleClick} variant="outline">
           <svg

@@ -1,11 +1,14 @@
-import { useState } from "react";
-import { Button, Card, Offcanvas } from "react-bootstrap";
+import dynamic from "next/dynamic";
+import { Suspense, useState } from "react";
+import { Button, Card, Offcanvas, Spinner } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
 import { KisiKartProps } from "../../types/types";
 import CallCanvas from "../layout/CallCanvas";
 import KisiAvatar from "./KisiAvatar";
 import KisiSecenek from "./KisiSecenek";
-import KisiSilModal from "./KisiSilModal";
+// import KisiSilModal from "./KisiSilModal";
+
+const DKisiSilModal = dynamic(() => import("./KisiSilModal"));
 
 const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
   const { adsoyad, tel } = kisi.fields;
@@ -103,7 +106,9 @@ const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
           {/* sil butonu */}
           <div className={styles.delete}>
             {/* silme modalı */}
-            <KisiSilModal kisi={kisi} />
+            <Suspense fallback={<Spinner animation="border" />}>
+              <DKisiSilModal kisi={kisi} />
+            </Suspense>
           </div>
         </Offcanvas.Body>
       </Offcanvas>

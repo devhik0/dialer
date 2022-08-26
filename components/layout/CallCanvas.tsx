@@ -1,10 +1,13 @@
-import { useState } from "react";
-import { Button, Offcanvas } from "react-bootstrap";
+import dynamic from "next/dynamic";
+import { Suspense, useState } from "react";
+import { Button, Offcanvas, Spinner } from "react-bootstrap";
 import { kisiAra } from "../../cms/setup";
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
 import { CallCanvasProps } from "../../types/types";
 import KisiAvatar from "../kisiler/KisiAvatar";
-import Pads from "./Pads";
+// import Pads from "./Pads";
+
+const DPads = dynamic(() => import("./Pads"));
 
 // * Call screen offcanvas
 const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
@@ -44,7 +47,9 @@ const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
           <span>Aranıyor...</span>
           <h4>{adsoyad}</h4>
           <h5>{tel}</h5>
-          <Pads kisiler={kisiler} placement={"bottom"} name={"bottom"} />
+          <Suspense fallback={<Spinner animation="border" />}>
+            <DPads kisiler={kisiler} placement={"bottom"} name={"bottom"} />
+          </Suspense>
           {/* Close call button */}
           <Button variant="danger" className={styles["call-close"]} onClick={handleCloseCall}>
             <svg

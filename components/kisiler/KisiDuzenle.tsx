@@ -1,10 +1,14 @@
-import { useState } from "react";
-import { Button, Offcanvas } from "react-bootstrap";
+import dynamic from "next/dynamic";
+import { Suspense, useState } from "react";
+import { Button, Offcanvas, Spinner } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiDuzenle.module.css";
 import { KisiDuzenleProps } from "../../types/types";
 import KisiAvatar from "./KisiAvatar";
-import KisiDuzenleForm from "./KisiDuzenleForm";
-import KisiSilModal from "./KisiSilModal";
+// import KisiDuzenleForm from "./KisiDuzenleForm";
+// import KisiSilModal from "./KisiSilModal";
+
+const DKisiDuzenleForm = dynamic(() => import("./KisiDuzenleForm"), { suspense: true });
+const DKisiSilModal = dynamic(() => import("./KisiSilModal"), { suspense: true });
 
 const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {
   // offcanvas state i
@@ -21,17 +25,21 @@ const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {
         </svg>
       </Button>
       {/* kişi düzenleme sayfası */}
-      <Offcanvas style={{ width: "100vw", height: "100vh" }} show={show} onHide={handleClose} {...props}>
+      <Offcanvas show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <h5>Kişiyi Düzenle</h5>
         </Offcanvas.Header>
         <Offcanvas.Body className={styles["off-body"]}>
           <KisiAvatar kisi={kisi} />
           {/* düzenleme formu */}
-          <KisiDuzenleForm kisi={kisi} handleClose={handleClose} />
+          <Suspense fallback={<Spinner animation="border" />}>
+            <DKisiDuzenleForm kisi={kisi} handleClose={handleClose} />
+          </Suspense>
           <div className={styles.delete}>
             {/* silme modalı */}
-            <KisiSilModal kisi={kisi} />
+            <Suspense fallback={<Spinner animation="border" />}>
+              <DKisiSilModal kisi={kisi} />
+            </Suspense>
           </div>
         </Offcanvas.Body>
       </Offcanvas>

@@ -1,13 +1,21 @@
 import { EntryCollection } from "contentful";
-import { useState } from "react";
-import { Button, Offcanvas } from "react-bootstrap";
+import dynamic from "next/dynamic";
+import { Suspense, useState } from "react";
+import { Button, Offcanvas, Spinner } from "react-bootstrap";
 import { client } from "../../cms/setup";
-import KisiEkleForm from "../../components/kisiler/KisiEkleForm";
-import KisiListe from "../../components/kisiler/KisiListe";
-import Pads from "../../components/layout/Pads";
-import Search from "../../components/layout/Search";
+
+// import KisiEkleForm from "../../components/kisiler/KisiEkleForm";
+// import KisiListe from "../../components/kisiler/KisiListe";
+// import Pads from "../../components/layout/Pads";
+// import Search from "../../components/layout/Search";
+
 import styles from "../../styles/scss/modules/pages/kisiler/index.module.css";
 import { EntryFields, RehberProps } from "../../types/types";
+
+const DKisiEkleForm = dynamic(() => import("../../components/kisiler/KisiEkleForm"));
+const DKisiListe = dynamic(() => import("../../components/kisiler/KisiListe"));
+const DPads = dynamic(() => import("../../components/layout/Pads"));
+const DSearch = dynamic(() => import("../../components/layout/Search"));
 
 export const getStaticProps = async () => {
   const res: EntryCollection<EntryFields> = await client.getEntries({
@@ -27,7 +35,9 @@ const Rehber = ({ kisiler, ...props }: RehberProps) => {
 
   return (
     <div className={styles.container}>
-      <Search kisiler={kisiler} />
+      <Suspense fallback={<Spinner animation="border" />}>
+        <DSearch kisiler={kisiler} />
+      </Suspense>
       <Button variant="outline" onClick={handleShow} className={styles.eklebtn}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -52,12 +62,18 @@ const Rehber = ({ kisiler, ...props }: RehberProps) => {
         </Offcanvas.Header>
         <Offcanvas.Body className={styles["off-body"]}>
           {/* ekleme formu */}
-          <KisiEkleForm handleClose={handleClose} />
+          <Suspense fallback={<Spinner animation="border" />}>
+            <DKisiEkleForm handleClose={handleClose} />
+          </Suspense>
         </Offcanvas.Body>
       </Offcanvas>
-      <KisiListe kisiler={kisiler} />
+      <Suspense fallback={<Spinner animation="border" />}>
+        <DKisiListe kisiler={kisiler} />
+      </Suspense>
       {/* // * tuşlar offcanvas */}
-      <Pads kisiler={kisiler} name={"bottom"} placement={"bottom"} />
+      <Suspense fallback={<Spinner animation="border" />}>
+        <DPads kisiler={kisiler} name={"bottom"} placement={"bottom"} />
+      </Suspense>
     </div>
   );
 };

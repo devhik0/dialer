@@ -1,12 +1,21 @@
+import dynamic from "next/dynamic";
+import { Suspense } from "react";
+import { Spinner } from "react-bootstrap";
 import { SonucProps } from "../../types/types";
-import KisiKart from "../kisiler/KisiKart";
+// import KisiKart from "../kisiler/KisiKart";
+
+const DKisiKart = dynamic(() => import("../kisiler/KisiKart"));
 
 const Sonuc = ({ kisiler, query }: SonucProps) => {
   return (
     <>
       <b style={{ fontSize: ".75rem" }}>Sonuçlar</b> <br />
       {kisiler
-        .map((kisi) => <KisiKart key={kisi.sys.id} kisi={kisi} kisiler={kisiler} />)
+        .map((kisi) => (
+          <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" />}>
+            <DKisiKart kisi={kisi} kisiler={kisiler} name={"end"} placement={"end"} />
+          </Suspense>
+        ))
         .filter((k) => {
           const { adsoyad, tel } = k.props.kisi.fields;
           return adsoyad.includes(query) | tel.includes(query);
