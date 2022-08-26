@@ -17,7 +17,8 @@ const Sonuc = ({ kisiler, query }: SonucProps) => {
           </Suspense>
         ))
         .filter((k) => {
-          const { adsoyad, tel } = k.props.kisi.fields;
+          // * renders inside suspense as children
+          const { adsoyad, tel } = k.props.children.props.kisi.fields;
           return adsoyad.includes(query) | tel.includes(query);
         })}
     </>
