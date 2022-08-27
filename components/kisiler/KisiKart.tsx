@@ -6,7 +6,6 @@ import { KisiKartProps } from "../../types/types";
 import CallCanvas from "../layout/CallCanvas";
 import KisiAvatar from "./KisiAvatar";
 import KisiSecenek from "./KisiSecenek";
-// import KisiSilModal from "./KisiSilModal";
 
 const DKisiSilModal = dynamic(() => import("./KisiSilModal"));
 
