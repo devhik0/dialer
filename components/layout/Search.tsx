@@ -3,7 +3,6 @@ import { ChangeEvent, Suspense, useState } from "react";
 import { Form, Spinner } from "react-bootstrap";
 import styles from "../../styles/scss/modules/layout/Search.module.css";
 import { SearchProps } from "../../types/types";
-// import Sonuc from "./Sonuc";
 
 const DSonuc = dynamic(() => import("./Sonuc"));
 
@@ -11,9 +10,7 @@ const Search = ({ kisiler }: SearchProps) => {
   // search state i
   const [query, SetQuery] = useState("");
 
-  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
-    SetQuery(evt.target.value.toLowerCase());
-  };
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => SetQuery(evt.target.value.toLowerCase());
 
   return (
     <div className={styles.search}>

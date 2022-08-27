@@ -5,7 +5,6 @@ import { kisiAra } from "../../cms/setup";
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
 import { CallCanvasProps } from "../../types/types";
 import KisiAvatar from "../kisiler/KisiAvatar";
-// import Pads from "./Pads";
 
 const DPads = dynamic(() => import("./Pads"));
 

@@ -1,0 +1,36 @@
+@import '../../variables';
+
+.eklebtn {
+  width: 35%;
+  margin-bottom: 0.5rem;
+  align-self: center;
+  border: none;
+  background: none;
+  color: $blue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: none;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background: none;
+    color: $blue;
+    border: none;
+    box-shadow: none;
+  }
+}
+
+.off-body {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  row-gap: 1.5rem;
+
+  .form {
+    svg {
+      margin-right: 0.5rem;
+    }
+  }
+}

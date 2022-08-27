@@ -1,6 +1,4 @@
-type Input = { adsoyad: string };
-
-type Data = string | Input;
+import { Data } from "../types/types";
 
 const makeSlug = (data: Data) => {
   if (typeof data === "string") {

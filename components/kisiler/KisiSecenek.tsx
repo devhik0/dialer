@@ -4,7 +4,6 @@ import { Button, Spinner } from "react-bootstrap";
 import { kisiFav } from "../../cms/setup";
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
 import { KisiSecenekProps } from "../../types/types";
-// import KisiDuzenle from "./KisiDuzenle";
 
 const DKisiDuzenle = dynamic(() => import("./KisiDuzenle"));
 

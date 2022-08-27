@@ -2,11 +2,18 @@ import { Entry } from "contentful";
 import { MouseEvent } from "react";
 import { OffcanvasProps } from "react-bootstrap";
 
+// todo: burayı generic type yap type kisi = Entry.EntryFields...  -> type ... { kisi: K, kisiler: K[]}
+
 // General
 type Inputs = {
   adsoyad: string;
   tel: string;
 };
+
+// Utils
+type Input = { adsoyad: string };
+
+type Data = string | Input;
 
 // Functions
 type KisiDuzenleParams = {
@@ -25,7 +32,11 @@ type EntryFields = {
   isfav: boolean;
 };
 
-// Component Props
+// Kisi Component Props
+type KisiAvatarProps = {
+  kisi: Entry<EntryFields>;
+};
+
 type KisiDuzenleProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;
 };
@@ -43,6 +54,10 @@ type KisiFavProps = {
   kisi: Entry<EntryFields>;
 };
 
+type KisiFavSilModalProps = {
+  kisi: Entry<EntryFields>;
+};
+
 type KisiKartProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;
   kisiler: Entry<EntryFields>[];
@@ -50,6 +65,10 @@ type KisiKartProps = OffcanvasProps & {
 
 type KisiKayitProps = {
   kisiler: Entry<EntryFields>[];
+};
+
+type KisiKayitSilModalProps = {
+  kisi: Entry<EntryFields>;
 };
 
 type KisiListeProps = {
@@ -64,10 +83,7 @@ type KisiSilModalProps = {
   kisi: Entry<EntryFields>;
 };
 
-type KisiAvatarProps = {
-  kisi: Entry<EntryFields>;
-};
-
+// Layout components
 type CallCanvasProps = OffcanvasProps & {
   kisi: Entry<EntryFields>;
   kisiler: Entry<EntryFields>[];
@@ -112,14 +128,17 @@ type FavProps = {
 
 export type {
   Inputs,
+  Data,
   EntryFields,
   KisiDuzenleProps,
   KisiDuzenleFormProps,
   KisiDuzenleParams,
   KisiEkleFormProps,
   KisiFavProps,
+  KisiFavSilModalProps,
   KisiKartProps,
   KisiKayitProps,
+  KisiKayitSilModalProps,
   KisiListeProps,
   KisiSecenekProps,
   KisiSilModalProps,

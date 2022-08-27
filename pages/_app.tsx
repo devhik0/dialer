@@ -11,6 +11,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
         <title>Dialer</title>
+        <meta name="description" content="Dialer app" />
       </Head>
 
       <Layout>

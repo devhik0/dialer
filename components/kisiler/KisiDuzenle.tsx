@@ -4,8 +4,6 @@ import { Button, Offcanvas, Spinner } from "react-bootstrap";
 import styles from "../../styles/scss/modules/kisiler/KisiDuzenle.module.css";
 import { KisiDuzenleProps } from "../../types/types";
 import KisiAvatar from "./KisiAvatar";
-// import KisiDuzenleForm from "./KisiDuzenleForm";
-// import KisiSilModal from "./KisiSilModal";
 
 const DKisiDuzenleForm = dynamic(() => import("./KisiDuzenleForm"), { suspense: true });
 const DKisiSilModal = dynamic(() => import("./KisiSilModal"), { suspense: true });

@@ -7,6 +7,10 @@ const nextConfig = {
     C_ACC_TKN: process.env.CONTENTFUL_ACCESS_TOKEN,
     C_MNG_TKN: process.env.CONTENTFUL_MANAGE_TOKEN,
   },
+  i18n: {
+    locales: ["tr"],
+    defaultLocale: "tr",
+  },
 };
 
 module.exports = nextConfig;

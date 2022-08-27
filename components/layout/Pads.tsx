@@ -5,7 +5,6 @@ import { Button, Container, Form, Offcanvas, Row, Spinner } from "react-bootstra
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
 import { PadsProps } from "../../types/types";
 import Pad from "./Pad";
-// import Sonuc from "./Sonuc";
 
 const DSonuc = dynamic(() => import("./Sonuc"));
 

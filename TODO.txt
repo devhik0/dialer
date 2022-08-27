@@ -1,2 +1,5 @@
--> optimizasyon sorunlarını çöz
+* types düzenle -> todo yu yap. 
+* stilleri düzenle scss
+* componentleri daha küçük parçalara böl
+* componentleri kendi içinde basitleştir
 * koda her zaman yorum yaz !
