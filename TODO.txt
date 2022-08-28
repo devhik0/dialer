@@ -1,1 +1,2 @@
+* componentleri daha küçük parçalara böl (code/splitting)
 * koda her zaman yorum yaz !

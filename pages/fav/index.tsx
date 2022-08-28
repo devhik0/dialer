@@ -15,7 +15,7 @@ export const getStaticProps = async () => {
     "fields.isfav": true,
   });
 
-  return { props: { kisiler: res.items } };
+  return { props: { kisiler: res.items }, revalidate: 60 };
 };
 
 const Fav = ({ kisiler }: FavProps) => (
