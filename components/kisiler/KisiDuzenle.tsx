@@ -23,7 +23,7 @@ const KisiDuzenle = ({ kisi, ...props }: KisiDuzenleProps) => {
         </svg>
       </Button>
       {/* kişi düzenleme sayfası */}
-      <Offcanvas show={show} onHide={handleClose} {...props}>
+      <Offcanvas style={{ width: "100%" }} show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <h5>Kişiyi Düzenle</h5>
         </Offcanvas.Header>

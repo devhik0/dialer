@@ -2,7 +2,6 @@ import Router from "next/router";
 import { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import { kisiSil } from "../../cms/setup";
-import styles from "../../styles/scss/modules/kisiler/KisiSilModal.module.css";
 import { KisiSilModalProps } from "../../types/types";
 
 const KisiSilModal = ({ kisi }: KisiSilModalProps) => {
@@ -39,7 +38,7 @@ const KisiSilModal = ({ kisi }: KisiSilModalProps) => {
         <span>Sil</span>
       </Button>
       {/* silme modalı */}
-      <Modal className={styles["delete-modal"]} show={showModal} onHide={handleCloseModal}>
+      <Modal style={{ top: "65%" }} show={showModal} onHide={handleCloseModal}>
         <Modal.Header>
           <Modal.Title>Kişi silinsin mi ?</Modal.Title>
         </Modal.Header>

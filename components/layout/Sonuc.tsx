@@ -2,7 +2,6 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { Spinner } from "react-bootstrap";
 import { SonucProps } from "../../types/types";
-// import KisiKart from "../kisiler/KisiKart";
 
 const DKisiKart = dynamic(() => import("../kisiler/KisiKart"));
 

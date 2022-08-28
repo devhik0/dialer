@@ -1,10 +1,9 @@
-import styles from "../../styles/scss/modules/layout/Layout.module.css";
-import Navbar from "./Navbar";
 import { LayoutProps } from "../../types/types";
+import Navbar from "./Navbar";
 
 const Layout = ({ children }: LayoutProps) => {
   return (
-    <div className={styles.container}>
+    <div style={{ maxWidth: "100%" }}>
       <main>{children}</main>
       <Navbar />
     </div>

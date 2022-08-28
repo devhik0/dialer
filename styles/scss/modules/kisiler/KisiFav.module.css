@@ -1,6 +1,7 @@
 @charset "UTF-8";
 /* kisi kartı */
 .kisi-container {
+  border: none;
   display: flex;
   margin: 1rem;
   justify-items: space-around;

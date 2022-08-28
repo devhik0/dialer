@@ -32,19 +32,6 @@ $border: none;
   padding: 0.5rem;
 }
 
-/* back button */
-.back {
-  text-align: left;
-  width: 5%;
-  padding: 0;
-  margin-left: 0.5rem;
-  border: $border;
-
-  &:hover {
-    border: $border;
-  }
-}
-
 /* offcanvas body */
 .kisi-container-col {
   margin: 1rem;
@@ -94,6 +81,9 @@ $border: none;
 
     button {
       border: $border;
+      width: 30%;
+      display: flex;
+      justify-content: space-around;
       color: currentColor;
       margin-right: 1rem;
 
@@ -104,18 +94,6 @@ $border: none;
         box-shadow: none;
       }
     }
-  }
-
-  /* info card buttons */
-  .message {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-  }
-
-  &:hover,
-  &:focus {
-    border: $border;
   }
 }
 

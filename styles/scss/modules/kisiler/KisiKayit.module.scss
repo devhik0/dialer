@@ -5,29 +5,27 @@
   display: flex;
   margin: 1rem;
   justify-items: space-around;
-}
 
-.kisi-container:hover {
-  background: #f1f1f1;
-}
-
-.kisi-container-col {
-  padding: 1rem .5rem;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-
-  .delete {
-    .delete-modal {
-      z-index: 1251;
-      top: 25%;
-    }
-
-    svg {
-      margin-right: 1rem;
-    }
+  &:hover {
+    background: #f1f1f1;
   }
 
+  .kisi-container-col {
+    padding: 1rem .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
 
+    .delete {
+      .delete-modal {
+        z-index: 1251;
+        top: 25%;
+      }
+
+      svg {
+        margin-right: 1rem;
+      }
+    }
+  }
 }

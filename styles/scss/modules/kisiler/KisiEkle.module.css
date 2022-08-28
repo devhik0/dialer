@@ -23,6 +23,6 @@
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.off-body .form svg {
+.off-body form svg {
   margin-right: 0.5rem;
 }

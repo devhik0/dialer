@@ -23,11 +23,6 @@
   height: 25vh;
   overflow: scroll;
   margin: 0 1.25rem;
-
-  li {
-    list-style: none;
-    font-size: 1.25rem;
-  }
 }
 
 .offheader {
@@ -44,14 +39,4 @@
 .pads {
   display: flex;
   flex-direction: column;
-}
-
-.pad-call-btn {
-  width: 50%;
-  margin-bottom: 1rem;
-  font-size: 1.5rem;
-  display: flex;
-  align-self: center;
-  align-items: center;
-  justify-content: space-evenly;
 }

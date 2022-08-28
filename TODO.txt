@@ -1,2 +1,1 @@
-* stilleri düzenle scss
 * koda her zaman yorum yaz !

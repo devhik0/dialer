@@ -1,11 +1,9 @@
-import { EntryCollection } from "contentful";
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
 import { Spinner } from "react-bootstrap";
 import { client } from "../../cms/setup";
-
 import styles from "../../styles/scss/modules/pages/kisiler/index.module.css";
-import { EntryFields, RehberProps } from "../../types/types";
+import { C, RehberProps } from "../../types/types";
 
 const DKisiEkle = dynamic(() => import("../../components/kisiler/KisiEkle"));
 const DKisiListe = dynamic(() => import("../../components/kisiler/KisiListe"));
@@ -13,7 +11,7 @@ const DPads = dynamic(() => import("../../components/layout/Pads"));
 const DSearch = dynamic(() => import("../../components/layout/Search"));
 
 export const getStaticProps = async () => {
-  const res: EntryCollection<EntryFields> = await client.getEntries({
+  const res: C = await client.getEntries({
     order: "fields.adsoyad",
     content_type: "kisi",
   });

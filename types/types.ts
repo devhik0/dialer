@@ -1,103 +1,77 @@
-import { Entry } from "contentful";
+import { Entry, EntryCollection } from "contentful";
 import { MouseEvent } from "react";
 import { OffcanvasProps } from "react-bootstrap";
 
 // *** type definitions ***
-type B = boolean;
+// CMS
+export type EntryFields = { adsoyad: S; tel: S; slug: S; iscalled: B; isfav: B };
 
-type K = Entry<EntryFields>;
+export type B = boolean;
 
-type N = number;
+export type C = EntryCollection<EntryFields>;
 
-type S = string;
+export type K = Entry<EntryFields>;
+
+export type N = number;
+
+export type S = string;
 
 // Utils
-type Input = { adsoyad: S };
+export type Input = { adsoyad: S };
 
 // General
-type Inputs = Input & { tel: S };
+export type Inputs = Input & { tel: S };
 
-type Data = S | Input;
+export type Data = S | Input;
 
 // Functions
-type KisiDuzenleParams = { kisi: K; inputs: Inputs; iscalled: B; isfav: B };
-
-// CMS
-type EntryFields = { adsoyad: S; tel: S; slug: S; iscalled: B; isfav: B };
+export type KisiDuzenleParams = { kisi: K; inputs: Inputs; iscalled: B; isfav: B };
 
 // Kisi Component Props
-type KisiAvatarProps = { kisi: K };
+export type KisiAvatarProps = { kisi: K };
 
-type KisiDuzenleProps = OffcanvasProps & { kisi: K };
+export type KisiDuzenleProps = OffcanvasProps & { kisi: K };
 
-type KisiDuzenleFormProps = { kisi: K; handleClose: () => void };
+export type KisiDuzenleFormProps = { kisi: K; handleClose: () => void };
 
-type KisiEkleFormProps = { handleClose: () => void };
+export type KisiEkleFormProps = { handleClose: () => void };
 
-type KisiFavProps = { kisi: K };
+export type KisiFavProps = { kisi: K };
 
-type KisiFavSilModalProps = { kisi: K };
+export type KisiFavSilModalProps = { kisi: K };
 
-type KisiKartProps = OffcanvasProps & { kisi: K; kisiler: K[] };
+export type KisiKartProps = OffcanvasProps & { kisi: K; kisiler: K[] };
 
-type KisiKayitProps = { kisiler: K[] };
+export type KisiKayitProps = { kisiler: K[] };
 
-type KisiKayitSilModalProps = { kisi: K };
+export type KisiKayitSilModalProps = { kisi: K };
 
-type KisiListeProps = { kisiler: K[] };
+export type KisiListeProps = { kisiler: K[] };
 
-type KisiSecenekProps = OffcanvasProps & { kisi: K };
+export type KisiSecenekProps = OffcanvasProps & { kisi: K };
 
-type KisiSilModalProps = { kisi: K };
+export type KisiSilModalProps = { kisi: K };
 
 // Layout components
-type CallCanvasProps = OffcanvasProps & { kisi: K; kisiler: K[] };
+export type CallCanvasProps = OffcanvasProps & { kisi: K; kisiler: K[] };
 
-type LayoutProps = { children: React.ReactNode };
+export type LayoutProps = { children: React.ReactNode };
 
-type PadProps = {
+export type PadProps = {
   handleClick: (evt: MouseEvent<HTMLButtonElement>) => void;
   btns: (S | N)[];
   firstIndex: N;
   lastIndex: N;
 };
-type PadsProps = OffcanvasProps & { kisiler: K[] };
+export type PadsProps = OffcanvasProps & { kisiler: K[] };
 
-type SearchProps = { kisiler: K[] };
+export type SearchProps = { kisiler: K[] };
 
-type SonucProps = { kisiler: K[]; query: S };
+export type SonucProps = { kisiler: K[]; query: S };
 
 // Page props
-type RehberProps = { kisiler: K[] };
+export type RehberProps = { kisiler: K[] };
 
-type SonProps = { kisiler: K[] };
+export type SonProps = { kisiler: K[] };
 
-type FavProps = { kisiler: K[] };
-
-export type {
-  Inputs,
-  Data,
-  EntryFields,
-  KisiDuzenleProps,
-  KisiDuzenleFormProps,
-  KisiDuzenleParams,
-  KisiEkleFormProps,
-  KisiFavProps,
-  KisiFavSilModalProps,
-  KisiKartProps,
-  KisiKayitProps,
-  KisiKayitSilModalProps,
-  KisiListeProps,
-  KisiSecenekProps,
-  KisiSilModalProps,
-  CallCanvasProps,
-  KisiAvatarProps,
-  LayoutProps,
-  PadProps,
-  PadsProps,
-  SearchProps,
-  SonucProps,
-  RehberProps,
-  SonProps,
-  FavProps,
-};
+export type FavProps = { kisiler: K[] };
