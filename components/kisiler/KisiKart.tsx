@@ -35,7 +35,7 @@ const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
         </Offcanvas.Header>
         <Offcanvas.Body style={{ padding: "0" }}>
           {/* kişi bilgileri */}
-          <div className={styles["kisi-container-col"]} key={kisi.sys.id}>
+          <div className={styles["kisi-container-col"]}>
             <KisiAvatar kisi={kisi} />
             <h3>{kisi.fields.adsoyad}</h3>
           </div>
