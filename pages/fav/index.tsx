@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Suspense } from "react";
-import { Spinner } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 import { client } from "../../cms/setup";
 import styles from "../../styles/scss/modules/pages/fav/index.module.css";
-import { C, FavProps } from "../../types/types";
+import type { C, FavProps } from "../../types/types";
 
 const DKisiFav = dynamic(() => import("../../components/kisiler/KisiFav"));
 

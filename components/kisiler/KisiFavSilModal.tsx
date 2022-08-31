@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { favSil } from "../../cms/setup";
-import { KisiFavSilModalProps } from "../../types/types";
+import type { KisiFavSilModalProps } from "../../types/types";
 
 const KisiFavSilModal = ({ kisi }: KisiFavSilModalProps) => {
   // modal state i

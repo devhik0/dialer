@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { kayitSil } from "../../cms/setup";
-import { KisiKayitSilModalProps } from "../../types/types";
+import type { KisiKayitSilModalProps } from "../../types/types";
 
 const KisiKayitSilModal = ({ kisi }: KisiKayitSilModalProps) => {
   // modal state i

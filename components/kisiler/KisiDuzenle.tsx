@@ -1,8 +1,10 @@
 import dynamic from "next/dynamic";
 import { Suspense, useState } from "react";
-import { Button, Offcanvas, Spinner } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Spinner from "react-bootstrap/Spinner";
 import styles from "../../styles/scss/modules/kisiler/KisiDuzenle.module.css";
-import { KisiDuzenleProps } from "../../types/types";
+import type { KisiDuzenleProps } from "../../types/types";
 import KisiAvatar from "./KisiAvatar";
 
 const DKisiDuzenleForm = dynamic(() => import("./KisiDuzenleForm"), { suspense: true });

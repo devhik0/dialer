@@ -1,6 +1,7 @@
-import { Button, Col } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Col from "react-bootstrap/Col";
 import styles from "../../styles/scss/modules/layout/Pad.module.css";
-import { PadProps } from "../../types/types";
+import type { PadProps } from "../../types/types";
 
 const Pad = ({ handleClick, btns, firstIndex, lastIndex }: PadProps) => (
   <>

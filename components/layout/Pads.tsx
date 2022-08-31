@@ -1,9 +1,14 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import { ChangeEvent, MouseEvent, Suspense, useState } from "react";
-import { Button, Container, Form, Offcanvas, Row, Spinner } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Container from "react-bootstrap/Container";
+import Form from "react-bootstrap/Form";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Row from "react-bootstrap/Row";
+import Spinner from "react-bootstrap/Spinner";
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
-import { PadsProps } from "../../types/types";
+import type { PadsProps } from "../../types/types";
 import Pad from "./Pad";
 
 const DSonuc = dynamic(() => import("./Sonuc"));

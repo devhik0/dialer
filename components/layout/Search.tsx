@@ -1,8 +1,9 @@
 import dynamic from "next/dynamic";
 import { ChangeEvent, Suspense, useState } from "react";
-import { Form, Spinner } from "react-bootstrap";
+import Form from "react-bootstrap/Form";
+import Spinner from "react-bootstrap/Spinner";
 import styles from "../../styles/scss/modules/layout/Search.module.css";
-import { SearchProps } from "../../types/types";
+import type { SearchProps } from "../../types/types";
 
 const DSonuc = dynamic(() => import("./Sonuc"));
 

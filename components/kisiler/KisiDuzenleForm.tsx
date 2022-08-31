@@ -1,7 +1,8 @@
 import { ChangeEvent, FormEvent, useState } from "react";
-import { Button, Form } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Form from "react-bootstrap/Form";
 import { kisiDuzenle } from "../../cms/setup";
-import { Inputs, KisiDuzenleFormProps } from "../../types/types";
+import type { Inputs, KisiDuzenleFormProps } from "../../types/types";
 
 const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
   const { adsoyad, tel, iscalled, isfav } = kisi.fields;

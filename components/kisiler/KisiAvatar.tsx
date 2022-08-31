@@ -1,5 +1,5 @@
 import styles from "../../styles/scss/modules/kisiler/KisiAvatar.module.css";
-import { KisiAvatarProps } from "../../types/types";
+import type { KisiAvatarProps } from "../../types/types";
 
 const KisiAvatar = ({ kisi }: KisiAvatarProps) => (
   <div className={styles.avatar}>

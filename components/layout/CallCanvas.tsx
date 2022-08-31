@@ -1,9 +1,11 @@
 import dynamic from "next/dynamic";
 import { Suspense, useState } from "react";
-import { Button, Offcanvas, Spinner } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Spinner from "react-bootstrap/Spinner";
 import { kisiAra } from "../../cms/setup";
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
-import { CallCanvasProps } from "../../types/types";
+import type { CallCanvasProps } from "../../types/types";
 import KisiAvatar from "../kisiler/KisiAvatar";
 
 const DPads = dynamic(() => import("./Pads"));

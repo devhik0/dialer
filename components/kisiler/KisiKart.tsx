@@ -1,8 +1,11 @@
 import dynamic from "next/dynamic";
 import { Suspense, useState } from "react";
-import { Button, Card, Offcanvas, Spinner } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Offcanvas from "react-bootstrap/Offcanvas";
+import Spinner from "react-bootstrap/Spinner";
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
-import { KisiKartProps } from "../../types/types";
+import type { KisiKartProps } from "../../types/types";
 import CallCanvas from "../layout/CallCanvas";
 import KisiAvatar from "./KisiAvatar";
 import KisiSecenek from "./KisiSecenek";

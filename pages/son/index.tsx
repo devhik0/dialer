@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import { Suspense } from "react";
-import { Spinner } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 import { client } from "../../cms/setup";
-import { C, SonProps } from "../../types/types";
+import type { C, SonProps } from "../../types/types";
 
 const DKisiKayit = dynamic(() => import("../../components/kisiler/KisiKayit"));
 const DSearch = dynamic(() => import("../../components/layout/Search"));

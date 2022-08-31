@@ -1,7 +1,7 @@
 // Contentful Client Setup
 import { createClient, Entry } from "contentful";
 import { createClient as createClientM } from "contentful-management";
-import { EntryFields, Inputs, KisiDuzenleParams } from "../types/types";
+import type { EntryFields, Inputs, KisiDuzenleParams } from "../types/types";
 import { makeSlug } from "../utils/utils";
 
 const client = createClient({

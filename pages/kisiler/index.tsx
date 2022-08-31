@@ -1,10 +1,10 @@
 import dynamic from "next/dynamic";
 import { Suspense } from "react";
-import { Spinner } from "react-bootstrap";
+import Spinner from "react-bootstrap/Spinner";
 import { client } from "../../cms/setup";
 import KisiEkle from "../../components/kisiler/KisiEkle";
 import styles from "../../styles/scss/modules/pages/kisiler/index.module.css";
-import { C, RehberProps } from "../../types/types";
+import type { C, RehberProps } from "../../types/types";
 
 const DKisiEkle = dynamic(() => import("../../components/kisiler/KisiEkle"));
 const DKisiListe = dynamic(() => import("../../components/kisiler/KisiListe"));

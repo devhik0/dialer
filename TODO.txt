@@ -1,1 +1,1 @@
--> Tree shaking yokmuş gibi yapıp import ... from ../lib/module olarak kullan,mümkün oldukça  react-bootstrap için.
+-> move the CRUD layer to API routes / in pages/api/cms/kisiEkle

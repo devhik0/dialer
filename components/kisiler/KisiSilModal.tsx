@@ -1,8 +1,9 @@
 import Router from "next/router";
 import { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Modal from "react-bootstrap/Modal";
 import { kisiSil } from "../../cms/setup";
-import { KisiSilModalProps } from "../../types/types";
+import type { KisiSilModalProps } from "../../types/types";
 
 const KisiSilModal = ({ kisi }: KisiSilModalProps) => {
   // modal state i

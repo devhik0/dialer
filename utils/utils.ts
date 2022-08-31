@@ -1,4 +1,4 @@
-import { Data } from "../types/types";
+import type { Data } from "../types/types";
 
 const makeSlug = (data: Data) => {
   if (typeof data === "string") {
