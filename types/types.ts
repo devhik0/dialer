@@ -1,6 +1,6 @@
-import { Entry, EntryCollection } from "contentful";
-import { MouseEvent } from "react";
-import { OffcanvasProps } from "react-bootstrap";
+import type { Entry, EntryCollection } from "contentful";
+import type { MouseEvent } from "react";
+import type { OffcanvasProps } from "react-bootstrap";
 
 // *** type definitions ***
 // CMS
