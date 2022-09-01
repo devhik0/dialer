@@ -22,7 +22,7 @@ module.exports = {
           "./node_modules/react-bootstrap/**/*",
         ],
         defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
-        safelist: ["html", "body"],
+        safelist: ["html", "body", "./node_modules/react-bootstrap/"],
       },
     ],
   ],
