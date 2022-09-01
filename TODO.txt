@@ -1,2 +1,1 @@
--> stil sorununu çöz ! /purgecss react-bootstrap ile çalışmıyormuş -> purgecss i sil
 -> move the CRUD layer to API routes / in pages/api/cms/kisiEkle
