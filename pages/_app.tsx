@@ -1,4 +1,4 @@
-import "bootstrap-icons/font/bootstrap-icons.css";
+// import "bootstrap-icons/font/bootstrap-icons.css"; // todo: <-- comment here
 import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
