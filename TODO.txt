@@ -1,1 +1,2 @@
+-> stil sorununu çöz !
 -> move the CRUD layer to API routes / in pages/api/cms/kisiEkle
