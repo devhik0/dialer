@@ -1,7 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+
 import { kisiEkle } from "../../cms/setup";
+
 import type { Inputs, KisiEkleFormProps } from "../../types/types";
 
 const KisiEkleForm = ({ handleClose }: KisiEkleFormProps) => {
@@ -38,6 +41,7 @@ const KisiEkleForm = ({ handleClose }: KisiEkleFormProps) => {
         <Form.Label>Ad</Form.Label>
         <Form.Control name="adsoyad" value={inputs.adsoyad || ""} onChange={handleChange} placeholder="Ad girin" />
       </Form.Group>
+
       <Form.Group className="mb-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"

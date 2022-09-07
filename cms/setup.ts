@@ -1,21 +1,25 @@
-// Contentful Client Setup
-import { createClient, Entry } from "contentful";
+// * Contentful Client Setup
+import { createClient } from "contentful";
+
 import { createClient as createClientM } from "contentful-management";
-import type { EntryFields, Inputs, KisiDuzenleParams } from "../types/types";
+
+import type { Inputs, K, KisiDuzenleParams } from "../types/types";
+
 import { makeSlug } from "../utils/utils";
 
-const client = createClient({
+// Clients
+export const client = createClient({
   space: process.env.C_SPC_ID || "",
   accessToken: process.env.C_ACC_TKN || "",
 });
 
-const clientM = createClientM({
+export const clientM = createClientM({
   accessToken: process.env.C_MNG_TKN || "",
   retryOnError: false,
 });
 
-// CRUD Functions
-const kisiEkle = async (inputs: Inputs) => {
+// * CRUD Functions * //
+export const kisiEkle = async (inputs: Inputs) => {
   try {
     const space = await clientM.getSpace(process.env.C_SPC_ID || "");
     const env = await space.getEnvironment("master");
@@ -35,7 +39,7 @@ const kisiEkle = async (inputs: Inputs) => {
   }
 };
 
-const kisiDuzenle = async (params: KisiDuzenleParams) => {
+export const kisiDuzenle = async (params: KisiDuzenleParams) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -57,7 +61,7 @@ const kisiDuzenle = async (params: KisiDuzenleParams) => {
     .catch(console.error);
 };
 
-const kisiSil = async (kisi: Entry<EntryFields>) => {
+export const kisiSil = async (kisi: K) => {
   try {
     const space = await clientM.getSpace(process.env.C_SPC_ID || "");
     const env = await space.getEnvironment("master");
@@ -70,7 +74,7 @@ const kisiSil = async (kisi: Entry<EntryFields>) => {
   }
 };
 
-const kayitSil = async (kisi: Entry<EntryFields>) => {
+export const kayitSil = async (kisi: K) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -89,7 +93,7 @@ const kayitSil = async (kisi: Entry<EntryFields>) => {
     .catch(console.error);
 };
 
-const kisiAra = async (kisi: Entry<EntryFields>) => {
+export const kisiAra = async (kisi: K) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -108,7 +112,7 @@ const kisiAra = async (kisi: Entry<EntryFields>) => {
     .catch(console.error);
 };
 
-const kisiFav = async (kisi: Entry<EntryFields>) => {
+export const kisiFav = async (kisi: K) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -127,7 +131,7 @@ const kisiFav = async (kisi: Entry<EntryFields>) => {
     .catch(console.error);
 };
 
-const favSil = async (kisi: Entry<EntryFields>) => {
+export const favSil = async (kisi: K) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -145,5 +149,3 @@ const favSil = async (kisi: Entry<EntryFields>) => {
     })
     .catch(console.error);
 };
-
-export { client, clientM, kisiDuzenle, kisiEkle, kayitSil, kisiSil, favSil, kisiAra, kisiFav };

@@ -1,14 +1,19 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
+
 import { ChangeEvent, MouseEvent, Suspense, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Row from "react-bootstrap/Row";
 import Spinner from "react-bootstrap/Spinner";
+
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
+
 import type { PadsProps } from "../../types/types";
+
 import Pad from "./Pad";
 
 const DSonuc = dynamic(() => import("./Sonuc"));
@@ -53,6 +58,7 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
       <Button onClick={handleShow} className={styles.fab}>
         <Image src="/dialpad.svg" alt="dialpad" width={32} height={32} />
       </Button>
+
       {/* Dialpad Offcanvas */}
       <Offcanvas style={{ height: "100vh" }} show={show} onHide={handleClose} {...props}>
         <Button onClick={handleClose} variant="outline" className={styles.back}>
@@ -70,11 +76,13 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
             />
           </svg>
         </Button>
+
         <div data-testid="kb" className={styles["search-results"]}>
           <Suspense fallback={<Spinner animation="border" />}>
             <DSonuc kisiler={kisiler} query={query} />
           </Suspense>
         </div>
+
         <Offcanvas.Header className={styles.offheader}>
           <Form.Control className={styles.offinput} onChange={handleChange} value={val} type="search" />
           <Button variant="outline" style={{ marginRight: ".5rem", padding: ".75rem .5rem" }} onClick={handleDelete}>
@@ -91,6 +99,7 @@ const Pads = ({ kisiler, ...props }: PadsProps) => {
             </svg>
           </Button>
         </Offcanvas.Header>
+
         <Offcanvas.Body>
           <Container fluid className={styles.pads}>
             <Row>

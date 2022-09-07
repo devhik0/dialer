@@ -1,7 +1,10 @@
 import { useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+
 import { kayitSil } from "../../cms/setup";
+
 import type { KisiKayitSilModalProps } from "../../types/types";
 
 const KisiKayitSilModal = ({ kisi }: KisiKayitSilModalProps) => {
@@ -16,6 +19,7 @@ const KisiKayitSilModal = ({ kisi }: KisiKayitSilModalProps) => {
       <Button onClick={handleShowModal} variant="outline-danger">
         Sil
       </Button>
+
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header>
           <Modal.Title>Kayıt silinsin mi ?</Modal.Title>

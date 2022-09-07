@@ -1,9 +1,14 @@
 import dynamic from "next/dynamic";
+
 import { Suspense } from "react";
+
 import Card from "react-bootstrap/Card";
 import Spinner from "react-bootstrap/Spinner";
+
 import styles from "../../styles/scss/modules/kisiler/KisiKayit.module.css";
+
 import type { KisiKayitProps } from "../../types/types";
+
 import KisiAvatar from "./KisiAvatar";
 
 const DKisiKayitSilModal = dynamic(() => import("./KisiKayitSilModal"));

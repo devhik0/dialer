@@ -1,8 +1,12 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
+
 import { Suspense } from "react";
+
 import Spinner from "react-bootstrap/Spinner";
+
 import { client } from "../../cms/setup";
+
 import type { C, SonProps } from "../../types/types";
 
 const DKisiKayit = dynamic(() => import("../../components/kisiler/KisiKayit"));

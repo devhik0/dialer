@@ -1,9 +1,14 @@
 import dynamic from "next/dynamic";
+
 import { Suspense, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
+
 import { kisiFav } from "../../cms/setup";
+
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
+
 import type { KisiSecenekProps } from "../../types/types";
 
 const DKisiDuzenle = dynamic(() => import("./KisiDuzenle"));

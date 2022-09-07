@@ -1,6 +1,6 @@
 import type { Data } from "../types/types";
 
-const makeSlug = (data: Data) => {
+export const makeSlug = (data: Data) => {
   if (typeof data === "string") {
     const slug = data.toLowerCase().split(" ");
     const ad = slug[0];
@@ -12,5 +12,3 @@ const makeSlug = (data: Data) => {
   const soyad = slug[1];
   return `${ad}-${soyad}`;
 };
-
-export { makeSlug };

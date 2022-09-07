@@ -1,7 +1,10 @@
 import { ChangeEvent, FormEvent, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+
 import { kisiDuzenle } from "../../cms/setup";
+
 import type { Inputs, KisiDuzenleFormProps } from "../../types/types";
 
 const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
@@ -40,6 +43,7 @@ const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
         <Form.Label>Ad</Form.Label>
         <Form.Control name="adsoyad" value={inputs.adsoyad} onChange={handleChange} placeholder="Ad girin" />
       </Form.Group>
+
       <Form.Group className="mb-3">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -54,6 +58,7 @@ const KisiDuzenleForm = ({ kisi, handleClose }: KisiDuzenleFormProps) => {
         <Form.Label>Telefon</Form.Label>
         <Form.Control name="tel" value={inputs.tel} onChange={handleChange} placeholder="Telefon girin" />
       </Form.Group>
+
       <Button variant="outline-primary" type="submit">
         Kaydet
       </Button>

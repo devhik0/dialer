@@ -1,5 +1,11 @@
-import Home from "../components/layout/Home";
+import Router from "next/router";
 
-const Anasayfa = () => <Home />;
+import { useEffect } from "react";
+
+const Anasayfa = () => {
+  useEffect(() => {
+    Router.pathname === "/" ? Router.push("/son") : "";
+  });
+};
 
 export default Anasayfa;

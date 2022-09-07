@@ -1,4 +1,5 @@
 import type { LayoutProps } from "../../types/types";
+
 import Navbar from "./Navbar";
 
 const Layout = ({ children }: LayoutProps) => {

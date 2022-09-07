@@ -1,8 +1,11 @@
 import dynamic from "next/dynamic";
+
 import { Suspense, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
+
 import styles from "../../styles/scss/modules/kisiler/KisiEkle.module.css";
 
 const DKisiEkleForm = dynamic(() => import("../../components/kisiler/KisiEkleForm"));
@@ -33,11 +36,13 @@ const KisiEkle = ({ ...props }) => {
         </svg>
         <span>Yeni kişi ekle</span>
       </Button>
+
       {/* kişi ekleme sayfası */}
       <Offcanvas style={{ width: "100vw", height: "100vh" }} show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header closeButton>
           <h5>Kişi Ekle</h5>
         </Offcanvas.Header>
+
         <Offcanvas.Body className={styles["off-body"]}>
           {/* ekleme formu */}
           <Suspense fallback={<Spinner animation="border" />}>

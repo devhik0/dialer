@@ -1,8 +1,12 @@
 import Router from "next/router";
+
 import { useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+
 import { kisiSil } from "../../cms/setup";
+
 import type { KisiSilModalProps } from "../../types/types";
 
 const KisiSilModal = ({ kisi }: KisiSilModalProps) => {
@@ -38,6 +42,7 @@ const KisiSilModal = ({ kisi }: KisiSilModalProps) => {
         </svg>
         <span>Sil</span>
       </Button>
+
       {/* silme modalı */}
       <Modal style={{ top: "65%" }} show={showModal} onHide={handleCloseModal}>
         <Modal.Header>

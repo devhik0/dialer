@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
+
 import { Suspense } from "react";
+
 import Spinner from "react-bootstrap/Spinner";
+
 import type { KisiListeProps } from "../../types/types";
 
 const DKisiKart = dynamic(() => import("./KisiKart"));

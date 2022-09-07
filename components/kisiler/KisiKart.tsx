@@ -1,12 +1,18 @@
 import dynamic from "next/dynamic";
+
 import { Suspense, useState } from "react";
+
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
+
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
+
 import type { KisiKartProps } from "../../types/types";
+
 import CallCanvas from "../layout/CallCanvas";
+
 import KisiAvatar from "./KisiAvatar";
 import KisiSecenek from "./KisiSecenek";
 
@@ -30,12 +36,14 @@ const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
           </span>
         </div>
       </Button>
+
       {/* kişi bilgileri offcanvas */}
       <Offcanvas style={{ width: "100vw", height: "100vh" }} show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header className={styles.header} closeButton>
           {/* settings paneli */}
           <KisiSecenek kisi={kisi} name={"end"} placement={"end"} />
         </Offcanvas.Header>
+
         <Offcanvas.Body style={{ padding: "0" }}>
           {/* kişi bilgileri */}
           <div className={styles["kisi-container-col"]}>
