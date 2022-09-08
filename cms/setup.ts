@@ -20,23 +20,18 @@ export const clientM = createClientM({
 
 // * CRUD Functions * //
 export const kisiEkle = async (inputs: Inputs) => {
-  try {
-    const space = await clientM.getSpace(process.env.C_SPC_ID || "");
-    const env = await space.getEnvironment("master");
-    const entry = await env.createEntry("kisi", {
-      fields: {
-        slug: { "en-US": makeSlug(inputs) },
-        adsoyad: { "en-US": inputs.adsoyad },
-        tel: { "en-US": inputs.tel },
-        iscalled: { "en-US": false },
-        isfav: { "en-US": false },
-      },
-    });
-    entry.publish();
-    // console.log(`Entry ${entry.sys.id} published !`);
-  } catch (error) {
-    console.error("Error while publishing entry", error);
-  }
+  const space = await clientM.getSpace(process.env.C_SPC_ID || "");
+  const env = await space.getEnvironment("master");
+  const entry = await env.createEntry("kisi", {
+    fields: {
+      slug: { "en-US": makeSlug(inputs) },
+      adsoyad: { "en-US": inputs.adsoyad },
+      tel: { "en-US": inputs.tel },
+      iscalled: { "en-US": false },
+      isfav: { "en-US": false },
+    },
+  });
+  entry.publish();
 };
 
 export const kisiDuzenle = async (params: KisiDuzenleParams) => {
@@ -56,22 +51,15 @@ export const kisiDuzenle = async (params: KisiDuzenleParams) => {
     })
     .then((entry) => {
       entry.publish();
-      // console.log(`Entry ${entry.sys.id} updated.`);
-    })
-    .catch(console.error);
+    });
 };
 
 export const kisiSil = async (kisi: K) => {
-  try {
-    const space = await clientM.getSpace(process.env.C_SPC_ID || "");
-    const env = await space.getEnvironment("master");
-    const entry = await env.getEntry(kisi.sys.id);
-    await entry.unpublish();
-    await entry.delete();
-    // console.log(`Entry: ${kisi.sys.id} deleted !`);
-  } catch (error) {
-    console.error(`Error while deleting entry ${kisi.sys.id} !`, error);
-  }
+  const space = await clientM.getSpace(process.env.C_SPC_ID || "");
+  const env = await space.getEnvironment("master");
+  const entry = await env.getEntry(kisi.sys.id);
+  await entry.unpublish();
+  await entry.delete();
 };
 
 export const kayitSil = async (kisi: K) => {
@@ -88,9 +76,7 @@ export const kayitSil = async (kisi: K) => {
     })
     .then((entry) => {
       entry.publish();
-      // console.log(`Entry ${entry.sys.id} updated.`);
-    })
-    .catch(console.error);
+    });
 };
 
 export const kisiAra = async (kisi: K) => {
@@ -107,9 +93,7 @@ export const kisiAra = async (kisi: K) => {
     })
     .then((entry) => {
       entry.publish();
-      // console.log(`Entry ${entry.sys.id} updated.`);
-    })
-    .catch(console.error);
+    });
 };
 
 export const kisiFav = async (kisi: K) => {
@@ -126,9 +110,7 @@ export const kisiFav = async (kisi: K) => {
     })
     .then((entry) => {
       entry.publish();
-      // console.log(`Entry ${entry.sys.id} updated.`);
-    })
-    .catch(console.error);
+    });
 };
 
 export const favSil = async (kisi: K) => {
@@ -145,7 +127,5 @@ export const favSil = async (kisi: K) => {
     })
     .then((entry) => {
       entry.publish();
-      // console.log(`Entry ${entry.sys.id} updated.`);
-    })
-    .catch(console.error);
+    });
 };
