@@ -3,10 +3,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import type { AppProps } from "next/app";
 
 import Head from "next/head";
+import { Provider } from "react-redux";
 
 import Layout from "../components/layout/Layout";
 
 import "../styles/globals.css";
+
+import { store } from "../app/store";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
@@ -16,10 +19,11 @@ function MyApp({ Component, pageProps }: AppProps) {
         <title>Dialer</title>
         <meta name="description" content="Dialer app" />
       </Head>
-
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
+      <Provider store={store}>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </Provider>
     </>
   );
 }

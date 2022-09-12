@@ -48,7 +48,7 @@ export type KisiKayitProps = { kisiler: K[] };
 
 export type KisiKayitSilModalProps = { kisi: K };
 
-export type KisiListeProps = { kisiler: K[] };
+export type KisiListeProps = { kisiler?: K[] };
 
 export type KisiSecenekProps = OffcanvasProps & { kisi: K };
 
