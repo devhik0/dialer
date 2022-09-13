@@ -7,13 +7,13 @@ import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/kisiler/KisiKayit.module.css";
 
-import type { KisiKayitProps } from "../../types/types";
+import type { Kisi } from "../../features/api/apiSlice";
 
 import KisiAvatar from "./KisiAvatar";
 
 const DKisiKayitSilModal = dynamic(() => import("./KisiKayitSilModal"));
 
-const KisiKayit = ({ kisiler }: KisiKayitProps) => (
+const KisiKayit = ({ kisiler }: { kisiler: Kisi[] }) => (
   <>
     {kisiler.map((kisi) => (
       <Card key={kisi.sys.id} className={styles["kisi-container"]}>

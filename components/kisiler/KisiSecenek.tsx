@@ -6,14 +6,13 @@ import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
 
 import { kisiFav } from "../../cms/setup";
+import { Kisi } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
 
-import type { KisiSecenekProps } from "../../types/types";
-
 const DKisiDuzenle = dynamic(() => import("./KisiDuzenle"));
 
-const KisiSecenek = ({ kisi }: KisiSecenekProps) => {
+const KisiSecenek = ({ kisi }: { kisi: Kisi }) => {
   // fav button color state i
   const [color, setColor] = useState("currentColor");
 

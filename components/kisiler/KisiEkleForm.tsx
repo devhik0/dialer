@@ -5,11 +5,9 @@ import Form from "react-bootstrap/Form";
 
 import { kisiEkle } from "../../cms/setup";
 
-import type { Inputs, KisiEkleFormProps } from "../../types/types";
-
-const KisiEkleForm = ({ handleClose }: KisiEkleFormProps) => {
+const KisiEkleForm = ({ handleClose }: { handleClose: () => void }) => {
   // form state i
-  const [inputs, setInputs] = useState<Inputs>({ adsoyad: "", tel: "" });
+  const [inputs, setInputs] = useState({ adsoyad: "", tel: "" });
 
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     const { name, value } = evt.currentTarget;

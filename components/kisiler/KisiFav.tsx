@@ -7,13 +7,13 @@ import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/kisiler/KisiFav.module.css";
 
-import type { KisiFavProps } from "../../types/types";
+import type { Kisi } from "../../features/api/apiSlice";
 
 import KisiAvatar from "./KisiAvatar";
 
 const DKisiFavSilModal = dynamic(() => import("./KisiFavSilModal"));
 
-const KisiFav = ({ kisi }: KisiFavProps) => (
+const KisiFav = ({ kisi }: { kisi: Kisi }) => (
   <Card key={kisi.sys.id} className={styles["kisi-container"]}>
     <Card.Body className={styles["kisi-container-col"]}>
       <KisiAvatar kisi={kisi} />

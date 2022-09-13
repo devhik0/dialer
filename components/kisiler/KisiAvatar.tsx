@@ -1,8 +1,7 @@
 import styles from "../../styles/scss/modules/kisiler/KisiAvatar.module.css";
+import type { Kisi } from "../../features/api/apiSlice";
 
-import type { KisiAvatarProps } from "../../types/types";
-
-const KisiAvatar = ({ kisi }: KisiAvatarProps) => (
+const KisiAvatar = ({ kisi }: { kisi: Kisi }) => (
   <div className={styles.avatar}>
     <span>{kisi.fields.adsoyad.toUpperCase().split(" ")[0][0]}</span>
   </div>

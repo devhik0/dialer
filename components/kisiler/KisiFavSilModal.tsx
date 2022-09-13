@@ -5,9 +5,9 @@ import Modal from "react-bootstrap/Modal";
 
 import { favSil } from "../../cms/setup";
 
-import type { KisiFavSilModalProps } from "../../types/types";
+import type { Kisi } from "../../features/api/apiSlice";
 
-const KisiFavSilModal = ({ kisi }: KisiFavSilModalProps) => {
+const KisiFavSilModal = ({ kisi }: { kisi: Kisi }) => {
   // modal state i
   const [showModal, setShowModal] = useState(false);
 

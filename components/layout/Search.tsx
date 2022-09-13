@@ -4,14 +4,13 @@ import { ChangeEvent, Suspense, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
+import { Kisi } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/layout/Search.module.css";
 
-import type { SearchProps } from "../../types/types";
-
 const DSonuc = dynamic(() => import("./Sonuc"));
 
-const Search = ({ kisiler }: SearchProps) => {
+const Search = ({ kisiler }: { kisiler: Kisi[] }) => {
   // search state i
   const [query, SetQuery] = useState("");
 

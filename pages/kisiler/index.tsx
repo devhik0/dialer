@@ -20,6 +20,8 @@ import { useKisileriGetirQuery } from "../../features/api/apiSlice";
 //   return { props: { kisiler: res.items }, revalidate: 60 };
 // };
 
+// TODO: BURAYI DÜZENLE VE REDUX U BÜTÜN UYGULAMAYA DAĞIT
+
 // * aha: bye-bye-props
 const Rehber = () => {
   const { data } = useKisileriGetirQuery("kisi");

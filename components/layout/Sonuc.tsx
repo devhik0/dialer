@@ -3,12 +3,11 @@ import dynamic from "next/dynamic";
 import { Suspense } from "react";
 
 import Spinner from "react-bootstrap/Spinner";
-
-import type { SonucProps } from "../../types/types";
+import { Kisi } from "../../features/api/apiSlice";
 
 const DKisiKart = dynamic(() => import("../kisiler/KisiKart"));
 
-const Sonuc = ({ kisiler, query }: SonucProps) => (
+const Sonuc = ({ kisiler, query }: { kisiler: Kisi[]; query: string }) => (
   <>
     <b style={{ fontSize: ".75rem" }}>Sonuçlar</b> <br />
     {kisiler

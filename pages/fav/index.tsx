@@ -1,3 +1,4 @@
+import { EntryCollection } from "contentful";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
@@ -6,15 +7,14 @@ import { Suspense } from "react";
 import Spinner from "react-bootstrap/Spinner";
 
 import { client } from "../../cms/setup";
+import { EntryFields, Kisi } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/pages/fav/index.module.css";
-
-import type { C, FavProps } from "../../types/types";
 
 const DKisiFav = dynamic(() => import("../../components/kisiler/KisiFav"));
 
 export const getStaticProps = async () => {
-  const res: C = await client.getEntries({
+  const res: EntryCollection<EntryFields> = await client.getEntries({
     order: "-sys.updatedAt",
     content_type: "kisi",
     "fields.isfav": true,
@@ -23,7 +23,7 @@ export const getStaticProps = async () => {
   return { props: { kisiler: res.items }, revalidate: 60 };
 };
 
-const Fav = ({ kisiler }: FavProps) => (
+const Fav = ({ kisiler }: { kisiler: Kisi[] }) => (
   <>
     {kisiler.length === 0 ? (
       <div className={styles.container}>

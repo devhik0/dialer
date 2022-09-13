@@ -3,21 +3,20 @@ import dynamic from "next/dynamic";
 import { Suspense, useState } from "react";
 
 import Button from "react-bootstrap/Button";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
 
 import { kisiAra } from "../../cms/setup";
+import { Kisi } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
-
-import type { CallCanvasProps } from "../../types/types";
 
 import KisiAvatar from "../kisiler/KisiAvatar";
 
 const DPads = dynamic(() => import("./Pads"));
 
 // * Call screen offcanvas
-const CallCanvas = ({ kisi, kisiler, ...props }: CallCanvasProps) => {
+const CallCanvas = ({ kisi, kisiler, ...props }: OffcanvasProps & { kisi: Kisi; kisiler: Kisi[] }) => {
   const { adsoyad, tel } = kisi.fields;
 
   // call screen offcanvas state i

@@ -6,20 +6,19 @@ import { ChangeEvent, MouseEvent, Suspense, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Row from "react-bootstrap/Row";
 import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
 
-import type { PadsProps } from "../../types/types";
-
+import { Kisi } from "../../features/api/apiSlice";
 import Pad from "./Pad";
 
 const DSonuc = dynamic(() => import("./Sonuc"));
 
 // * Floating pads button with offcanvas
-const Pads = ({ kisiler, ...props }: PadsProps) => {
+const Pads = ({ kisiler, ...props }: OffcanvasProps & { kisiler: Kisi[] }) => {
   // dial offcanvas state i
   const [show, setShow] = useState(false);
 

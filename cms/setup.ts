@@ -3,7 +3,7 @@ import { createClient } from "contentful";
 
 import { createClient as createClientM } from "contentful-management";
 
-import type { Inputs, K, KisiDuzenleParams } from "../types/types";
+import type { Kisi } from "../features/api/apiSlice";
 
 import { makeSlug } from "../utils/utils";
 
@@ -19,7 +19,7 @@ export const clientM = createClientM({
 });
 
 // * CRUD Functions * //
-export const kisiEkle = async (inputs: Inputs) => {
+export const kisiEkle = async (inputs: { adsoyad: string; tel: string }) => {
   const space = await clientM.getSpace(process.env.C_SPC_ID || "");
   const env = await space.getEnvironment("master");
   const entry = await env.createEntry("kisi", {
@@ -34,7 +34,12 @@ export const kisiEkle = async (inputs: Inputs) => {
   entry.publish();
 };
 
-export const kisiDuzenle = async (params: KisiDuzenleParams) => {
+export const kisiDuzenle = async (params: {
+  kisi: Kisi;
+  inputs: { adsoyad: string; tel: string };
+  iscalled: boolean;
+  isfav: boolean;
+}) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -54,7 +59,7 @@ export const kisiDuzenle = async (params: KisiDuzenleParams) => {
     });
 };
 
-export const kisiSil = async (kisi: K) => {
+export const kisiSil = async (kisi: Kisi) => {
   const space = await clientM.getSpace(process.env.C_SPC_ID || "");
   const env = await space.getEnvironment("master");
   const entry = await env.getEntry(kisi.sys.id);
@@ -62,7 +67,7 @@ export const kisiSil = async (kisi: K) => {
   await entry.delete();
 };
 
-export const kayitSil = async (kisi: K) => {
+export const kayitSil = async (kisi: Kisi) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -79,7 +84,7 @@ export const kayitSil = async (kisi: K) => {
     });
 };
 
-export const kisiAra = async (kisi: K) => {
+export const kisiAra = async (kisi: Kisi) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -96,7 +101,7 @@ export const kisiAra = async (kisi: K) => {
     });
 };
 
-export const kisiFav = async (kisi: K) => {
+export const kisiFav = async (kisi: Kisi) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))
@@ -113,7 +118,7 @@ export const kisiFav = async (kisi: K) => {
     });
 };
 
-export const favSil = async (kisi: K) => {
+export const favSil = async (kisi: Kisi) => {
   clientM
     .getSpace(process.env.C_SPC_ID || "")
     .then((space) => space.getEnvironment("master"))

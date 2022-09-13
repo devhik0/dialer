@@ -4,11 +4,11 @@ import { Suspense } from "react";
 
 import Spinner from "react-bootstrap/Spinner";
 
-import type { KisiListeProps } from "../../types/types";
+import type { Kisi } from "../../features/api/apiSlice";
 
 const DKisiKart = dynamic(() => import("./KisiKart"));
 
-const KisiListe = ({ kisiler }: KisiListeProps) => (
+const KisiListe = ({ kisiler }: { kisiler: Kisi[] }) => (
   <div style={{ height: "70vh", overflow: "scroll" }}>
     {kisiler &&
       kisiler.map((kisi) => (

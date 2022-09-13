@@ -4,12 +4,12 @@ import { Suspense, useState } from "react";
 
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import Offcanvas from "react-bootstrap/Offcanvas";
+import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
 
-import type { KisiKartProps } from "../../types/types";
+import type { Kisi } from "../../features/api/apiSlice";
 
 import CallCanvas from "../layout/CallCanvas";
 
@@ -18,7 +18,7 @@ import KisiSecenek from "./KisiSecenek";
 
 const DKisiSilModal = dynamic(() => import("./KisiSilModal"));
 
-const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
+const KisiKart = ({ kisi, kisiler, ...props }: OffcanvasProps & { kisi: Kisi; kisiler: Kisi[] }) => {
   // offcanvas state i
   const [show, setShow] = useState(false);
 
@@ -41,7 +41,7 @@ const KisiKart = ({ kisi, kisiler, ...props }: KisiKartProps) => {
       <Offcanvas style={{ width: "100vw", height: "100vh" }} show={show} onHide={handleClose} {...props}>
         <Offcanvas.Header className={styles.header} closeButton>
           {/* settings paneli */}
-          <KisiSecenek kisi={kisi} name={"end"} placement={"end"} />
+          <KisiSecenek kisi={kisi} />
         </Offcanvas.Header>
 
         <Offcanvas.Body style={{ padding: "0" }}>

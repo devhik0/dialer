@@ -1,3 +1,4 @@
+import { EntryCollection } from "contentful";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 
@@ -6,14 +7,13 @@ import { Suspense } from "react";
 import Spinner from "react-bootstrap/Spinner";
 
 import { client } from "../../cms/setup";
-
-import type { C, SonProps } from "../../types/types";
+import { EntryFields, Kisi } from "../../features/api/apiSlice";
 
 const DKisiKayit = dynamic(() => import("../../components/kisiler/KisiKayit"));
 const DSearch = dynamic(() => import("../../components/layout/Search"));
 
 export const getStaticProps = async () => {
-  const res: C = await client.getEntries({
+  const res: EntryCollection<EntryFields> = await client.getEntries({
     order: "-sys.updatedAt",
     content_type: "kisi",
     "fields.iscalled": true,
@@ -22,7 +22,7 @@ export const getStaticProps = async () => {
   return { props: { kisiler: res.items }, revalidate: 60 };
 };
 
-const Son = ({ kisiler }: SonProps) => {
+const Son = ({ kisiler }: { kisiler: Kisi[] }) => {
   return (
     <>
       {kisiler.length === 0 ? (
