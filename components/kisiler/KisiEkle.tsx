@@ -8,7 +8,7 @@ import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/kisiler/KisiEkle.module.css";
 
-const DKisiEkleForm = dynamic(() => import("../../components/kisiler/KisiEkleForm"));
+const DKisiEkleForm = dynamic(() => import("../../components/kisiler/KisiEkleForm"), { suspense: true });
 
 const KisiEkle = ({ ...props }) => {
   // offcanvas state i

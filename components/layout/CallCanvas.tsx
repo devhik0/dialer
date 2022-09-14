@@ -13,7 +13,7 @@ import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
 
 import KisiAvatar from "../kisiler/KisiAvatar";
 
-const DPads = dynamic(() => import("./Pads"));
+const DPads = dynamic(() => import("./Pads"), { suspense: true });
 
 // * Call screen offcanvas
 const CallCanvas = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {

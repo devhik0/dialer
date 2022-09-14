@@ -9,7 +9,7 @@ import { useKisileriGetirQuery } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/pages/fav/index.module.css";
 
-const DKisiFav = dynamic(() => import("../../components/kisiler/KisiFav"));
+const DKisiFav = dynamic(() => import("../../components/kisiler/KisiFav"), { suspense: true });
 
 const Fav = () => {
   const { data } = useKisileriGetirQuery("kisiler");

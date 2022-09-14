@@ -14,7 +14,7 @@ import styles from "../../styles/scss/modules/layout/Pads.module.css";
 
 import Pad from "./Pad";
 
-const DSonuc = dynamic(() => import("./Sonuc"));
+const DSonuc = dynamic(() => import("./Sonuc"), { suspense: true });
 
 // * Floating pads button with offcanvas
 const Pads = ({ ...props }: OffcanvasProps) => {

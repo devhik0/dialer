@@ -10,7 +10,7 @@ import { Kisi } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
 
-const DKisiDuzenle = dynamic(() => import("./KisiDuzenle"));
+const DKisiDuzenle = dynamic(() => import("./KisiDuzenle"), { suspense: true });
 
 const KisiSecenek = ({ kisi }: { kisi: Kisi }) => {
   // fav button color state i

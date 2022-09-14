@@ -11,7 +11,7 @@ import type { Kisi } from "../../features/api/apiSlice";
 
 import KisiAvatar from "./KisiAvatar";
 
-const DKisiFavSilModal = dynamic(() => import("./KisiFavSilModal"));
+const DKisiFavSilModal = dynamic(() => import("./KisiFavSilModal"), { suspense: true });
 
 const KisiFav = ({ kisi }: { kisi: Kisi }) => (
   <Card key={kisi.sys.id} className={styles["kisi-container"]}>

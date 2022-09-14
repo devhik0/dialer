@@ -7,8 +7,8 @@ import Spinner from "react-bootstrap/Spinner";
 
 import { useKisileriGetirQuery } from "../../features/api/apiSlice";
 
-const DKisiKayit = dynamic(() => import("../../components/kisiler/KisiKayit"));
-const DSearch = dynamic(() => import("../../components/layout/Search"));
+const DKisiKayit = dynamic(() => import("../../components/kisiler/KisiKayit"), { suspense: true });
+const DSearch = dynamic(() => import("../../components/layout/Search"), { suspense: true });
 
 const Son = () => {
   const { data } = useKisileriGetirQuery("kisiler");

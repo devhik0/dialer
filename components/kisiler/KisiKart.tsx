@@ -16,7 +16,7 @@ import CallCanvas from "../layout/CallCanvas";
 import KisiAvatar from "./KisiAvatar";
 import KisiSecenek from "./KisiSecenek";
 
-const DKisiSilModal = dynamic(() => import("./KisiSilModal"));
+const DKisiSilModal = dynamic(() => import("./KisiSilModal"), { suspense: true });
 
 const KisiKart = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
   // data fetch from CMS

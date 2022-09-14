@@ -11,7 +11,7 @@ import { useKisileriGetirQuery } from "../../features/api/apiSlice";
 
 import KisiAvatar from "./KisiAvatar";
 
-const DKisiKayitSilModal = dynamic(() => import("./KisiKayitSilModal"));
+const DKisiKayitSilModal = dynamic(() => import("./KisiKayitSilModal"), { suspense: true });
 
 const KisiKayit = () => {
   const { data } = useKisileriGetirQuery("kisiler");

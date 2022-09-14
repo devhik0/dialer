@@ -1,17 +1,11 @@
 import dynamic from "next/dynamic";
-
 import { Suspense } from "react";
+import { Spinner } from "react-bootstrap";
+import { Kisi } from "../../features/api/apiSlice";
 
-import Spinner from "react-bootstrap/Spinner";
+const DKisiKart = dynamic(() => import("../kisiler/KisiKart"), { suspense: true });
 
-import { useKisileriGetirQuery } from "../../features/api/apiSlice";
-
-const DKisiKart = dynamic(() => import("./KisiKart"));
-
-const KisiListe = () => {
-  const { data } = useKisileriGetirQuery("kisiler");
-  const kisiler = data?.items || [];
-
+const KisiListe = ({ kisiler }: { kisiler: Kisi[] }) => {
   return (
     <div style={{ height: "70vh", overflow: "scroll" }}>
       {kisiler.map((kisi) => (

@@ -6,17 +6,20 @@ export type EntryFields = { adsoyad: string; tel: string; slug: string; iscalled
 
 export type Kisi = Entry<EntryFields>;
 
+type Response = EntryCollection<EntryFields>;
+
 // contentful api url
 const C_BASE_URL = "https://cdn.contentful.com/";
 const space = process.env.C_SPC_ID || "";
 const acc_token = process.env.C_ACC_TKN || "";
+const content_type = "kisi";
 
 export const kisilerApi = createApi({
   reducerPath: "kisilerApi",
   baseQuery: fetchBaseQuery({ baseUrl: C_BASE_URL }),
   endpoints: (builder) => ({
-    kisileriGetir: builder.query<EntryCollection<EntryFields>, string>({
-      query: () => `spaces/${space}/environments/master/entries?access_token=${acc_token}`,
+    kisileriGetir: builder.query<Response, string>({
+      query: () => `spaces/${space}/environments/master/entries?access_token=${acc_token}&content_type=${content_type}`,
     }),
   }),
 });
