@@ -1,3 +1,4 @@
 * redux ile yeniden yaz 
 * rest --> graphql yap
+* gereksiz spinner ları sil
 * optimize et

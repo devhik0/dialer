@@ -14,24 +14,31 @@ import KisiAvatar from "./KisiAvatar";
 const DKisiKayitSilModal = dynamic(() => import("./KisiKayitSilModal"), { suspense: true });
 
 const KisiKayit = () => {
-  const { data } = useKisileriGetirQuery("kisiler");
+  const { data, isError, isLoading } = useKisileriGetirQuery("kisiler");
   const kisiler = data?.items || [];
 
-  return (
-    <>
-      {kisiler.map((kisi) => (
-        <Card key={kisi.sys.id} className={styles["kisi-container"]}>
-          <Card.Body className={styles["kisi-container-col"]}>
-            <KisiAvatar kisi={kisi} />
-            <span>{kisi.fields.adsoyad}</span>
-            <Suspense fallback={<Spinner animation="border" />}>
-              <DKisiKayitSilModal kisi={kisi} />
-            </Suspense>
-          </Card.Body>
-        </Card>
-      ))}
-    </>
-  );
+  if (isError) {
+    return <>Kişiler alınırken bir sorun oluştu.</>;
+  }
+  if (isLoading) {
+    return <Spinner animation="border" />;
+  } else {
+    return (
+      <>
+        {kisiler.map((kisi) => (
+          <Card key={kisi.sys.id} className={styles["kisi-container"]}>
+            <Card.Body className={styles["kisi-container-col"]}>
+              <KisiAvatar kisi={kisi} />
+              <span>{kisi.fields.adsoyad}</span>
+              <Suspense fallback={<Spinner animation="border" />}>
+                <DKisiKayitSilModal kisi={kisi} />
+              </Suspense>
+            </Card.Body>
+          </Card>
+        ))}
+      </>
+    );
+  }
 };
 
 export default KisiKayit;

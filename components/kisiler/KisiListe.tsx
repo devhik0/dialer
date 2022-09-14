@@ -6,21 +6,28 @@ import { useKisileriGetirQuery } from "../../features/api/apiSlice";
 const DKisiKart = dynamic(() => import("../kisiler/KisiKart"), { suspense: true });
 
 const KisiListe = () => {
-  const { data } = useKisileriGetirQuery("kisiler");
+  const { data, isError, isLoading } = useKisileriGetirQuery("kisiler");
   const kisiler = data?.items || [];
 
-  return (
-    <div style={{ height: "70vh", overflow: "scroll", display: "flex", flexDirection: "column" }}>
-      {kisiler.map((kisi) => (
-        <Suspense
-          key={kisi.sys.id}
-          fallback={<Spinner animation="border" style={{ alignSelf: "center", color: "var(--bs-primary)" }} />}
-        >
-          <DKisiKart kisi={kisi} name={"end"} placement={"end"} />
-        </Suspense>
-      ))}
-    </div>
-  );
+  if (isError) {
+    return <>Kişiler alınırken bir sorun oluştu.</>;
+  }
+  if (isLoading) {
+    return <Spinner animation="border" />;
+  } else {
+    return (
+      <div style={{ height: "70vh", overflow: "scroll", display: "flex", flexDirection: "column" }}>
+        {kisiler.map((kisi) => (
+          <Suspense
+            key={kisi.sys.id}
+            fallback={<Spinner animation="border" style={{ alignSelf: "center", color: "var(--bs-primary)" }} />}
+          >
+            <DKisiKart kisi={kisi} name={"end"} placement={"end"} />
+          </Suspense>
+        ))}
+      </div>
+    );
+  }
 };
 
 export default KisiListe;

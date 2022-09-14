@@ -6,6 +6,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
 import { kisiSil } from "../../cms/setup";
+
 import { Kisi } from "../../features/api/apiSlice";
 
 const KisiSilModal = ({ kisi }: { kisi: Kisi }) => {
