@@ -12,13 +12,12 @@ import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
 
-import { Kisi } from "../../features/api/apiSlice";
 import Pad from "./Pad";
 
 const DSonuc = dynamic(() => import("./Sonuc"));
 
 // * Floating pads button with offcanvas
-const Pads = ({ kisiler, ...props }: OffcanvasProps & { kisiler: Kisi[] }) => {
+const Pads = ({ ...props }: OffcanvasProps) => {
   // dial offcanvas state i
   const [show, setShow] = useState(false);
 
@@ -78,7 +77,7 @@ const Pads = ({ kisiler, ...props }: OffcanvasProps & { kisiler: Kisi[] }) => {
 
         <div data-testid="kb" className={styles["search-results"]}>
           <Suspense fallback={<Spinner animation="border" />}>
-            <DSonuc kisiler={kisiler} query={query} />
+            <DSonuc query={query} />
           </Suspense>
         </div>
 

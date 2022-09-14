@@ -7,7 +7,7 @@ import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
 
 import { kisiAra } from "../../cms/setup";
-import { Kisi } from "../../features/api/apiSlice";
+import { Kisi, useKisileriGetirQuery } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
 
@@ -16,7 +16,11 @@ import KisiAvatar from "../kisiler/KisiAvatar";
 const DPads = dynamic(() => import("./Pads"));
 
 // * Call screen offcanvas
-const CallCanvas = ({ kisi, kisiler, ...props }: OffcanvasProps & { kisi: Kisi; kisiler: Kisi[] }) => {
+const CallCanvas = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
+  // data fetch from CMS
+  const { data } = useKisileriGetirQuery("kisiler");
+  const kisiler = data?.items || [];
+
   const { adsoyad, tel } = kisi.fields;
 
   // call screen offcanvas state i

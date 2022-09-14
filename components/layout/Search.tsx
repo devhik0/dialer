@@ -4,17 +4,16 @@ import { ChangeEvent, Suspense, useState } from "react";
 
 import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
-import { Kisi } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/layout/Search.module.css";
 
 const DSonuc = dynamic(() => import("./Sonuc"));
 
-const Search = ({ kisiler }: { kisiler: Kisi[] }) => {
+const Search = () => {
   // search state i
-  const [query, SetQuery] = useState("");
+  const [query, setQuery] = useState("");
 
-  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => SetQuery(evt.target.value.toLowerCase());
+  const handleChange = (evt: ChangeEvent<HTMLInputElement>) => setQuery(evt.target.value.toLowerCase());
 
   return (
     <div className={styles.search}>
@@ -40,7 +39,7 @@ const Search = ({ kisiler }: { kisiler: Kisi[] }) => {
 
       <div data-testid="kb" className={styles["search-results"]}>
         <Suspense fallback={<Spinner animation="border" />}>
-          <DSonuc kisiler={kisiler} query={query} />
+          <DSonuc query={query} />
         </Suspense>
       </div>
     </div>

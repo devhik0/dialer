@@ -1,3 +1,4 @@
+* fix error at console !
 * redux ile yeniden yaz 
 * rest --> graphql yap
 * optimize et

@@ -6,8 +6,6 @@ export type EntryFields = { adsoyad: string; tel: string; slug: string; iscalled
 
 export type Kisi = Entry<EntryFields>;
 
-// todo: buraya contentful cms i kur
-
 // contentful api url
 const C_BASE_URL = "https://cdn.contentful.com/";
 const space = process.env.C_SPC_ID || "";
