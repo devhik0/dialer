@@ -40,7 +40,7 @@ const Rehber = () => {
             <DKisiEkle />
           </Suspense>
           <Suspense fallback={<Spinner animation="border" />}>
-            <DKisiListe kisiler={kisiler} />
+            <DKisiListe />
           </Suspense>
           <Suspense fallback={<Spinner animation="border" />}>
             <DPads name={"bottom"} placement={"bottom"} />

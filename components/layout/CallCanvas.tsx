@@ -7,7 +7,7 @@ import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
 
 import { kisiAra } from "../../cms/setup";
-import { Kisi, useKisileriGetirQuery } from "../../features/api/apiSlice";
+import { Kisi } from "../../features/api/apiSlice";
 
 import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
 
@@ -17,10 +17,6 @@ const DPads = dynamic(() => import("./Pads"), { suspense: true });
 
 // * Call screen offcanvas
 const CallCanvas = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
-  // data fetch from CMS
-  const { data } = useKisileriGetirQuery("kisiler");
-  const kisiler = data?.items || [];
-
   const { adsoyad, tel } = kisi.fields;
 
   // call screen offcanvas state i
@@ -59,7 +55,7 @@ const CallCanvas = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
           <h4>{adsoyad}</h4>
           <h5>{tel}</h5>
           <Suspense fallback={<Spinner animation="border" />}>
-            <DPads kisiler={kisiler} placement={"bottom"} name={"bottom"} />
+            <DPads placement={"bottom"} name={"bottom"} />
           </Suspense>
           {/* Close call button */}
           <Button variant="danger" className={styles["call-close"]} onClick={handleCloseCall}>

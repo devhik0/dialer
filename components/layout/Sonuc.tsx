@@ -18,7 +18,7 @@ const Sonuc = ({ query }: { query: string }) => {
       {kisiler
         .map((kisi) => (
           <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" />}>
-            <DKisiKart kisi={kisi} kisiler={kisiler} name={"end"} placement={"end"} />
+            <DKisiKart kisi={kisi} name={"end"} placement={"end"} />
           </Suspense>
         ))
         .filter((k) => {

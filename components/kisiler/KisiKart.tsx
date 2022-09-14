@@ -9,7 +9,7 @@ import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
 
-import { Kisi, useKisileriGetirQuery } from "../../features/api/apiSlice";
+import { Kisi } from "../../features/api/apiSlice";
 
 import CallCanvas from "../layout/CallCanvas";
 
@@ -19,10 +19,6 @@ import KisiSecenek from "./KisiSecenek";
 const DKisiSilModal = dynamic(() => import("./KisiSilModal"), { suspense: true });
 
 const KisiKart = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
-  // data fetch from CMS
-  const { data } = useKisileriGetirQuery("kisiler");
-  const kisiler = data?.items || [];
-
   // offcanvas state i
   const [show, setShow] = useState(false);
 
@@ -58,7 +54,7 @@ const KisiKart = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
           <Card className={styles.options}>
             <Card.Body>
               {/* ara butonu */}
-              <CallCanvas kisi={kisi} kisiler={kisiler} />
+              <CallCanvas kisi={kisi} />
             </Card.Body>
           </Card>
           {/* iletişim bilgileri kartı */}
@@ -66,7 +62,7 @@ const KisiKart = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
             <Card.Title as={"h6"}>İletişim bilgileri</Card.Title>
             <Card.Body className={styles.info}>
               {/* call icon */}
-              <CallCanvas kisi={kisi} kisiler={kisiler} />
+              <CallCanvas kisi={kisi} />
               <span>Mobil {kisi.fields.tel}</span>
             </Card.Body>
           </Card>

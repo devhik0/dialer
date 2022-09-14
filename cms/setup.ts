@@ -1,18 +1,12 @@
 // * Contentful Client Setup
-import { createClient } from "contentful";
 
 import { createClient as createClientM } from "contentful-management";
 
-import type { Kisi } from "../features/api/apiSlice";
+import { Kisi } from "../features/api/apiSlice";
 
 import { makeSlug } from "../utils/utils";
 
 // Clients
-export const client = createClient({
-  space: process.env.C_SPC_ID || "",
-  accessToken: process.env.C_ACC_TKN || "",
-});
-
 export const clientM = createClientM({
   accessToken: process.env.C_MNG_TKN || "",
   retryOnError: false,
