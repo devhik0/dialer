@@ -69,7 +69,7 @@ const KisiKart = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
           {/* sil butonu */}
           <div className={styles.delete}>
             {/* silme modalı */}
-            <Suspense fallback={<Spinner animation="border" />}>
+            <Suspense fallback={<Spinner animation="border" variant="primary" />}>
               <DKisiSilModal kisi={kisi} />
             </Suspense>
           </div>

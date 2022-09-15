@@ -38,7 +38,7 @@ const Search = () => {
       </Form>
 
       <div data-testid="kb" className={styles["search-results"]}>
-        <Suspense fallback={<Spinner animation="border" />}>
+        <Suspense fallback={<Spinner animation="border" variant="primary" />}>
           <DSonuc query={query} />
         </Suspense>
       </div>

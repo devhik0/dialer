@@ -21,7 +21,7 @@ const KisiKayit = () => {
     return <>Kişiler alınırken bir sorun oluştu.</>;
   }
   if (isLoading) {
-    return <Spinner animation="border" />;
+    return <Spinner animation="border" variant="primary" />;
   } else {
     return (
       <>
@@ -30,7 +30,7 @@ const KisiKayit = () => {
             <Card.Body className={styles["kisi-container-col"]}>
               <KisiAvatar kisi={kisi} />
               <span>{kisi.fields.adsoyad}</span>
-              <Suspense fallback={<Spinner animation="border" />}>
+              <Suspense fallback={<Spinner animation="border" variant="primary" />}>
                 <DKisiKayitSilModal kisi={kisi} />
               </Suspense>
             </Card.Body>

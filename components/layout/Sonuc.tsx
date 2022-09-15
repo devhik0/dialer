@@ -16,14 +16,14 @@ const Sonuc = ({ query }: { query: string }) => {
     return <>Kişiler alınırken bir sorun oluştu.</>;
   }
   if (isLoading) {
-    return <Spinner animation="border" />;
+    return <Spinner animation="border" variant="primary" />;
   } else {
     return (
       <>
         <b style={{ fontSize: ".75rem" }}>Sonuçlar</b> <br />
         {kisiler
           .map((kisi) => (
-            <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" />}>
+            <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" variant="primary" />}>
               <DKisiKart kisi={kisi} name={"end"} placement={"end"} />
             </Suspense>
           ))

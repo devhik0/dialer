@@ -54,7 +54,7 @@ const CallCanvas = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
           <span>Aranıyor...</span>
           <h4>{adsoyad}</h4>
           <h5>{tel}</h5>
-          <Suspense fallback={<Spinner animation="border" />}>
+          <Suspense fallback={<Spinner animation="border" variant="primary" />}>
             <DPads placement={"bottom"} name={"bottom"} />
           </Suspense>
           {/* Close call button */}

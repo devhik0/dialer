@@ -39,13 +39,13 @@ const KisiDuzenle = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
         <Offcanvas.Body className={styles["off-body"]}>
           <KisiAvatar kisi={kisi} />
           {/* düzenleme formu */}
-          <Suspense fallback={<Spinner animation="border" />}>
+          <Suspense fallback={<Spinner animation="border" variant="primary" />}>
             <DKisiDuzenleForm kisi={kisi} handleClose={handleClose} />
           </Suspense>
 
           <div className={styles.delete}>
             {/* silme modalı */}
-            <Suspense fallback={<Spinner animation="border" />}>
+            <Suspense fallback={<Spinner animation="border" variant="primary" />}>
               <DKisiSilModal kisi={kisi} />
             </Suspense>
           </div>

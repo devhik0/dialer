@@ -45,7 +45,7 @@ const KisiEkle = ({ ...props }) => {
 
         <Offcanvas.Body className={styles["off-body"]}>
           {/* ekleme formu */}
-          <Suspense fallback={<Spinner animation="border" />}>
+          <Suspense fallback={<Spinner animation="border" variant="primary" />}>
             <DKisiEkleForm handleClose={handleClose} />
           </Suspense>
         </Offcanvas.Body>

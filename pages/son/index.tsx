@@ -18,7 +18,7 @@ const Son = () => {
     return <>Kişiler alınırken bir sorun oluştu.</>;
   }
   if (isLoading) {
-    return <Spinner animation="border" />;
+    return <Spinner animation="border" variant="primary" />;
   } else {
     if (kisiler.length === 0) {
       return (
@@ -34,7 +34,7 @@ const Son = () => {
       );
     } else {
       return (
-        <Suspense fallback={<Spinner animation="border" />}>
+        <Suspense fallback={<Spinner animation="border" variant="primary" />}>
           <DSearch />
           {/* arama kaydı kartı */}
           <DKisiKayit />

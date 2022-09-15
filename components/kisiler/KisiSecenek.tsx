@@ -28,7 +28,7 @@ const KisiSecenek = ({ kisi }: { kisi: Kisi }) => {
       {/* settings section */}
       <div className={styles.settings}>
         {/* edit button */}
-        <Suspense fallback={<Spinner animation="border" />}>
+        <Suspense fallback={<Spinner animation="border" variant="primary" />}>
           <DKisiDuzenle kisi={kisi} name={"end"} placement={"end"} />
         </Suspense>
         {/* fav button */}

@@ -13,15 +13,12 @@ const KisiListe = () => {
     return <>Kişiler alınırken bir sorun oluştu.</>;
   }
   if (isLoading) {
-    return <Spinner animation="border" />;
+    return <Spinner animation="border" variant="primary" />;
   } else {
     return (
       <div style={{ height: "70vh", overflow: "scroll", display: "flex", flexDirection: "column" }}>
         {kisiler.map((kisi) => (
-          <Suspense
-            key={kisi.sys.id}
-            fallback={<Spinner animation="border" style={{ alignSelf: "center", color: "var(--bs-primary)" }} />}
-          >
+          <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" variant="primary" />}>
             <DKisiKart kisi={kisi} name={"end"} placement={"end"} />
           </Suspense>
         ))}

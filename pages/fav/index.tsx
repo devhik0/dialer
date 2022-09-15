@@ -19,7 +19,7 @@ const Fav = () => {
     return <>Kişiler alınırken bir sorun oluştu.</>;
   }
   if (isLoading) {
-    return <Spinner animation="border" />;
+    return <Spinner animation="border" variant="primary" />;
   } else {
     if (kisiler.length === 0) {
       return (
@@ -38,7 +38,7 @@ const Fav = () => {
         <>
           <h6 style={{ margin: "1rem" }}>Favoriler</h6>
           {kisiler.map((kisi) => (
-            <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" />}>
+            <Suspense key={kisi.sys.id} fallback={<Spinner animation="border" variant="primary" />}>
               <DKisiFav kisi={kisi} />
             </Suspense>
           ))}
