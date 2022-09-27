@@ -1,10 +1,9 @@
-export const makeSlug = (data: string | { adsoyad: string }) => {
-  if (typeof data === "string") {
-    const slug = data.toLowerCase().split(" ");
-    const ad = slug[0];
-    const soyad = slug[1];
-    return `${ad}-${soyad}`;
-  }
+/**
+ *
+ * @param data {adsoyad: string}
+ * @returns string
+ */
+export const makeSlug = (data: { adsoyad: string }) => {
   const slug = data.adsoyad.toLowerCase().split(" ");
   const ad = slug[0];
   const soyad = slug[1];
