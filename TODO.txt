@@ -1,1 +1,4 @@
+* sorunları çöz
+* testler yaz
+* refactor yap
 * optimize et
