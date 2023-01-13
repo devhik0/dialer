@@ -15,7 +15,8 @@ const DKisiKayitSilModal = dynamic(() => import("./KisiKayitSilModal"), { suspen
 
 const KisiKayit = () => {
   const { data, isError, isLoading } = useKisileriGetirQuery("kisiler");
-  const kisiler = data?.items || [];
+  // aranan kisiler
+  const kisiler = data?.items?.filter((kisi) => kisi.fields.iscalled == true) || [];
 
   if (isError) {
     return <>Kişiler alınırken bir sorun oluştu.</>;

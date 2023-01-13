@@ -12,7 +12,8 @@ const DSearch = dynamic(() => import("../../components/layout/Search"), { suspen
 
 const Son = () => {
   const { data, isError, isLoading } = useKisileriGetirQuery("kisiler");
-  const kisiler = data?.items || [];
+  const kisiler = data?.items?.filter((kisi) => kisi.fields.iscalled == true) || [];
+  console.log("aranan kisiler: ", kisiler);
 
   if (isError) {
     return <>Kişiler alınırken bir sorun oluştu.</>;

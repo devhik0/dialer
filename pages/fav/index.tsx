@@ -13,7 +13,8 @@ const DKisiFav = dynamic(() => import("../../components/kisiler/KisiFav"), { sus
 
 const Fav = () => {
   const { data, isError, isLoading } = useKisileriGetirQuery("kisiler");
-  const kisiler = data?.items || [];
+  // favori kişiler
+  const kisiler = data?.items?.filter((kisi) => kisi.fields.isfav == true) || [];
 
   if (isError) {
     return <>Kişiler alınırken bir sorun oluştu.</>;
