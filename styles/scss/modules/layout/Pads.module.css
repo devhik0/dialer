@@ -9,13 +9,14 @@
 .back {
   text-align: left;
   width: 5%;
-  padding: 0;
-  padding: 0.5rem;
   margin-left: 0.5rem;
   border: none;
 }
 .back:hover {
   border: none;
+}
+.back i {
+  font-size: 20px;
 }
 
 .search-results {
@@ -28,6 +29,9 @@
   margin: 0;
   padding-top: 1rem;
   padding-bottom: 0;
+}
+.offheader i {
+  font-size: 32px;
 }
 .offheader .offinput {
   margin: 0 0.25rem;

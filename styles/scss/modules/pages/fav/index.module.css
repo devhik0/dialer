@@ -5,7 +5,8 @@
   width: 30%;
   margin: 7rem auto;
 }
-.container svg {
+.container i {
+  font-size: 32px;
   fill: blue;
 }
 .container p {

@@ -4,8 +4,9 @@
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.off-body form svg {
+.off-body form i {
   margin-right: 0.5rem;
+  font-size: 20px;
 }
 .off-body button {
   width: 100%;

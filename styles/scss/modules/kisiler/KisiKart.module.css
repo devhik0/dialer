@@ -56,6 +56,9 @@
   align-items: center;
   justify-content: space-around;
 }
+.options button i {
+  font-size: 24px;
+}
 
 .info-card {
   margin: 1rem;

@@ -16,6 +16,9 @@
   border: none;
   box-shadow: none;
 }
+.eklebtn i {
+  font-size: 22px;
+}
 
 .off-body {
   display: flex;
@@ -23,6 +26,6 @@
   flex-direction: column;
   row-gap: 1.5rem;
 }
-.off-body form svg {
+.off-body form i {
   margin-right: 0.5rem;
 }

@@ -1,4 +1,4 @@
-@import '../../variables';
+@import "../../variables";
 
 .eklebtn {
   width: 35%;
@@ -20,6 +20,10 @@
     border: none;
     box-shadow: none;
   }
+
+  i {
+    font-size: 22px;
+  }
 }
 
 .off-body {
@@ -29,7 +33,7 @@
   row-gap: 1.5rem;
 
   form {
-    svg {
+    i {
       margin-right: 0.5rem;
     }
   }
