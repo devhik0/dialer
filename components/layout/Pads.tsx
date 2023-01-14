@@ -1,17 +1,13 @@
+import styles from "@styles/layout/Pads.module.css";
 import dynamic from "next/dynamic";
 import Image from "next/image";
-
 import { ChangeEvent, MouseEvent, Suspense, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Row from "react-bootstrap/Row";
 import Spinner from "react-bootstrap/Spinner";
-
-import styles from "../../styles/scss/modules/layout/Pads.module.css";
-
 import { Pad } from "./Pad";
 
 const DSonuc = dynamic(() => import("./Sonuc"), { suspense: true });
@@ -20,16 +16,12 @@ const DSonuc = dynamic(() => import("./Sonuc"), { suspense: true });
 const Pads = ({ ...props }: OffcanvasProps) => {
   // dial offcanvas state i
   const [show, setShow] = useState(false);
-
   const handleShow = () => setShow(true);
   const handleClose = () => setShow(false);
-
   // input ve pad state i
   const [val, setVal] = useState("");
-
   // search state i
   const [query, SetQuery] = useState("");
-
   // events
   const handleClick = (evt: MouseEvent<HTMLButtonElement>) => {
     setVal(val.concat(evt.currentTarget.value));
@@ -47,7 +39,6 @@ const Pads = ({ ...props }: OffcanvasProps) => {
     setVal(res.join(""));
     SetQuery(res.join(""));
   };
-
   // pads
   const buttons = [1, 2, 3, 4, 5, 6, 7, 8, 9, "*", 0, "#"];
 
