@@ -1,4 +1,5 @@
 * sorunları çöz
 * testler yaz
 * refactor yap
+**!!!** Lint Staged dosyasını testler bitince aç, pre-commit e de npx lint-staged yaz
 * optimize et
