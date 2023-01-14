@@ -1,16 +1,12 @@
+import { kayitSil } from "@cms/setup";
+import type { Kisi } from "@features/apiSlice";
 import { useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
-import { kayitSil } from "../../cms/setup";
-
-import type { Kisi } from "../../features/api/apiSlice";
 
 const KisiKayitSilModal = ({ kisi }: { kisi: Kisi }) => {
   // modal state i
   const [showModal, setShowModal] = useState(false);
-
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
 

@@ -1,14 +1,11 @@
+import { useKisileriGetirQuery } from "@features/apiSlice";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
 import { Suspense } from "react";
-
 import Spinner from "react-bootstrap/Spinner";
 
-import { useKisileriGetirQuery } from "../../features/api/apiSlice";
-
-const DKisiKayit = dynamic(() => import("../../components/kisiler/KisiKayit"), { suspense: true });
-const DSearch = dynamic(() => import("../../components/layout/Search"), { suspense: true });
+const DKisiKayit = dynamic(() => import("components/kisiler/KisiKayit"), { suspense: true });
+const DSearch = dynamic(() => import("components/layout/Search"), { suspense: true });
 
 const Son = () => {
   const { data, isError, isLoading } = useKisileriGetirQuery("kisiler");

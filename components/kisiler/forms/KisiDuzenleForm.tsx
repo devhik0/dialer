@@ -1,15 +1,11 @@
+import { kisiDuzenle } from "@cms/setup";
+import type { Kisi } from "@features/apiSlice";
 import { ChangeEvent, FormEvent, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 
-import { kisiDuzenle } from "../../cms/setup";
-
-import type { Kisi } from "../../features/api/apiSlice";
-
 const KisiDuzenleForm = ({ kisi, handleClose }: { kisi: Kisi; handleClose: () => void }) => {
   const { adsoyad, tel, iscalled, isfav } = kisi.fields;
-
   // form state i
   const [inputs, setInputs] = useState({ adsoyad, tel });
 

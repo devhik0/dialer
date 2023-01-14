@@ -1,27 +1,20 @@
+import { Kisi } from "@features/apiSlice";
+import styles from "@styles/kisiler/KisiKart.module.css";
+import CallCanvas from "components/layout/CallCanvas";
 import dynamic from "next/dynamic";
-
 import { Suspense, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
-
-import styles from "../../styles/scss/modules/kisiler/KisiKart.module.css";
-
-import { Kisi } from "../../features/api/apiSlice";
-
-import CallCanvas from "../layout/CallCanvas";
-
 import KisiAvatar from "./KisiAvatar";
 import KisiSecenek from "./KisiSecenek";
 
-const DKisiSilModal = dynamic(() => import("./KisiSilModal"), { suspense: true });
+const DKisiSilModal = dynamic(() => import("./modals/KisiSilModal"), { suspense: true });
 
 const KisiKart = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
   // offcanvas state i
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

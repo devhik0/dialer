@@ -1,16 +1,12 @@
+import { favSil } from "@cms/setup";
+import type { Kisi } from "@features/apiSlice";
 import { useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
-import { favSil } from "../../cms/setup";
-
-import type { Kisi } from "../../features/api/apiSlice";
 
 const KisiFavSilModal = ({ kisi }: { kisi: Kisi }) => {
   // modal state i
   const [showModal, setShowModal] = useState(false);
-
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
 

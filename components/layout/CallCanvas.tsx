@@ -1,27 +1,20 @@
+import { kisiAra } from "@cms/setup";
+import { Kisi } from "@features/apiSlice";
+import styles from "@styles/layout/CallCanvas.module.css";
+import KisiAvatar from "components/kisiler/KisiAvatar";
 import dynamic from "next/dynamic";
-
 import { Suspense, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
-
-import { kisiAra } from "../../cms/setup";
-import { Kisi } from "../../features/api/apiSlice";
-
-import styles from "../../styles/scss/modules/layout/CallCanvas.module.css";
-
-import KisiAvatar from "../kisiler/KisiAvatar";
 
 const DPads = dynamic(() => import("./Pads"), { suspense: true });
 
 // * Call screen offcanvas
 const CallCanvas = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
   const { adsoyad, tel } = kisi.fields;
-
   // call screen offcanvas state i
   const [showcall, setShowCall] = useState(false);
-
   const handleShowCall = () => setShowCall(true);
   const handleCloseCall = () => setShowCall(false);
 

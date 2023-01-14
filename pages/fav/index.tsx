@@ -1,13 +1,9 @@
+import { useKisileriGetirQuery } from "@features/apiSlice";
+import styles from "@styles/pages/fav/index.module.css";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-
 import { Suspense } from "react";
-
 import Spinner from "react-bootstrap/Spinner";
-
-import { useKisileriGetirQuery } from "../../features/api/apiSlice";
-
-import styles from "../../styles/scss/modules/pages/fav/index.module.css";
 
 const DKisiFav = dynamic(() => import("../../components/kisiler/KisiFav"), { suspense: true });
 

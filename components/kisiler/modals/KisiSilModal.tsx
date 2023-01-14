@@ -1,18 +1,13 @@
+import { kisiSil } from "@cms/setup";
+import { Kisi } from "@features/apiSlice";
 import Router from "next/router";
-
 import { useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-
-import { kisiSil } from "../../cms/setup";
-
-import { Kisi } from "../../features/api/apiSlice";
 
 const KisiSilModal = ({ kisi }: { kisi: Kisi }) => {
   // modal state i
   const [showModal, setShowModal] = useState(false);
-
   const handleCloseModal = () => setShowModal(false);
   const handleShowModal = () => setShowModal(true);
 

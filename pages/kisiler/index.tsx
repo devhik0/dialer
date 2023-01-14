@@ -1,17 +1,13 @@
+import { useKisileriGetirQuery } from "@features/apiSlice";
+import styles from "@styles/pages/kisiler/index.module.css";
 import dynamic from "next/dynamic";
-
 import { Suspense } from "react";
-
 import { Spinner } from "react-bootstrap";
 
-import { useKisileriGetirQuery } from "../../features/api/apiSlice";
-
-import styles from "../../styles/scss/modules/pages/kisiler/index.module.css";
-
-const DKisiEkle = dynamic(() => import("../../components/kisiler/KisiEkle"), { suspense: true });
-const DKisiListe = dynamic(() => import("../../components/kisiler/KisiListe"), { suspense: true });
-const DPads = dynamic(() => import("../../components/layout/Pads"), { suspense: true });
-const DSearch = dynamic(() => import("../../components/layout/Search"), { suspense: true });
+const DKisiEkle = dynamic(() => import("components/kisiler/KisiEkle"), { suspense: true });
+const DKisiListe = dynamic(() => import("components/kisiler/KisiListe"), { suspense: true });
+const DPads = dynamic(() => import("components/layout/Pads"), { suspense: true });
+const DSearch = dynamic(() => import("components/layout/Search"), { suspense: true });
 
 const Rehber = () => {
   const { data, isError, isLoading } = useKisileriGetirQuery("kisiler");

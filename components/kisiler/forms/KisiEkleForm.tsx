@@ -1,9 +1,7 @@
+import { kisiEkle } from "@cms/setup";
 import { ChangeEvent, FormEvent, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
-import { kisiEkle } from "../../cms/setup";
 
 const KisiEkleForm = ({ handleClose }: { handleClose: () => void }) => {
   // form state i

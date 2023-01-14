@@ -1,8 +1,6 @@
+import styles from "@styles/layout/Navbar.module.css";
 import { useRouter } from "next/router";
-
 import Nav from "react-bootstrap/Nav";
-
-import styles from "../../styles/scss/modules/layout/Navbar.module.css";
 
 const Navbar = () => {
   const router = useRouter();

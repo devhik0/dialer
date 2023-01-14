@@ -1,18 +1,14 @@
+import styles from "@styles/layout/Search.module.css";
 import dynamic from "next/dynamic";
-
 import { ChangeEvent, Suspense, useState } from "react";
-
 import Form from "react-bootstrap/Form";
 import Spinner from "react-bootstrap/Spinner";
-
-import styles from "../../styles/scss/modules/layout/Search.module.css";
 
 const DSonuc = dynamic(() => import("./Sonuc"), { suspense: true });
 
 const Search = () => {
   // search state i
   const [query, setQuery] = useState("");
-
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => setQuery(evt.target.value.toLowerCase());
 
   return (

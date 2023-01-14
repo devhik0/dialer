@@ -1,11 +1,9 @@
+import { useKisileriGetirQuery } from "@features/apiSlice";
 import dynamic from "next/dynamic";
-
 import { Suspense } from "react";
-
 import Spinner from "react-bootstrap/Spinner";
-import { useKisileriGetirQuery } from "../../features/api/apiSlice";
 
-const DKisiKart = dynamic(() => import("../kisiler/KisiKart"), { suspense: true });
+const DKisiKart = dynamic(() => import("kisiler/KisiKart"), { suspense: true });
 
 const Sonuc = ({ query }: { query: string }) => {
   // data fetch CMS

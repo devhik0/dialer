@@ -1,20 +1,16 @@
+import styles from "@styles/layout/Pad.module.css";
 import { MouseEvent } from "react";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 
-import styles from "../../styles/scss/modules/layout/Pad.module.css";
-
-const Pad = ({
-  handleClick,
-  btns,
-  firstIndex,
-  lastIndex,
-}: {
+type TPadProps = {
   handleClick: (evt: MouseEvent<HTMLButtonElement>) => void;
   btns: (string | number)[];
   firstIndex: number;
   lastIndex: number;
-}) => (
+};
+
+export const Pad = ({ handleClick, btns, firstIndex, lastIndex }: TPadProps) => (
   <>
     {btns.slice(firstIndex, lastIndex).map((btn) => (
       <Col key={btn} style={{ padding: "0 0.3rem" }}>
@@ -25,5 +21,3 @@ const Pad = ({
     ))}
   </>
 );
-
-export default Pad;

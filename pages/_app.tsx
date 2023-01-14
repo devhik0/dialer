@@ -1,15 +1,10 @@
+import { store } from "app/store";
 import "bootstrap/dist/css/bootstrap.min.css";
-
+import Layout from "components/layout/Layout";
 import type { AppProps } from "next/app";
-
 import Head from "next/head";
 import { Provider } from "react-redux";
-
-import Layout from "../components/layout/Layout";
-
-import "../styles/globals.css";
-
-import { store } from "../app/store";
+import "styles/globals.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (

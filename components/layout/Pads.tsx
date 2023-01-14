@@ -12,7 +12,7 @@ import Spinner from "react-bootstrap/Spinner";
 
 import styles from "../../styles/scss/modules/layout/Pads.module.css";
 
-import Pad from "./Pad";
+import { Pad } from "./Pad";
 
 const DSonuc = dynamic(() => import("./Sonuc"), { suspense: true });
 

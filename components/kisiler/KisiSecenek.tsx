@@ -1,21 +1,16 @@
+import { kisiFav } from "@cms/setup";
+import { Kisi } from "@features/apiSlice";
+import styles from "@styles/kisiler/KisiSecenek.module.css";
 import dynamic from "next/dynamic";
-
 import { Suspense, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
-
-import { kisiFav } from "../../cms/setup";
-import { Kisi } from "../../features/api/apiSlice";
-
-import styles from "../../styles/scss/modules/kisiler/KisiSecenek.module.css";
 
 const DKisiDuzenle = dynamic(() => import("./KisiDuzenle"), { suspense: true });
 
 const KisiSecenek = ({ kisi }: { kisi: Kisi }) => {
   // fav button color state i
   const [color, setColor] = useState("currentColor");
-
   const handleColor = () => (color === "var(--bs-blue)" ? setColor("currentColor") : setColor("var(--bs-blue)"));
 
   const handleClick = () => {

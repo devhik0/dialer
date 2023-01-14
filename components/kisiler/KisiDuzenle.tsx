@@ -1,23 +1,18 @@
+import { Kisi } from "@features/apiSlice";
+import styles from "@styles/kisiler/KisiDuzenle.module.css";
 import dynamic from "next/dynamic";
-
 import { Suspense, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Offcanvas, { OffcanvasProps } from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
-
-import { Kisi } from "../../features/api/apiSlice";
-import styles from "../../styles/scss/modules/kisiler/KisiDuzenle.module.css";
-
 import KisiAvatar from "./KisiAvatar";
 
-const DKisiDuzenleForm = dynamic(() => import("./KisiDuzenleForm"), { suspense: true });
-const DKisiSilModal = dynamic(() => import("./KisiSilModal"), { suspense: true });
+const DKisiDuzenleForm = dynamic(() => import("./forms/KisiDuzenleForm"), { suspense: true });
+const DKisiSilModal = dynamic(() => import("./modals/KisiSilModal"), { suspense: true });
 
 const KisiDuzenle = ({ kisi, ...props }: OffcanvasProps & { kisi: Kisi }) => {
   // offcanvas state i
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 

@@ -16,7 +16,15 @@
     "incremental": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "noImplicitThis": true
+    "noImplicitThis": true,
+    "baseUrl": ".",
+    "paths": {
+      "@styles/*": ["styles/scss/modules/*"],
+      "@cms/*": ["cms/*"],
+      "@features/*": ["features/api/*"],
+      "components/*": ["components/*"],
+      "kisiler/*": ["components/kisiler/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

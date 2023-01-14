@@ -1,5 +1,5 @@
-import { Kisi } from "../../features/api/apiSlice";
-import styles from "../../styles/scss/modules/kisiler/KisiAvatar.module.css";
+import { Kisi } from "@features/apiSlice";
+import styles from "@styles/kisiler/KisiAvatar.module.css";
 
 const KisiAvatar = ({ kisi }: { kisi: Kisi }) => {
   const { adsoyad } = kisi.fields || {};

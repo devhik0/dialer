@@ -1,19 +1,15 @@
+import styles from "@styles/kisiler/KisiEkle.module.css";
 import dynamic from "next/dynamic";
-
 import { Suspense, useState } from "react";
-
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Spinner from "react-bootstrap/Spinner";
 
-import styles from "../../styles/scss/modules/kisiler/KisiEkle.module.css";
-
-const DKisiEkleForm = dynamic(() => import("../../components/kisiler/KisiEkleForm"), { suspense: true });
+const DKisiEkleForm = dynamic(() => import("./forms/KisiEkleForm"), { suspense: true });
 
 const KisiEkle = ({ ...props }) => {
   // offcanvas state i
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
