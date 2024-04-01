@@ -8,7 +8,6 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
-    "prepare": "husky install",
     "lh-report": "lighthouse http://localhost:3000/kisiler --view --output html --output-path ./report.html --throttling.cpuSlowdownMultiplier=2.7"
   },
   "dependencies": {
